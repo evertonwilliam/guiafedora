@@ -1,0 +1,52 @@
+<article>
+<h1>como instalar o xen no fedora</h1>
+
+<p>
+	<a href="http://www.cl.cam.ac.uk/research/srg/netos/projects/archive/xen/" target="_blank">Xen</a> (pronuncia-se Zêin) é um software livre de virtualização para as arquiteturas x86, x86-64, IA-32, IA-64 e PowerPC.
+</p>
+
+<p>
+	Ele permite a execução de vários sistemas operacionais, simultaneamente, sobre um mesmo hardware. Versões modificadas de Linux e NetBSD podem ser usadas como base. Diversos sistemas Unix modificados podem ser executados. Desde a versão 3.0, o Microsoft Windows e outros sistemas operacionais podem ser executados sobre o <a href="http://www.cl.cam.ac.uk/research/srg/netos/projects/archive/xen/" target="_blank">Xen</a>.
+</p>
+	
+<p>
+	O <a href="http://www.cl.cam.ac.uk/research/srg/netos/projects/archive/xen/" target="_blank">Xen</a> foi originalmente desenvolvido como um projeto de pesquisa na Universidade de Cambridge, liderado por Ian Pratt, fundador da XenSource, Inc. Em 15 de agosto de 2007, a XenSource foi adquirida pela Citrix System Inc. pelo valor de 500 milhões de dólares. A Citrix agora suporta o desenvolvimento do projeto open source e vende também uma versão "empresarial" do software. O primeiro lançamento público do Xen foi disponibilizado em 2003.
+</p>
+
+<p>
+	Para efetuar a instalação, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Baixe o repositório do Xen
+cd /etc/yum.repos.d/
+wget http://fedorapeople.org/groups/virt/virt-preview/fedora-virt-preview.repo
+
+# Efetue a atualização do repositório
+dnf -y makecache
+dnf -y check-update
+dnf -y update
+
+# Desabilite o SELinux
+grep /var/log/audit/audit.log | audit2allow -M mypol
+semodule -i mypol.pp
+
+# Efetue a instalação do Xen
+dnf -y install xen
+</pre>
+
+<p>
+	Após a instalação, será criado uma nova opção de inicialização no GRUB, para executá-lo basta reiniciar o Fedora e selecionar a opção parecida com "4.xx Xen" no menu GRUB.
+</p>
+
+<p>
+	Se acaso necessitar de mais informações sobre este aplicativo, pode acessar o <a href="http://wiki.xenproject.org/wiki/Main_Page" target="_blank"> Site Oficial Xen</a> do qual contém um WIKI completo de suas configurações e utilizações. Bons estudos.
+</p>
+
+</article>

@@ -1,0 +1,30 @@
+<article>
+<h1>como instalar o putty (cliente ssh) no fedora</h1>
+
+<p>
+	O <a href="http://www.putty.org/" alt="Site Oficial Putty" target="_blank">PuTTy</a> é um programa cliente para protoclos de rede SSH, Telnet e Rlogin. Esses protocolos são usados para rodar uma sessão remota num computador, sobre uma rede. O software implementa o cliente no fim da sessão: o fim no qual a sessão é exibida, ao invés do fim em que ela é executada.
+</p>
+
+<p>
+	Em termos mais simples: você executa <a href="http://www.putty.org/" alt="Site Oficial Putty" target="_blank">PuTTy</a> numa máquina Windows ou Linux e diz a ele como conectar-se, por exemplo, a um servidor Unix. O <a href="http://www.putty.org/" alt="Site Oficial Putty" target="_blank">PuTTy</a> abre uma janela. Então, qualquer coisa que você digitar na janela será enviada para a máquina Unix e tudo o que a máquina Unix enviar de volta é exibido nessa janela. Agora você pode trabalhar com uma máquina Unix como se estivesse no seu console
+</p>
+
+<p>
+	Para efetuar a instalação deste aplicativo, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Instalando o Putty
+dnf -y install putty
+</pre>
+
+<p>
+	O aplicativo é bem simples, e é possível encontrar vários exemplos de utilização e configuração na internet. O <a href="http://www.putty.org/" alt="Site Oficial Putty" target="_blank">site oficial do PuTTy</a> é muito simples e não contém muitas informações.
+</p>
+</article>

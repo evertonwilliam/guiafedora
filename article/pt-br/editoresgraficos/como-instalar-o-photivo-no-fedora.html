@@ -1,0 +1,47 @@
+<article>
+<h1>como instalar o photivo no fedora</h1>
+
+<p>
+	O <a href="http://photivo.org/" target="_blank" alt="Site do photivo">Photivo</a> é um editor de fotos de código aberto, está registrado sob a licença (GPL3). Ele lida com os arquivos RAW, e também com arquivos bitmap do tipo (TIFF, JPEG, BMP, PNG,  etc) utiliza processamento de 16 bits em cores não destrutiva com integração de fluxo de trabalho juntamente com o Gimp e possui modo de ediçao em lote.
+</p>
+
+<p>
+	Este aplicativo fornece os melhores algoritmos disponíveis no mercado, tais como: Denoise mais flexível e poderosa, nitidez e contraste mais eficientes do mundo open-source. Embora, para obter os resultados desejados, o usuário enfrentará uma curva de aprendizado bastante íngreme.
+</p>
+
+<p>
+	Destina-se a ser utilizado em um fluxo de trabalho em conjunto com o digiKam / F-Spot / Shotwell e Gimp. Ele precisa de um computador bastante forte e não é destinado a iniciantes.
+</p>
+
+<p>
+	Para efetuar a instalação deste aplicativo, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Instalando as dependencias
+sudo yum install gcc gcc-c++ ccache qt-devel mercurial libjpeg-turbo-devel exiv2-devel lensfun-devel fftw-devel libpng-devel libtiff-devel gimp-devel lcms2-devel liblqr-1-devel fftw3-devel libjasper-devel libwmf-devel liblqr-1-devel GraphicsMagick-c++-devel 
+
+# Baixe os arquivos fontes do aplicativo
+wget http://download.opensuse.org/repositories/home:/sergeyopensuse/Fedora_20/src/photivo-alexander-1063rev1a9673d035b3-10.2.src.rpm
+
+# efetue a compilação do código fonte
+rpmbuild --rebuild photivo-alexander-1063rev1a9673d035b3-9.1.src.rpm
+
+# efetue a instalação
+cd [diretório gerado pela build]
+dnf -y install photivo-alexander-1063rev1a9673d035b3-9.1.x86_64.rpm photivo-alexander-gimp-1063rev1a9673d035b3-9.1.x86_64.rpm
+
+# acesse o aplicativo pelo comando
+photivo
+</pre>
+
+<p>
+	Acesse o site oficial do Photivo pelo seguinte link: <a href="http://photivo.org/" target="_blank" alt="Site do photivo">http://photivo.org/</a> e obtenha mais informações para a utilização e obtenção ajuda para esse aplicativo.
+</p>
+</article>

@@ -1,0 +1,41 @@
+<article>
+<h1>como instalar o qemu no fedora</h1>
+
+<p>
+	QEMU é um software livre escrito por Fabrice Bellard que implementa um emulador de processador, permitindo uma virtualização completa de um sistema PC dentro de outro. O QEMU é um hypervisor e é semelhante a projetos como o Bochs, VMware Workstation e o PearPC, mas possui várias características que faltam nestes, incluindo aumento de velocidade em x86, (através de um acelerador) e suporte para múltiplas arquiteturas está a ser acrescentado. Usando tradução dinâmica, atinge uma velocidade razoável, não deixando de ser fácil de converter para novos processadores		
+</p>
+
+<p>
+	O QEMU tem dois modos de operação:
+</p>
+
+<p>
+	Emulação em modo de usuário:
+	O QEMU pode lançar processos Linux ou Darwin/Mac OS X compilados para uma CPU em outra CPU. As chamadas ao SO alvo são truncadas para um endianamento e combinações 32/64bits. Wine e o Dosemu são os alvos principais para o QEMU.
+</p>
+
+<p>
+	Emulação em modo computador completo
+	O QEMU emula um computador completo, incluindo um processador e vários periféricos. Ele pode ser utilizado para prover hospedeiros virtuais de vários computadores virtuais em um único computador.
+</p>
+
+<p>
+	A instalação dele é bem simples, para isso, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Digite este comando para instalar o imagination
+dnf -y install qemu
+</pre>
+
+<p>
+	Nosso objetivo até aqui não é ensinar sobre como utilizar o QEMU, mas sim mostrar como efetuar a instalação, que neste caso é bem simples, porém a sua utilização não é tão simples assim, então se desejar aprender um pouco sobre esta ferramenta, acesse o <a href="http://wiki.qemu.org/Main_Page" target="_blank">Site Oficial WEMU</a> e localize a documentação que é bem completa, porém em inglês. Bons estudos.
+</p>
+
+</article>

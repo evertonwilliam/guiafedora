@@ -1,0 +1,59 @@
+<article>
+<h1>como instalar o SGDB Mysql no Fedora</h1>
+
+<p>
+	O SGDB <a href="https://www.mysql.com/" alt="Site Oficial MySQL" target="_blank">MySQL</a> não convive juntamente com o <a href="https://mariadb.org/pt-br/" alt="Site Oficial MariaDB" target="_blank">MariaDB</a>. Para que seja instalado o <a href="https://www.mysql.com/" alt="Site Oficial MySQL" target="_blank">MySQL</a> no Fedora é necessário efetuar a desinstalação do <a href="https://mariadb.org/pt-br/" alt="Site Oficial MariaDB" target="_blank">MariaDB</a>. Se acaso você desejar manter o <a href="https://mariadb.org/pt-br/" alt="Site Oficial MariaDB" target="_blank">MariaDB</a> instalado, então não execute os passos listados neste manual pois o <a href="https://mariadb.org/pt-br/" alt="Site Oficial MariaDB" target="_blank">MariaDB</a> será desinstalado e totalmente substituído pelo <a href="https://www.mysql.com/" alt="Site Oficial MySQL" target="_blank">MySQL</a>.
+</p>
+
+<p>
+	Para efetuar a instalação do <a href="https://www.mysql.com/" alt="Site Oficial MySQL" target="_blank">MySQL</a> no Fedora, devemos primeiramente desabilitar o repositório do <a href="https://mariadb.org/pt-br/" alt="Site Oficial MariaDB" target="_blank">MariaDB</a>, em seguida efetuar a desinstalação total do <a href="https://mariadb.org/pt-br/" alt="Site Oficial MariaDB" target="_blank">MariaDB</a>. Após a desinstalação do <a href="https://mariadb.org/pt-br/" alt="Site Oficial MariaDB" target="_blank">MariaDB</a> deve-se efetuar a instalação do repositório do <a href="https://www.mysql.com/" alt="Site Oficial MySQL" target="_blank">MySQL</a>, este arquivo de instalação é encontrado no site do <a href="https://www.mysql.com/" alt="Site Oficial MySQL" target="_blank">MySQL</a> pelo endereço: <a href="http://dev.mysql.com/downloads/repo/yum/" target="_blank" alt="Oracle Mysql">http://dev.mysql.com/downloads/repo/yum/</a>.
+</p>
+
+<p>
+	Abaixo segue os passos para desinstalar o <a href="https://mariadb.org/pt-br/" alt="Site Oficial MariaDB" target="_blank">MariaDB</a>, para executar abra o terminal de comandos do Fedora através do menu: "Aplicativos->System Tolls->LXTerminal" e digite os seguintes comandos:
+</p>
+
+<pre class="brush: shell, bash">
+# acesse a conta root
+su
+
+#digite a sua senha:
+Senha:
+
+# Desabilitando as entradas dnf para o MariaDB
+dnf-config-manager --disable mariadb
+
+# Efetuando a remoção do MariaDB
+dnf remove -y mariadb-common mariadb-compat mariadb-server
+</pre>
+
+<p>
+	Antes de iniciarmos a instalação do <a href="https://www.mysql.com/" alt="Site Oficial MySQL" target="_blank">MySQL</a>, devemos efetuar o download e a instalação de seu repositório, para isso efetue o download do arquivo rpm de instalação dos repositórios da Oracle, para isso acesse o site: <a href="http://dev.mysql.com/downloads/repo/yum/" target="_blank">Oracle Mysql</a> será solicitado um login para efetuar o download, se já tiver, basta efetuar o login e o arquivo será baixado, senão poderá efetuar o seu cadastro sem nenhum custo.
+</p>
+
+<p>
+	Após o Download do arquivo RPM, siga os passos á seguir, no terminal do Fedora, estando logado como ROOT.
+</p>
+
+<pre class="brush: shell, bash">
+# Efetue a instalação do repositório do MySQL (ver explicações abaixo)
+dnf install -y mysql-community-release-fc21-6.noarch.rpm
+
+# Efetue a verificação do repositório
+dnf repolist enabled | grep "mysql.*-community.*"
+
+# Efetue a instalação do MySQL no Fedora
+dnf install -y mysql-community-server
+
+# Depois da instalação, efetue a configuração da senha
+mysql_secure_installation
+</pre>
+
+<p>
+	Escolha o RPM que representa a versão de seu Fedora, lá tem os arquivos designados para as versões atuais do fedora.
+</p>
+
+<p>
+	Feito isso, os passos de acesso ao <a href="https://www.mysql.com/" alt="Site Oficial MySQL" target="_blank">MySQL</a> são os mesmos apresentados no <a href="https://mariadb.org/pt-br/" alt="Site Oficial MariaDB" target="_blank">MariaDB</a>.
+</p>
+</article>

@@ -1,0 +1,125 @@
+<article>
+<h1>como instalar codescs de vídeo e som no fedora</h1>
+
+<p>
+	Para que seja possível executar arquivos de vídeos e arquivos de áudio, é necessário que seja instalado os Codecs, cuja finalidade é decodificar os diversos tipos de mídias de áudio e vídeo.
+</p>
+
+<p>
+	A palavra "Codec" vem de COdificação e DECodificação, ou seja, eles "traduzem" um arquivo que originalmente seria muito grande. Os Codecs pegam um arquivo grande e comprimem os elementos que fazem parte do mesmo - audio e video - em um formato menor, capaz de ser codificado e decodificado a partir de softwares específicos para isso, a exemplo do iTunes, Windows Media Player, Quicktime, Real Player, entre outros. Eles rearranjam o fluxo de bits para determinar coisas como largura e titleura de imagens, velocidade de exibição, entre outras. 
+</p>
+
+<p>
+	Em suma, sem Codec é impossível assistir vídeos de titlea resolução e ouvir músicas mp3, por exemplo, eles são os responsáveis em nos oferecer esta experiência com nosso computador, para que tenhamos esta opções em nosso Fedora devemos acessar o terminal pelo seguinte menu: "Aplicativos->System Tolls->LXTerminal" e executar os seguintes comandos.
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Digite os comandos abaixo para instalar os codecs
+dnf -y install gstreamer-plugins-bad gstreamer-plugins-bad-free-extras gstreamer-plugins-bad-nonfree gstreamer-plugins-ugly gstreamer-ffmpeg xmms xmms-mp3
+</pre>
+
+<h2>Como instalar o conversor FFMPEG no Fedora</h2>
+
+<p>
+	FFmpeg é um programa de computador que grava, converte e cria stream de áudio e vídeo em diversos formatos. FFmpeg é um programa em linha de comando que é composto de uma coleção de software livre e bibliotecas de código aberto. Inclui libavcodec, biblioteca de codec de áudio e vídeo, e libavformat, um multiplexador/demultiplexador de conteúdo de áudio e vídeo. O nome do projeto vem do nome do grupo de padrões de vídeo MPEG, junto com a sigla "FF" que em inglês é "fast forward" ou avanço rápido em português 
+</p>	
+
+<p>
+	O projeto começou com Fabrice Bellard (usando o pseudônimo "Gerard Lantau"), e é mantido por Michael Niedermayer. Muitos dos desenvolvedores também participam do projeto MPlayer (FFmpeg é hospedado no servidor do projeto MPlayer). FFmpeg é desenvolvido na plataforma Linux, mas pode ser compilado em outros sistemas operacionais (Apple Mac OS X, Microsoft Windows, e AmigaOS) e é usado por grandes empresas no intuito de acelerar os trabalhos em vídeo (edição) e muitas vezes criando plugins para finalização rápida (Globo.com, Uol, Terra, entras empresas utilizam).
+</p>
+
+<p>
+	Para efetuar a instalação deste aplicativo, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Digite este comando para instalar o FFmpeg
+dnf -y install ffmpeg
+</pre>
+
+<p>
+	O FFmpeg é o mais completo de todos os conversores, existe um manual completo de sua utilização no seu site oficial, para conhecer mais sobre ele, acesso o seguinte link <a href="https://www.ffmpeg.org/documentation.html" title="Manual do FFmpeg" target="_blank">Manual do FFMpeg</a>
+</p>
+
+<h2>como instalar o conversor MEncoder no Fedora</h2>
+<p>
+	MEncoder é uma ferramenta que usa em linha de comando para codificação de vídeos sob a Licença Pública Geral GNU. O MEncoder é distribuido juntamente com o MPlayer e permite converter todos os formatos de vídeo aceitos pelo MPlayer para um grande número de outros formatos. Possui diversos filtros de áudio e vídeo para a manipulação dos arquivos. Devido a enorme quantidade de opções o MEncoder pode parecer pouco amigável no começo, mas ele é uma ferramenta extremamente poderosa para conversão de vídeo. Alguns frontends foram desenvolvidos para torná-lo mais acessível.
+</p>
+
+<p>
+	Para efetuar a instalação, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Digite este comando para instalar o MEncoder
+dnf -y install mencoder
+</pre>
+
+<p>
+	Após a instalação, você terá acesso ao aplicativo através da linha de comando como também alguns aplicativos de multimidia irão utilizá-lo.
+</p>
+
+<p>
+	Se você se interessou pelo aplicativo e tem vontade em conhecer um pouco mais sobre ele, acesse o manual do MEncoder através deste link: <a href="https://www.mplayerhq.hu/DOCS/HTML/en/index.html" title="Manual do MEncoder" target="_blank">Manual do MEncoder</a> 
+</p>
+
+<h2>como instalar o conversor MPlayer no fedora</h2>
+
+<p>
+	MPlayer é um player multimídia de código aberto para diversos sistemas operacionais, como GNU/Linux, FreeBSD e Microsoft Windows, e é um dos que possuem suporte à maior quantidade de formatos de arquivos de vídeo. Tem suporte a vídeos em MPEG-1, MPEG-2, MPEG-4, DivX, XviD, DVDs, VCDs, Real Audio, QuickTime e entre vários outros. Suporta também a reprodução de vídeos via streaming RTP e HTTP, além de legendas. Pelo fato de o MPlayer não ter como principal objetivo a reprodução de vídeos via streaming, esse suporte não é configurado na instalação padrão.
+</p>
+
+<p>
+	O MPlayer é uma aplicação de linha de comando, que tem disponíveis várias Interfaces gráficas para os sistemas operacionais em que ele é utilizado. Algumas comuns são o gmplayer (a GUI padrão para o GNU/Linux e outros sistemas operacionais do tipo Unix e o Windows), MPlayer OS X (para o Mac OS X), MPUI (para Windows) e WinMPLauncher (também para windows).
+</p>
+
+<p>
+	O código do MPlayer possui rotinas para tirar proveito da aceleração de placas de vídeo, tornando-o ideal para a reprodução de vídeos que exijam uma maior qualidade. Há também um plugin para navegadores baseados no mozilla e que permite a reprodução de vídeos dentro do próprio navegador.
+</p>
+
+<p>
+	As características apresentadas nos parágrafos acima somadas com os prêmios conseguidos em conferências por esse leitor, fazem dele o software ideal para reprodução de vídeos para o sistema operacional GNU/Linux.
+</p>
+
+<p>
+	Para efetuar a instalação, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Digite este comando para instalar o MPlayer
+dnf -y install mplayer
+</pre>
+
+<p>
+	Da mesma forma que o MEncoder, o MPlayer é um aplicativo de linha de comando, que é amplamente utilizado por outros aplicativos em forma de plugin, é possível utilizá-lo diretamente via terminal, se tiver interesse em conhecer mais sobre este aplicativos, acesse o site oficial através deste link <a href="https://www.mplayerhq.hu/design7/documentation.html" title="Manual do MPlayer" target="_blank">Manual do MPlayer</a>
+</p>
+
+<p>
+	Prontinho, viu como tudo é muito simples no Fedora, basta efetuar a instalação de todos os componentes necessários e terá um sistema operacional funcionando como qualquer outro. A paciência e a persistência é a sua chave para conseguir aproveitar ao máximo das experiências que este sistema operacional pode lhe fornecer.
+</p>
+
+</article>

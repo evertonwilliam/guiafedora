@@ -1,0 +1,68 @@
+<article>
+<h1>como instalar o dropbox no fedora</h1>
+
+<p>
+	O <a href="https://www.dropbox.com" alt="Download DropBox" target="_blank">DropBox</a> é um serviço para armazenamento e compartilhamento de arquivos em servidores na internet. Ele é baseado no conceito da "computação em nuvem" ("cloud computing"). Pertence ao Dropbox Inc., sediada em San Francisco, Califórnia, EUA.
+</p>
+
+<p>
+	A empresa desenvolvedora do programa disponibiliza centrais de computadores que armazenam os arquivos de seus clientes. Uma vez que os arquivos sejam devidamente copiados para os servidores da empresa, passarão a ficar acessíveis a partir de qualquer lugar que tenha acesso à Internet. O princípio é o de manter arquivos sincronizados entre dois ou mais computadores que tenham o aplicativo do Dropbox instalado.
+</p>
+
+<p>
+	O <a href="https://www.dropbox.com" alt="Download DropBox" target="_blank">DropBox</a> é utilizado por mais de 25 milhões de pessoas no mundo. O <a href="https://www.dropbox.com" alt="Download DropBox" target="_blank">DropBox</a> oferece 2 GB de espaço gratuito na rede para sincronizar e compartilhar arquivos com outros usuários.
+</p>
+
+<p>
+	Que tal começar a utilizar os serviços da núvem para manter seguro os seus arquivos pessoais? Vamos instalá-lo? Para isso, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<p> 
+	Obs.: Os procedimento abaixo são para a instalação do <a href="https://www.dropbox.com" alt="Download DropBox" target="_blank">DropBox</a> no Fedora que esteja instalado com o ambiente Gnome e suas ramificações, tais como LXDE, XFCE, GNOME SHELL etc. Para KDE estaremos atualizando esta matéria, do qual falaremos da instalação do <a href="http://kdropbox.deuteros.es/" alt="Kfilebox Project" target="_blank">Kfilebox</a>.
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Criando um arquivo de reposítório
+gedit /etc/yum.repos.d/dropbox.repo
+
+# Cole este conteúdo e grave o arquivo
+[Dropbox]
+name=Dropbox Repository
+baseurl=http://linux.dropbox.com/fedora/$releasever/
+gpgkey=http://linux.dropbox.com/fedora/rpm-public-key.asc
+
+# Efetue a atualização dos repositórios
+dnf -y makecache
+dnf -y check-update
+dnf -y update
+
+# efetue a instalação do Dropbox
+dnf -y install nautilus-dropbox
+</pre>
+
+<p>
+	Se acaso desejar baixar o arquivo RPM de instalação diretamente no site da Dropbox, então acesse este link: <a href="https://www.dropbox.com/pt_BR/install?os=lnx" alt="Download DropBox" target="_blank">Baixar DropBox</a> e em seguida execute o seguinte comando para instalar.
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# efetue a instalação do Dropbox
+dnf -y install nautilus-dropbox-2015.10.28-1.fedora.x86_64.rpm
+</pre>
+
+<p>
+	Para utilizar o DropBox é necessário abrir uma conta no site, e em seguida efetuar o login com o seu usuário e senha após a instalação do aplicativo.
+</p>
+
+</article>

@@ -1,0 +1,41 @@
+<article>
+<h1>como instalar os compactadores rar e zip no fedora</h1>
+
+<p>
+	Uma das preocupações dos usuários do Windows que estão migrando para o Linux é como efetuar a descompactação dos arquivos baixados na internet, ou até mesmo como efetuar a compactação dos arquivos para enviar para a internet, ou até mesmo para efetuar um backup ou algo do gênero.
+</p>
+
+<p>
+	No Linux o padrão de compactação é o TAR e o TAR.gz porém estas extensões não são conhecidas pelo sistema Windows, então para que possamos enviar arquivos que sejam compatíveis com todos os sistemas operacionais devemos então gerar os arquivos compactados em formato ZIP e ou RAR, para que isso seja possível devemos efetuar a instalação dos pacotes "unrar" e "p7zip" no Fedora.
+</p>
+
+<p>
+	Para isso vamos acessar o terminal pelo seguinte menu: "Aplicativos->System Tolls->LXTerminal" e digitar os seguintes comandos.
+</p>
+
+<pre class="brush: bash">
+# Acesse o modo root
+su
+
+# Entre com sua senha de root
+Senha:
+
+# Efetue a instalação do unrar
+dnf -y install unrar
+
+# Efetue a instalação do p7zip
+dnf -y install p7zip p7zip-plugins
+</pre>
+
+<p>
+	Viu como é simples, nem precisou baixar os aplicativos dos sites de download. Agora seu Fedora está preparado para receber arquivos no formato Zip e Rar, para tirar prova disso escolha qualquer arquivo do computador, clique com o botão direito do mouse sobre o arquivo e escolha a opção comprimir, e deverá aparecer a seguinte tela:
+</p>
+
+<div class="box_img_article">
+	<img class="img_article" alt="Rar e Zip Instalados no Fedora" src="../screens/pt-br/configurandofedora/utilizando-o-zip-e-rar-no-fedora.png" />
+</div>
+	
+<p>
+	Nada mal, estamos indo bem, se você chegou até aqui, é porque já efetuou todos os processos de configuração básica e excencial do Fedora, Se quiser ter acesso ao site oficial do 7Zip basta acessar este link <a href="http://www.7-zip.org/" alt="7Zip Website" target="_blank">site oficial 7zip</a>. Para o site oficial do Rar, basta acessar este link <a href="http://www.win-rar.com/start.html?&L=0" alt="Rar Website" target="_blank">site oficial rar</a> 
+</p>
+</article>

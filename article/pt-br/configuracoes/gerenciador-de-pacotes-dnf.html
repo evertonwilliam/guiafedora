@@ -1,0 +1,96 @@
+<article>
+<h1>conhecendo o gerenciador de pacotes dnf, do fedora</h1>
+<p>
+	Para quem já utilizava o Fedora como sistema operacional, notou que após a instalação da versão 22, o gerenciador de pacotes YUM (Yellowdog Updater Modified) deixou de funcionar, isso ocorreu porque a equipe de engenheiros do Fedora passou a disponibilizar o DNF como o gerenciador de pacotes principal da distribuição.
+</p>
+
+<p>
+	Para todos que acompanham as novidades da distribuição, esta não é exatamente uma novidade, pois desde a versão 18 SphericalCow a equipe do Fedora vem disponibilizando o DNF para teste. Mas para aqueles que nunca utilizaram uma versão Linux em sua vida, acredito que devem estar se perguntando, mas o que é afinal um Gerenciador de Pacotes?
+</p>
+
+<p>
+	Nas distribuições mais robustas como o Fedora, a instalação de software é feita com um software denominado de Gerenciador de Pacotes. O Gerenciador de Pacotes do Fedora trabalha com arquivo de extensão RPM, que nada mais é do que um conjunto de arquivos binários compactados que compõe um determinado aplicativo, neste caso, o Gerenciador de Pacotes obtém os arquivos RPM dos repositórios (servidores online, CDs, DVDs, etc) resolvendo as dependências de instalação e por fim instalando o aplicativo em seu sistema. O YUM é o antigo gerenciador de aplicações do Fedora que a partir da versão 22, passa a ser substituído pelo DNF.
+</p>
+
+<p>
+	O DNF é um fork do YUM 3.4 e com a liberação da versão 1.0 do DNF chega à hora de ativá-lo no Fedora, com isso o YUM passa a não mais funcionar em uma instalação limpa do Fedora, porém é possível, em momento, instalá-lo e manter ambos ao mesmo tempo.
+</p>
+
+<p>
+	O grande motivo desta mudança é que o YUM não suporta o Python 3, além disso, a API está em situação irregular, o algoritmo de resolução de dependência está quebrado e existe a incapacidade de refatorar as funções internas no código do YUM. O DNF foi totalmente reescrito para que seja compatível com todas estas aversões apresentadas pelo YUM.
+</p>
+
+<p>
+	Uma das boas novidades do DNF é a resolução de dependências, ele apresentou melhor desempenho, menor consumo de memória e um resolvedor de dependências que resolve dentro do RPM também. Basicamente o DNF utiliza as mesmas sintaxes do YUM, porém, em back-end, ele usa algumas bibliotecas específicas, como a libsolv e a hawkey.
+</p>
+
+<p>
+	As especificações do DNF estão documentadas no site: <a href="http://dnf.readthedocs.org/en/latest/" alt="Read the docs" title="Read the docs" target="_Blank">Read the docs</a> e todos os plug-ins do YUM estão sendo migrados para o DNF e atualmente a equipe do DNF está trabalhando em portar estes plug-ins populares do YUM para melhorar a experiência do usuário. 
+</p>
+
+<p>
+	A linha de comando do DNF fica muito parecida com a do YUM seguindo a seguinte sintaxe de comando:
+</p>
+
+<pre class="brush: shell, bash">
+dnf [options] &lsaquo;command&rsaquo; [&lsaquo;args&rsaquo;...]
+</pre>
+
+<p>
+	Os comandos existentes para o DNF são: autoremove, check-update, clean, distro-sync, downgrade, group, help, history, info, install, list, makecache, provides, reinstall, remove, repolist, repository-packages, search, updateinfo, upgrade e upgrade-to, podendo ser utilizados com as seguintes opções --allowerasing, --assumeno, --best, -C, --cacheonly, --disablerepo, --enablerepo>, -q, --quiet, -y, --assumeyes, etc. Obviamente aqui estão os mais comuns, para ter uma lista completa basta acessar a página de documentação do DNF.
+</p>
+
+<p>
+	Para nossos próximos passos, vamos acatar a sintaxe básica do DNF e em um momento oportuno vamos falar um pouco mais sobre este novo gerenciador de aplicativos desenvolvido pela equipe Fedora.
+</p>
+
+<p>
+	Para instalar um pacote de aplicativo, utilizaremos a seguinte sintaxe:
+</p>
+
+<pre class="brush: shell, bash">
+dnf -y install nome_pacote
+</pre>
+
+<p>
+	Para remover pacotes:
+</p>
+
+<pre class="brush: shell, bash">
+dnf -y remove nome_pacote
+</pre>
+
+<p>
+	Para efetuar atualizações de pacotes e do sistema
+</p>
+
+<pre class="brush: shell, bash">
+dnf -y makecache	# Gera um cache para os seus aplicativos.
+dnf -y check-update	# Verifica o que tem para atualizar.
+dnf -y update		# Efetua a atualização.
+dnf -y upgrade		# Atualiza todos os pacotes do sistema.
+</pre>
+
+<p>
+	Com este comandos em mãos, podemos então concluir que, sempre que for necessário efetuar a atualização dos aplicativos instalados no Fedora, bastamos apenas digitar o seguintes comandos no terminal:
+</p>
+
+<pre class="brush: shell, bash">
+dnf -y makecache	# Gera um cache para os seus aplicativos.
+dnf -y check-update	# Verifica o que tem para atualizar.
+dnf -y update		# Efetua a atualização.
+</pre>
+
+<p>
+	E se quisermos, por exemplo, instalar um novo aplicativo, basta saber o nome do pacote que ele pertence e efetuar a sua instalação como apresento a seguir:
+</p>
+
+<pre class="brush: shell, bash">
+dnf -y install firefox	# Efetua a instalação do navegador Firefox.
+</pre>
+
+<p>
+	Nada complicado né? Agora que você já conhece um pouquinho deste comando, podemos então iniciar todo o processo de atualização, configuração e instalação dos aplicativos que poderemos utilizar no dia a dia. Tenha boa sorte, e muita paciência daqui para frente!
+</p>
+
+</article>

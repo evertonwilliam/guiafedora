@@ -1,0 +1,57 @@
+<article>
+<h1>como instalar o F-Spot no Fedora</h1>
+
+<p>
+	O <a href="http://f-spot.org/" target="_blank" alt="Site do FSpot">F-Spot</a> é um aplicativo multiplataforma para organizar fotos. Ele não organiza suas fotos em pastas mas sim, através de metadados, do qual ele utiliza como base para visualização e organização de sua coleção de imagens. 
+</p>
+
+<p>
+	A adição e a manutenção dos metadados é fácil e agradável no <a href="http://f-spot.org/" target="_blank" alt="Site do FSpot">F-Spot</a>, as fotos individuais podem ser retocada e totalmente corrigidas para, em seguida, serem compartilhadas nas redes sociais ou até mesmo impressas. 
+</p>
+
+<p>
+	Para efetuar a instalação deste aplicativo, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Instalando o F-Spot
+dnf -y install f-spot gtk-sharp2
+
+# Se acaso não der certo é que não existe o repositórios então crie-o.
+
+# edite um novo arquivo no repositório do Fedora
+nano /etc/yum.repos.d/nrpms-mono.repo
+
+# Cole estas linhas no arquivo de repositório
+[nr-production]
+name=Fedora Core $releasever - $basearch - nrpms.net/production
+baseurl=http://yum.nrpms.net/fedora-$releasever-$basearch/production/
+mirrorlist=http://yum.nrpms.net/fedora-$releasever-$basearch/production/mirrors-nrpms
+enabled=1
+gpgcheck=0
+
+[nr-mono]
+name=Fedora Core $releasever - $basearch - nrpms.net/mono
+baseurl=http://yum.nrpms.net/fedora-$releasever-$basearch/mono/
+mirrorlist=http://yum.nrpms.net/fedora-$releasever-$basearch/mono/mirrors-nrpms
+enabled=1
+gpgcheck=0
+
+# Atualize os repositórios
+dnf -y update
+
+# Instale o F-Spot
+dnf -y install f-spot gtk-sharp2
+</pre>
+
+<p>
+	Acesse o site oficial do F-Spot pelo seguinte link: <a href="http://f-spot.org/" target="_blank" alt="Site do FSpot">F-Spot/</a> e obtenha mais informações para a utilização e obtenção ajuda para esse aplicativo.
+</p>
+
+</article>

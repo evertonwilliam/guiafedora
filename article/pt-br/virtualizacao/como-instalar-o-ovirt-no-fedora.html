@@ -1,0 +1,50 @@
+<article>
+<h1>como instalar o ovirt no fedora</h1>
+
+<p>
+	<a href="http://www.ovirt.org" target="_blank">oVirt</a> é plataforma de virtualização livre para gerenciamento web de aplicação. É um projeto comunitário que começou pela Red Hat. Ele é construído sobre libvirt que permite gerenciar máquinas virtuais hospedadas em qualquer backend, incluindo KVM, Xen e VirtualBox. No entanto, ele está atualmente focado em KVM sozinho. O <a href="http://www.ovirt.org/Home" target="_blank">oVirt</a> é um software open source desenvolvido com o apoio da Red Hat e é a base para o Red Hat Enterprise Virtualization.
+</p>
+
+<p>	
+	<a href="http://www.ovirt.org/Home" target="_blank">oVirt</a> pode gerenciar múltiplos hosts. Ele se comunica com seus servidores host via HTTPS com XML-RPC, através de um agente que está instalado no servidor - VDSMd (Virtual Desktops and Servers Manager daemo). VDSM comunica com Libvirt para controlar o ciclo de vida de máquinas virtuais.
+</p>
+
+<p>
+	A instalação é bem simples, basta acessar o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e entrar com os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Efetue a instalação do ovirt
+dnf -y install http://resources.ovirt.org/pub/yum-repo/ovirt-release36.rpm
+
+# Ative este repositório
+gedit /etc/yum.repos.d/ovirt.repo
+
+# Encontre a seguinte linha alterando para "=1".
+enabled = 0 para enabled = 1
+
+# Efetue a instalação do aplicativo
+dnf -y install ovirt-engine-setup-plugin-allinone
+
+# Após a instalação digite este comando e siga os passos em tela
+engine-setup
+</pre>
+
+<p>
+	Após estes passos, basta acessar o aplicativo através do navegodor, utilizando o nome de seu computador, ou o endereço: http://localhost/
+</p>
+
+<h1>vídeos de apresentação</h1>
+
+<p class="videos">
+	<iframe src="https://www.youtube.com/embed/Aq3ctFhBIhk"></iframe>
+	<iframe src="https://www.youtube.com/embed/C4gayV6dYK4"></iframe>
+</p>
+
+</article>

@@ -1,0 +1,39 @@
+<article>
+<h1>como instalar o libreoffice no Fedora</h1>
+
+<p>
+	<a href="https://pt-br.libreoffice.org/" alt="LibreOffice" target="_blank">LibreOffice</a> é uma suíte de aplicativos livre para escritório disponível para Windows, Unix, Solaris, Linux e Mac OS X. A suíte utiliza o formato OpenDocument (ODF)  formato homologado como ISO/IEC 26300 e NBR ISO/IEC 26300  e é também compatível com os formatos do Microsoft Office, além de outros formatos legados. Alguns formatos legados que não mais suportados pelas versões mais recentes do Microsoft Office ainda podem ser abertos pelo LibreOffice.4 5
+</p>
+
+<p>
+	O <a href="https://pt-br.libreoffice.org/" alt="LibreOffice" target="_blank">LibreOffice</a> surgiu como uma ramificação do projeto original <a href="http://www.openoffice.org/" title="Open office" target="_blank">OpenOffice.org</a>, que, por sua vez, é oriundo do <a href="http://www.staroffice.org/" title="StarOffice" target="_blank">StarOffice</a> 5.1, adquirido pela Sun Microsystems com a compra da Star Division em agosto de 1999. O código fonte da suíte foi liberado para que fosse possível a participação de contribuintes para desenvolvê-lo, dando início ao projeto de desenvolvimento de um software de código aberto em 13 de outubro de 2000, o <a href="http://www.openoffice.org/" title="Open office" target="_blank">OpenOffice.org</a>. O principal objetivo era fornecer uma alternativa de baixo custo, de alta qualidade e de código aberto
+</p>
+
+<p>
+	O LibreOffice É composto dos seguintes aplicativos: Writer - Editor de Texto, Calc - Planilha, Impress - Editor de apresentação, Draw - Editor de Desenho, Math - Editor de Fórmulas, Base - Banco de Dados
+</p>
+
+<p>
+	Para efetuar a instalação deste aplicativo, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Digite este comando para instalar o LibreOffice
+dnf -y install groupinstall libreoffice
+</pre>
+
+<p>
+	Observe que neste momento estamos utilizando um comando diferente no dnf, o "groupinstall", este comando tem a finalidade de efetuar a instalação de todos os aplicativos que fazem parte do pacote, de uma única vez, sem a necessidade de ficar instalando item á item.
+</p>
+
+<p>
+	Após a instalação, o sistema irá criar os ícones no menu principal do Fedora, Bom proveito!
+</p>
+
+</article>

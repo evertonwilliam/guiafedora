@@ -1,0 +1,76 @@
+<article>
+<h1>como instalar o gnu wget no fedora</h1>
+
+<p>
+	GNU Wget é um programa livre que propicia o download de dados da web. É parte do projeto GNU. Seu nome deriva de "World Wide Web e Get". Ele suporta os protocolos "HTTP", "HTTPS" e "FTP".
+</p>
+
+<p>
+	Escrito em C, Wget pode facilmente ser instalado em qualquer sistema Unix-like e já foi portado para diversos ambientes como Microsoft Windows e OpenVMS.
+</p>
+
+<p>
+	Vamos agora instalar esta ferramenta muito importante para os usuários Linux. Para isso acesse o terminal pelo menu: "Aplicativos->System Tolls->LXTerminal" e entre com os seguintes comandos:
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Digite o comando para efetuar a instalação do wget
+dnf -y install curl wget
+</pre>
+
+<p>
+	Sem dificuldades né? A partir de agora, você verá que a instalação de novos aplicativos seguirá praticamente estes moldes, e serão de forma bem simples e dinâmica. Agora você já tem o Wget e pode efetuar o download de aplicativos e arquivos de forma rápida e prática.
+</p>
+
+<h1>Como utilizar o Wget via terminal</h1>
+
+<p>
+	Uma das melhores opções para Downloads, o Wget tem várias vantagens interessantes para podermos utilizar. Para baixar um arquivo da internet, de forma simples e rápida, basta executar o comando com o seguinte argumento: "wget url_do_arquivo_a_ser_baixado", veja um exemplo prático:
+</p>
+
+<pre class="brush: shell, bash">
+# baixando o Firefox diretamente de seu repositório
+wget https://repos.fedorapeople.org/Firefox6/Firefox7/fedora-16/i386/firefox-6.0-1.fc17.x86_64.rpm
+</pre>
+
+<p>
+	Uma opção bem interessante do Wget é efetuarmos o download do arquivo e salvá-lo com o nome que desejarmos, assim fica mais prático para utilizarmos o arquivo baixado, para isso devemos utilizar o argumento "-O" da seguinte forma: "wget url_do_arquivo_a_ser_baixado -O novo-nome-do-arquivo", como mostra o exemplo abaixo:
+</p>
+
+<pre class="brush: shell, bash">
+# baixando o Firefox diretamente de seu repositório e salvando com um novo nome
+wget https://repos.fedorapeople.org/Firefox6/Firefox7/fedora-16/i386/firefox-6.0-1.fc17.x86_64.rpm -O firefox.rpm
+
+# baixando o Firefox diretamente de seu repositório e salvando com um diretório específico
+wget https://repos.fedorapeople.org/Firefox6/Firefox7/fedora-16/i386/firefox-6.0-1.fc17.x86_64.rpm -O ~/Downloads/firefox.rpm
+</pre>
+
+<p>
+	Se acaso você for baixar um arquivo muito grande, e necessitar limitar a banda do Wget, basta utilizar o argumento "--limit-rate", conforme é mostrado no exemplo abaixo:
+</p>
+
+<pre class="brush: shell, bash">
+# baixando o Firefox utilizando apenas 150kbps de velocidade da banda da internet
+wget --limit-rate=150k https://repos.fedorapeople.org/Firefox6/Firefox7/fedora-16/i386/firefox-6.0-1.fc17.x86_64.rpm -O ~/Downloads/firefox.rpm
+</pre>
+
+<p>
+	Supondo que, por algum motivo, o seu download foi interrompido, então como dar continuidade no download de onde ele parou, muito simples, basta utilizar o argumento "-c", como mostra no exemplo abaixo:
+</p>
+
+<pre class="brush: shell, bash">
+# baixando o Firefox utilizando apenas 150kbps de velocidade da banda da internet
+wget -c https://repos.fedorapeople.org/Firefox6/Firefox7/fedora-16/i386/firefox-6.0-1.fc17.x86_64.rpm
+</pre>
+
+<p> 
+	São várias opções, para conhecer mais sobre o aplicativo, acesse o seu manual on-line no seguinte endereço: <a href="https://www.gnu.org/software/wget/manual/wget.html" alt="Manual Wget" target="_Blank">Manual Wget</a> e conheça todas as vantagens desta aplicação fantástica de Downloads via terminal feita especialmente para o Linux.
+</p>
+
+</article>

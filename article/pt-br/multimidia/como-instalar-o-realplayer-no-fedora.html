@@ -1,0 +1,84 @@
+<article>
+<h1>como instalar o realplayer no fedora</h1>
+
+<p>
+	O <a href="http://www.real.com/br" alt="Site Oficial RealPlayer" target="_blank">RealPlayer</a> é um tocador de mídia de código fechado desenvolvido pela RealTimes destinado à execução de vídeos, músicas e programas de rádio via Internet. Ele reproduz uma série de formatos multimídia, incluindo MP3, MPEG-4, QuickTime, Windows Media e várias versões de codecs RealAudio e RealVideo.
+</p>
+
+<p>
+	Ele consiste em aplicativos interativos para Internet que realizam diversas comunicações pela Internet como parte de sua operação normal. Vários recursos de comunicação são automáticos e estão ativados por padrão. Por exemplo, quando o <a href="http://www.real.com/br" alt="Site Oficial RealPlayer" target="_blank">RealPlayer</a>, a Atualização Automática e a Central de Mensagens comunicam-se com os servidores da RealTimes, o software transmite informações padrão para que seja recebido o software, o conteúdo, as mensagens e as atualizações apropriadas. Isso inclui informações sobre o produto da RealTimes que tem instalado (incluindo o nome, a versão e o número de build dos produtos), o sistema operacional do usuário, informações sobre sua localidade (incluindo código postal, país e sua preferência de idioma) e informações padrão de comunicação da Internet, incluindo endereço IP, navegador e data.
+</p>
+
+<p>
+	A primeira versão do <a href="http://www.real.com/br" alt="Site Oficial RealPlayer" target="_blank">RealPlayer</a> foi introduzida em abril de 1995 como RealAudio Player, um dos primeiros executores de mídia capaz de fazer transmissões por streaming sobre a Internet. A versão 4.01 do <a href="http://www.real.com/br" alt="Site Oficial RealPlayer" target="_blank">RealPlayer</a> foi incluída como uma ferramenta da Internet selecionável na instalação do Windows 98. A versão 6 do RealPlayer foi chamada de RealPlayer G2, a versão 9 foi chamada de RealOne Player. O RealPlayer 11 foi lançado para Windows em novembro de 2007, e para Mac OS X em maio 2008.
+</p>
+
+<p>
+	As versões do <a href="http://www.real.com/br" alt="Site Oficial RealPlayer" target="_blank">RealPlayer</a> também estão disponíveis para Linux, Unix, Palm OS, Windows Mobile e Symbian OS. O programa é alimentado por uma base de mecanismo de mídia de código aberto chamado Helix. 
+</p>
+
+<p>
+	Para você que não fica sem este player, vamos instala-lo acessando o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Efetue a instalação dos componentes 
+dnf -y install install redhat-lsb redhat-lsb-core redhat-lsb-desktop
+
+# Agora efetue o Download do Pacote de Instalação
+wget http://client-software.real.com/free/unix/RealPlayer11GOLD.rpm
+
+# Agora vamos efetuar a instação
+rpm -ivh RealPlayer11GOLD.rpm
+
+# Para abrir o aplicativo, digite este comando
+realplay
+</pre>
+
+<p>
+	Após a instalação do RealPlayer, é necessário efetuar a instalação do Pangox, uma extensão do qual o realplayer utiliza para ser executado. Atualmente existem versões desta extensão para algumas versões do Fedora, mas para que não fiquemos amarrados em uma única versão, vamos acessar o FTP do qual existe este aplicativo e baixar a versão exata de nossos Fedora.
+</p>
+
+<p>
+	Acesse o seguinte endereço de FTP: <a href="ftp://195.220.108.108/linux/fedora/linux/releases/" alt="Pangox" target="_Blank">ftp://195.220.108.108/linux/fedora/linux/releases/</a>, no navegador de sua preferência. Procure pela versão de seu fedora clique no link que corresponde a sua versão, e em seguida vai navegando nas pastas conforme mostrado abaixo:
+</p>
+
+<div class="alteracoes">
+	<span class="negrito">&curren;</span> Clique na pasta: <i>Everything</i><br/>
+	<span class="negrito">&curren;</span> Se o Fedora for 32 bits clique nesta pasta: <i>i386</i><br/>
+	<span class="negrito">&curren;</span> Se o Fedora for 64 bits clique nesta pasta: <i>x86_64</i><br/>
+	<span class="negrito">&curren;</span> Em seguida: <i>os</i><br/>
+	<span class="negrito">&curren;</span> Depois: <i>Packages</i><br/>
+	<span class="negrito">&curren;</span> E depois: <i>p</i><br/>
+	<span class="negrito">&curren;</span> Agora na lista procure pelo aplicativo: <i>"pangox-compat-X.X.X-X.fcXX.XXXX.rpm"</i> onde os X correspondem a versão do aplicativo e a versão do Fedora.<br/>
+	<span class="negrito">&curren;</span> Clique no aplicativo e baixe-o na pasta Downloads de seu usuário e em seguida execute os comandos no terminal do Fedora.
+</div>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Acesse a pasta Downloads
+cd /home/seu-usuario/downloads/
+
+# Instale o aplicativo
+dnf -y install pangox-compat-0.0.2-6.fc23.i686.rpm
+</pre>
+
+<p>
+	Prontinho, aconselho reiniciar o fedora, para ativas todas as dependencias instaladas.
+</p>
+
+<p>
+	Se acaso você ainda não conhece este player, então acesse o site oficial neste link <a href="http://www.real.com/br" alt="Site Oficial RealPlayer" target="_blank">Site Oficial RealPlayer</a> e conheça mais sobre ele.
+
+</article>

@@ -1,0 +1,43 @@
+<article>
+<h1>como instalar o filezilla no fedora</h1>
+
+<p>
+	FTP, ou File Transfer Protocol, é uma forma bastante rápida e simples de se transferir arquivos. Hoje em dia, é utilizado para as mais diversas finalidades.
+</p>
+
+<p>
+	O <a href="https://filezilla-project.org/" alt="Site Oficial" target="_blank">FileZilla</a> é um cliente FTP, FTPS e SFTP simplificado e multiplataforma com diferentes recursos, além de uma interface gráfica simples, com todas as funções do programas distribuídas em abas.
+</p>
+
+<p>
+	Além de estar disponível em 40 idiomas (incluindo o português), o cliente é bem didático, com ícones que facilitam seu manuseio.
+</p>
+
+<p>
+	Entre seus recursos, um destaque é a capacidade que o <a href="https://filezilla-project.org/" alt="Site Oficial" target="_blank">FileZilla</a> tem de resumir a transferência de arquivos grandes  até mesmo maiores que 4 GB. Também se deve destacar a possibilidade de configuração dos limites de velocidades das transferências, para que o cliente não consuma toda a sua conexão com a internet.
+</p>
+
+<p>
+	O <a href="https://filezilla-project.org/" alt="Site Oficial" target="_blank">FileZilla</a> também disponibiliza o sistema drag and drop (arraste e solte), o que facilita a interação com o ambiente. Outro destaque são os marcadores, que facilita a sua vida caso você precise acessar arquivos em diferentes pastas
+</p>
+
+<p>
+	A instalação deste cliente FTP é muito simples, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# instale o FileZilla
+dnf -y install filezilla
+</pre>
+
+<p>
+	Simples assim, agora é só acessar o aplicativo pelo menu, conectar em um servidor com suporte FTP e efetuar as transferencias de seus arquivos. Para mais informações acesse o <a href="https://filezilla-project.org/" alt="Site Oficial" target="_blank">site oficial</a>
+</p>
+
+</article>

@@ -1,0 +1,42 @@
+<article>
+<h1>como instalar o lxde no fedora</h1>
+
+<p>
+	O <a href="http://www.xfce.org/" target="_blank">Xfce</a> é um ambiente de trabalho gráfico, que é executado sobre o sistema de janelas X em sistemas Unix, seus derivados e Linux, ele utiliza a biblioteca GTK+2 para fazer a interface com o usuário, o que o torna ligeiramente parecido com o GNOME.
+</p>
+
+<p>
+	O projeto foi fundado por Olivier Fourdan e é atualmente desenvolvido por vários colaboradores.	Devido à sua modularidade, os componentes podem não ser usados todos em conjunto e podem ser combinados com outros ambientes. É possível usar aplicações do GNOME ou KDE, sem instalar esses ambientes. No caso de aplicações GNOME, por usarem as mesma bibliotecas, a integração é muito boa.
+</p>
+
+<p>
+	O projeto tem vindo a afirmar-se como plataforma de desenvolvimento. É possível desenvolver aplicações em C/C++, Python e Perl recorrendo às bibliotecas oferecidas pelo ambiente. Ele incorpora a filosofia tradicional UNIX da modularidade e reutilização. É constituída por um número de componentes que fornecem a funcionalidade completa que se pode esperar de um ambiente de trabalho moderno. Eles são embalados separadamente e você pode escolher entre os pacotes disponíveis para criar o ambiente ideal de trabalho pessoal.
+</p>
+
+<p>
+	Ao lado do conjunto básico de módulos, o <a href="http://www.xfce.org/" target="_blank">Xfce</a> também fornece inúmeras aplicações adicionais e plugins para que você possa ampliar a sua área de trabalho do jeito que você gosta, por exemplo, um emulador de terminal, editor de texto, mixador de som, detector de aplicações, visualizador de imagens, calendário baseado iCal e um CD e aplicação de gravação de DVD.
+</p>
+
+<p>
+	A sua instalação é bem simples, basta acessar o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e entrar com os seguintes comandos, para a instalação do <a href="http://www.xfce.org/" target="_blank">Xfce</a>: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Efetue a instalação do Xfce.
+dnf -y groupinstall xfce 
+</pre>
+
+<p>
+	O processo pode demorar um pouco, dependendo da velocidade de sua internet, porém, após a instalação, reinicie o Fedora, e na tela de Login, na opção "AMBIENTE" escolha a opção "Sessão do XFCE" e em seguida efetue o seu login, com usuário e senha.
+</p>
+
+<p>
+	Prontinho, o seu <a href="http://www.xfce.org/" target="_blank">Xfce</a> está instalado e funcional, e se desejar trocar de ambiente, basta encerrar a sessão atual e efetuar um novo login. Para conhecer mais sobre o Xfce acesse o <a href="http://www.xfce.org/" target="_blank">Site Oficial</a>, lá é possível encontrar toda a documentação deste ambiente gráfico como também a versão mais recentes para ser instalada no Fedora.
+</p>
+</article>

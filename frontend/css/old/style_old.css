@@ -1,0 +1,173 @@
+/* ICONES ESPECIAIS */
+
+*{
+	font-family: 'Noto Serif', serif;
+}
+
+.tiny {
+	font-size: 1.5em;
+}
+.small {
+	font-size: 2.5em;
+}
+.medium {
+	font-size: 4em;
+}
+.large {
+	font-size: 6em;
+}
+
+/* BASIC TAGS CONFIG */
+h1{
+	font-size:20pt;
+}
+h2{
+	font-size:18pt;
+}
+h3{
+	font-size:18pt;
+}
+pre{
+	font-size:14pt;
+}
+table th, table td{
+	text-align:center;
+}
+a, a:link, a:active{
+	color:#c3c3c3;
+	text-decoration: none;
+}
+a:hover{
+	color:#FFFFFF;
+	text-decoration: none;
+}
+
+/* TEMA SYSTEM */
+
+div#barra{
+	border-bottom:1px dotted rgb(104,104,104);
+	border-top:1px dotted rgb(104,104,104);
+	color:rgb(136,136,136);
+	z-index:1000;
+	font-size:10pt;
+	padding:18px;
+}
+
+.url{
+	float:left;
+	margin-top:-5px;
+}
+
+.idioma{
+	float:right;
+	margin-right:20px;
+	margin-top:-11px;
+}
+
+div#header{
+	top:0px;
+	position:fixed;
+	width:100%;
+	height:93px;
+	z-index:1000;
+}
+div.bandheader{
+	clear:both;
+}
+div.bandheader a span{
+	float:left;
+	padding:0 0.2em 0 0;
+	margin-left: 0.3em;
+	top:10px;
+}
+
+div.bandheader h1{
+	float:left;
+	margin-top:8px;
+}
+
+div#content{
+	margin-top:6.5em;
+	width:100%;
+	z-index:-1000;
+	text-align:justify;
+	display:block;
+	clear:both;
+}
+
+div#content p{
+	line-height:1.3em;
+	text-indent: 1em;
+	font-size:16pt;
+	padding:0.5em 0.5em 0.5em 0.5em;
+}
+
+div#content h1, h2, h3, h4, h5, h6{
+	padding:0.5em 0.5em 0.5em 0.5em;
+	text-transform:uppercase;
+}
+
+div#content h1, h2, h3{
+	border-bottom: 1.8px solid #D4D4D4;
+}
+
+div#content li{
+	text-indent: 1.3em;
+	font-size:16pt;
+}
+
+div#publicity{
+	margin:1em 0.5em 5em 0.5em;
+	width:100%
+	z-index:-1000;
+	text-align:justify;
+	display:block;
+	clear:both;
+	border: 1px solid #D4D4D4;
+	padding:0.5em;
+}
+
+div#footer{
+	bottom:0px;
+	position:fixed;
+	width:100%;
+	height:45px;
+	z-index:1000;
+}
+
+div#footer footer{
+	font-size: 8pt;
+	color:#C4C4C4;
+	text-align: center;
+	margin-top: 15px;
+}
+
+div#header, div#footer, div#mainmenu, div#barra{
+	background:rgb(10,30,30);
+}
+
+div.social, div.bandheader{
+	float:left;
+	margin-top: 10px;
+	width:50%;
+}
+div.social{
+	text-align:right;
+}
+
+div.social ul li{
+	display:inline;
+	padding:1em 1em 0 0;
+}
+
+.menusocial{
+	padding: 1em 0 1.5em 0;
+	text-align:center;
+}
+.menusocial a{
+	padding:0.3em;
+}
+
+.menulogo{
+	text-align:center;
+}

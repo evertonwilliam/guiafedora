@@ -1,0 +1,88 @@
+<article>
+<h1>como instalar o oxygenoffice no fedora</h1>
+
+<p>
+	O <a href="http://www.oxygenofficepro.com/index.htm" alt="OxygenOffice Professional" target="_blank">OxygenOffice Professional</a> é uma versão melhorada do <a href="http://www.openoffice.org/" title="Open office" target="_blank">OpenOffice.org</a> que é um aplicativo de produtividade para escritório multi-plataforma.	Contém mais extras como modelos, cliparts, amostras, fontes e apoio VBA do que o <a href="http://www.openoffice.org/" title="Open office" target="_blank">OpenOffice.org</a>. 
+</p>
+
+<p>
+	Ele é na verdade um acessório para o <a href="http://www.openoffice.org/" title="Open office" target="_blank">OpenOffice.org</a>. A equipe que do Oxigen modificou o código fonte do <a href="http://www.openoffice.org/" title="Open office" target="_blank">OpenOffice.org</a> e passou a distribuí-lo com uma gama enorme de extras. 
+</p>
+
+<p>
+	Entre vários outros itens, podemos citar os mais de 3.400 gráficos incluídos nesta versão, entre eles clip art e fotos. Estas imagens são integrados na galeria e pode facilmente ser colocado em qualquer documento. Vários modelos e documentos de exemplo estão incluídos, bem como mais de 90 tipos de fontes. 
+</p>
+
+<p>
+	Os itens extras são integrados por padrão na instalação de <a href="http://www.oxygenofficepro.com/index.htm" alt="OxygenOffice Professional" target="_blank">OxygenOffice Professional</a>, mas eles são opcionais, assim o usuário pode decidir quais destes extras ele deseja incluir e que quais extras ele quer deixar de fora. Estes extras modelos, fontes e gráficos são livres para uso pessoal e profissional. 
+</p>
+
+<p>	
+	Ele inclui ferramentas adicionais como OOoWikipedia, que pode pesquisar a enciclopédia livre on-line Wikipedia, também estão incluídos: Menu de ajuda reforçado e Manual do Usuário. Além disso, você pode usar gradientes predefinidos em seus gráficos. A versão atual é capaz de executar VBA (Visual Basic for Applications) a partir de documentos do Excel no Calc e também você pode importar Office Open XML (Microsoft Office 2007), Works, arquivos do WordPerfect e documentos T602 como também gráficos do WordPerfect.
+</p>
+
+<p>
+	Para efetuar a instalação deste aplicativo, primeiramente deve ser instalado o <a href="../configuracoes/como-instalar-o-java-no-fedora" alt="Instalando o Java">JAVA da Oracle</a> e´só depois efetuar a instalação do OxygenOffice. Apos a intalação no Java, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Efetue o Download do Oxygen Office
+wget http://sourceforge.net/projects/ooop/files/Binary-Linux32bit_RPM/3.2.1.40/OOo_3.2.1_Linux_x86_install-rpm_pt-BR.tar.gz
+
+# Descompacte o pacote de instalação
+tar xvzf OOo_3.2.1_Linux_x86_install-rpm_pt-BR.tar.gz
+
+# Desinstale o Open Office se acaso tenha instalado
+dnf -y groupremove openoffice
+
+# Efetue a instalação do Oxigen Office
+cd pt-br/RPMS/
+rpm -Uvh openoffice.org-*
+
+# efetue a instalação dos ícones no menu principal
+cd desktop-integration
+rpm -Uvh openoffice.org3.2-redhat-*
+
+# Exclua as entradas do OpenOffice
+su -c "echo exclude=openoffice*>>/etc/yum.conf"
+</pre>
+
+<p>
+	No LXDE é necessário efetuar a criação dos link no Menu principal, para isso você deverá seguir os seguintes passos:
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Acesse o diretório de icones do menu
+/usr/share/applications/
+
+# Crie um arquivo de icone
+leafpad oxygenoffice.desktop
+
+# Cole este conteúdo no editor que abrir
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Oxigen Office
+Name[en_US]=Oxigen Office
+GenericName=Word Processor
+Exec=/opt/openoffice.org/ure/bin/startup.sh
+Comment[en_US]=Oxigen Office
+StartupNotify=true
+MimeType=application/x-abiword;text/x-abiword;text/x-xml-abiword;text/plain;application/msword;application/rtf;application/vnd.plain;application/xhtml+xml;text/html;application/x-crossmark;application/docbook+xml;application/x-t602;application/vnd.oasis.opendocument.text;application/vnd.oasis.opendocument.text-template;application/vnd.oasis.opendocument.text-web;application/vnd.sun.xml.writer;application/vnd.stardivision.writer;text/vnd.wap.wml;application/wordperfect6;application/wordperfect5.1;application/vnd.wordperfect;application/x-abicollab;application/x-applix-word;application/x-mswrite;application/x-kword;application/x-mif;
+Categories=Office;WordProcessor;GNOME;GTK;X-Red-Hat-Base;
+
+# Atualize a barras de menu do LXDE
+lxpanelctl restart
+</pre>
+
+<p>
+	Pronto, agora você já pode desfrutar do seu mais novo pacote de ferramentas OxygenOffice no Fedora.
+</p>
+
+</article>

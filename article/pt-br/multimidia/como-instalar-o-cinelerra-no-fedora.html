@@ -1,0 +1,49 @@
+<article>
+<h1>Como instalar o cinelerra no Fedora</h1>
+
+<p>
+	O <a href="http://cinelerra.org/2015/index.php" alt="Cinelarra" target="_blank">Cinelerra</a> é um programa profissional de edição de vídeo originariamente desenhado para os sistemas operativos Linux. É um software livre, sob a licença GPL (General Plublic License) pelo que poderá ser baixado e instalado sem nenhum encargo.
+</p>
+
+<p> 
+	Ele suporta OpenGL em algumas placas gráficas NVIDIA, o que acelera enormemente a reprodução. Atualmente o padrão para a programação GPU mudou ao longo dos anos entre NC, GLSL, e CUDA. A Intel e a ATI/AMD criaram seus próprios padrões. O <a href="http://cinelerra.org/2015/index.php" alt="Cinelarra" target="_blank">Cinelarra</a> foi escrito em GLSL, que só está disponível nas placas NVidia e atualmente parece ser a minoria existente no mercado.
+</p>
+
+<p>
+	Para efetuar a instalação, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Importe a chave publica do Atrpms 
+rpm import http://ATrpms.net/RPM-GPG-KEY.atrpms
+
+# Edite o arquivo de repositórios do Fedora
+gedit /etc/yum.repos.d/cinelerra.repo
+
+# Cole este conteúdo no arquivo
+[atrpms]
+name=Fedora Core $releasever - $basearch - ATrpms
+baseurl=http://dl.atrpms.net/f$releasever-$basearch/atrpms/stable
+gpgkey=http://ATrpms.net/RPM-GPG-KEY.atrpms
+gpgcheck=1
+
+# Atualize o sistema após a gravação do arquivo
+dnf -y makecache
+dnf -y check-update
+dnf -y update
+
+# Instale o Cinelerra no Fedora
+dnf -y install cinelerra
+</pre>
+
+<p>
+	Para mais informações, acesse o site oficial em: <a href="http://cinelerra.org/2015/index.php" alt="Site Oficial Cinelerra " target="_blank">Site Oficial Cinelerra</a>
+</p>
+
+</article>

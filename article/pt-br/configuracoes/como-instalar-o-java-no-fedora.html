@@ -1,0 +1,130 @@
+<article>
+<h1>como instalar o java no fedora</h1>
+
+<p>
+	Para o Linux, seja ele Fedora ou qualquer outra distribuição, temos duas versões funcionais da Máquina Virtual Java (JVM) e do Java Develompment Kit (JDK), são elas a versão oficial da Oracle e a versão OpenSource que é normalmente distribuída nas versões do Linux.
+</p>
+
+<p>
+	A versão OpenJDK, que é a versão de código aberto do Java, segue todas as especificações da versão oficial da Oracle, ou seja, se você for um desenvolvedor, poderá utilizá-la sem problemas, porém se você é um usuário final, e necessita ter acesso á sites como Caixa Economica Fedoral, Banco do Brasil, Itaú, sites governamentais, deverá por obrigação efetuar a instalação oficial do Java, pois estes sites obrigam que a versão seja a oficial, para dar acesso os devidos serviços.
+</p>
+
+<p>
+	Aqui, vamos aprender a como instalar cada uma delas, porém quero deixar claro, que é importante você escolher uma delas, e manter apenas uma, para melhor controle e menor espaço em disco utilizado.
+</p>
+
+<p>
+	Java é uma linguagem de programação orientada a objeto e desenvolvida pela Sun Microsystems na década de 90, que atualmente, pertence a Oracle. A característica mais marcante dessa linguagem é que programas criados nela não são compilados em código nativo da plataforma. Programas em Java são compilados para um bytecode, que é executado por uma máquina virtual, o que permite aos desenvolvedores criarem um programa uma única vez e depois executar este em qualquer uma das plataformas suportadas pela tecnologia
+</p>
+
+<p>
+	A máquina virtual Java também pode executar programas dentro do navegador, através de um plugin. Essa característica aliás, tem sido um dos fatores que mais contribuíram para a adoção do Java atualmente.
+</p>
+
+<p>
+	Entre os grandes exemplos do uso da tecnologia Java está no acesso a serviços bancários online, os vários aplicativos da Receita Federal brasileira como o programa de declaração de imposto de renda e até mesmo os utilizados no SPED
+</p>
+
+<p>
+	Quem possui a máquina virtual instalada em seu computador, normalmente não precisa fazer nada para executar aplicativos e acessar serviços baseados em Java. Contudo, quando ela não está presente, diferentes tipos de erros podem ocorrer e consequentemente, os aplicativos e serviços não funcionam
+</p>
+
+<p>
+	Então, já que é tão importante este tal de Java, vamos primeiramente efetuar o download do Java JRE, clique no link <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html" alt="JRE 8" target="_Blank">Download JRE 8</a> e baixe o seguinte arquivo da lista: "jre-versao-xxxx-x64.rpm" para máquinas 64bits ou "jre-xxxx-linux-i586.rpm" para versões 32bits:
+</p>
+
+<p>
+ Aproveite que você já está baixando os arquivos do JRE, e baixe também os arquivos do JDK, acesse o link: <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" alt="JDK 8" target="_Blank">Download JDK 8</a> e baixe o seguinte arquivo da lista: "jdk-xxxx-linux-x64.rpm" para máquinas 64bits ou "jdk-xxxx-linux-i586.rpm" para máquinas 32bits salvando-os no diretório /home/seu_login/Downloads.
+</p>
+
+<p>
+	Após o download totalmente finalizado, acesse o terminal pelo menu: "Aplicativos->System Tolls->LXTerminal" e entre com os seguintes comandos, para os arquivos baixados na versão 64bits:
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Digite estes comandos para instalar o JRE e o JDK
+rpm -Uvh /home/seu_login/Downloads/jre-xxxx-linux-x64.rpm
+rpm -Uvh /home/seu_login/Downloads/jdk-xxxx-linux-x64.rpm
+
+# Digite estes comandos para ativar os componentes do Java
+alternatives --install /usr/bin/java java /usr/java/latest/jre/bin/java 200000
+alternatives --install /usr/bin/javaws javaws /usr/java/latest/jre/bin/javaws 200000
+
+# Digite este comando para instalar o plug-in do Java no browser (Mozilla)
+mkdir /usr/lib64/mozilla
+mkdir /usr/lib64/mozilla/plugins/
+alternatives --install /usr/lib64/mozilla/plugins/libjavaplugin.so libjavaplugin.so.x86_64 /usr/java/latest/jre/lib/amd64/libnpjp2.so 200000
+
+# E por fim, digite estes comandos para instalar os comandos Javac e Java para compilação de programas
+alternatives --install /usr/bin/javac javac /usr/java/latest/bin/javac 200000
+alternatives --install /usr/bin/jar jar /usr/java/latest/bin/jar 200000
+</pre>
+
+<p>
+	Para a instalação do Java em máquinas de 32bits os procedimentos é um pouco diferente, então siga os seguintes passos para que seja efetuado a instalação do Java com sucesso nesta plataforma:
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Digite estes comandos para instalar o JRE e o JDK
+rpm -Uvh /home/seu_login/Downloads/jre-xxxx-linux-i586.rpm
+rpm -Uvh /home/seu_login/Downloads/jdk-xxxx-linux-i586.rpm
+
+
+# Digite estes comandos para ativar os componentes do Java
+alternatives --install /usr/bin/java java /usr/java/latest/jre/bin/java 200000
+alternatives --install /usr/bin/javaws javaws /usr/java/latest/jre/bin/javaws 200000
+
+# Digite este comando para instalar o plug-in do Java no browser (Mozilla)
+mkdir /usr/lib/mozilla
+mkdir /usr/lib/mozilla/plugins/
+alternatives --install /usr/lib/mozilla/plugins/libjavaplugin.so libjavaplugin.so.i586 /usr/java/latest/jre/lib/libnpjp2.so 200000
+
+# E por fim, digite estes comandos para instalar os comandos Javac e Java para compilação de programas
+alternatives --install /usr/bin/javac javac /usr/java/latest/bin/javac 200000
+alternatives --install /usr/bin/jar jar /usr/java/latest/bin/jar 200000
+</pre>
+
+<p>
+A instalação é bem simples para o Java, alguns comandos não apresentam retorno no terminal, porém foram executados com sucesso, para testar digite o seguinte comando no terminal, para que seja apresentada a versão do Java que foi instalado.
+</p>
+
+<pre class="brush: shell, bash">
+# Digite este comando para mostrar a versão do JAVA
+java --version
+</pre>
+
+<p>
+	Se por acaso, ao digitar o comando acima, o sistema apresentar a versão do OpenJDK, ai temos que indicar ao Fedora que desejamos rodar o Java da Oracle, para isso deverá rodar o seguinte comando:
+</p>
+
+<pre class="brush: shell, bash">
+# Digite este comando para cofigurar a versão desejada do Java
+alternatives --config java
+</pre>
+
+<p> 
+	Será apresentado a lista de instalação do Java, digite o número correspondente ao JDK ou ao JRE da Oracle e pressione Enter, e em seguida verifique qual a versão que está ativa do Java com o comando:
+</p>
+
+<pre class="brush: shell, bash">
+# Digite este comando para mostrar a versão do JAVA
+java --version
+</pre>
+
+<p>
+	Prontinho, agora você tem o Java Oficial da Oracle, podendo acessar qualquer homebanking ou qualquer tipo de site governamental desejavel, além de poder executar aplicativos desenvolvidos em Java.
+</p>
+
+</article>

@@ -1,0 +1,57 @@
+<article>
+<h1>como instalar o Apache OpenOffice no Fedora</h1>
+
+<p>
+	<a href="http://www.openoffice.org/" target="_blank">OpenOffice.org</a> é um conjunto de aplicativos para escritório livres multiplataforma, distribuída para Microsoft Windows, Unix, Solaris, Linux e Mac OS X, mantida pela <a href="http://www.apache.org/" title="Apache Fundation" target="_blank">Apache Software Foundation</a>. O conjunto usa o formato ODF (OpenDocument) - formato homologado com o ISO/IEC 26300 e NBR ISO/IEC 26300 e é também compatível com os formatos do <a href="http://www.microsoftstore.com/store/msbr/pt_BR/home" target="_blank">Microsoft Office</a>, além de outros formatos legados. Alguns formatos legados não mais suportados pelas versões mais recentes do <a href="http://www.microsoftstore.com/store/msbr/pt_BR/home" target="_blank">Microsoft Office</a> ainda podem ser abertos pelo <a href="http://www.openoffice.org/" target="_blank">OpenOffice.org</a> evitando assim sua perda.
+</p>
+
+<p>
+	O <a href="http://www.openoffice.org/" target="_blank">OpenOffice.org</a> é baseado em uma antiga versão do <a href="http://www.staroffice.org/" title="StarOffice" target="_blank">StarOffice</a>, o <a href="http://www.staroffice.org/" title="StarOffice" target="_blank">StarOffice</a> 5.1, adquirido pela Sun Microsystems em Agosto de 1999. O código fonte da suíte foi liberado dando início a um projeto de desenvolvimento de um software de código aberto em 13 de outubro de 2000, o <a href="http://www.openoffice.org/" title="Open office" target="_blank">OpenOffice.org</a>. O principal objetivo era fornecer uma alternativa de baixo custo, de alta qualidade e de código aberto.
+</p>
+
+<p>
+	O <a href="http://www.openoffice.org/" target="_blank">OpenOffice.org</a> é composto pelos seguintes aplicativos: OpenOffice.org Writer, OpenOffice.org Impress, OpenOffice.org Draw, OpenOffice.org Base.
+</p>
+
+<p>
+	Para efetuar a instalação deste aplicativo, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Baixe o OpenOffice pt-br versão 64bits
+wget http://sourceforge.net/projects/openofficeorg.mirror/files/4.1.1/binaries/pt-BR/Apache_OpenOffice_4.1.1_Linux_x86-64_install-rpm_pt-BR.tar.gz/download -O Apache_OpenOffice_4.1.1_Linux_x86-64_install-rpm_pt-BR.tar.gz
+
+# Para fins de compatibilidade remova o OpenOffice e o LibreOffice se acaso estiverem instalados
+dnf remove openoffice* libreoffice*
+
+# Extraia os arquivos de instalação
+tar -xvf Apache_OpenOffice_4.1.1*
+
+# Acesse a pasta pt-BR
+cd pt-BR
+
+# Edite o arquivo yum para futuros updates
+nano -w /etc/yum.conf
+ 
+# Adicione a seguinte linha
+[main]
+exclude=openoffice.org-ure* libreoffice-ure*
+
+# Digite este comando para instalar o OpenOffice
+rpm -Uvh RPMS/*.rpm RPMS/desktop-integration/openoffice4.1.1-redhat-*.rpm
+
+# Acesse o Aplicativo via terminal
+openoffice4
+</pre>
+
+<p>
+	Viu, embora pareça complicado, não foi preciso ficar acessando sites de Keygeration para ativar o aplicativo, e ainda por cima, não precisa ficar se preocupando com pirataria, uma vez que ele é totalmente gratuíto.
+</p>
+
+</article>

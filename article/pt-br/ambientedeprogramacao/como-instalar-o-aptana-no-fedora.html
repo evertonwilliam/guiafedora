@@ -1,0 +1,77 @@
+<article>
+	<h1>como instalar o aptana no fedora</h1>	
+	
+	<p>
+		O <a href="http://www.aptana.com/" title="Site oficial do Aptana" target="_blank">Aptana</a> ou <a href="http://www.aptana.com/" title="https://eclipse.org/" target="_blank">Aptana Studio</a> é um software open source gratuito para IDE (<i>Integrated Development Environment</i>), desenvolvido em Java que suporta as linguagens PHP, Python, Ruby, Ruby on Rails, CSS3, HTML5, JavaScript, ScriptDoc, XML e texto comum, embora também seja possível configurá-lo para suportar Adobe® AIR e Bibliotecas AJAX. 
+	</p>
+	
+	<p>
+		É baseado no IDE <a href="https://eclipse.org/" title="Site oficial do Eclipse" target="_blank">Eclipse</a>, software que tem a finalidade principal de desenvolver aplicativos para Java e Android, porém com plugins é possível acrescentar uma infinidade de outras linguagem de programação.
+	</p>
+	
+	<p>
+		<a href="http://www.aptana.com/" title="Site oficial do Aptana" target="_blank">Aptana Studio</a> é distribuído em multiplataforma, ou seja, pode ser rodado em Windows, Linux e Mac OS X, como também é possível integrá-lo ao <a href="https://eclipse.org/" title="Site oficial do Eclipse" target="_blank">Eclipse</a> através de um plugin específico.
+	</p>
+	
+	<p>
+		Uma das funcionalidades bastante interessante do <a href="http://www.aptana.com/" title="Site oficial do Aptana" target="_blank">Aptana</a> é o assistente de código. Ele funciona como um quadro branco, estilo pop-up, que sugere como você pode preencher com o código. Funciona da seguinte maneira: O desenvolvedor digita uma tag e o <a href="http://www.aptana.com/" title="Site oficial do Aptana" target="_blank">Aptana</a> mostra a possibilidade de auto-completar aquela tag e em que navegadores ela está disponível para ser renderizada corretamente. Junto do auto-completar, é exibida também uma caixa de descrição contendo o modo de preencher aquele código.
+	</p>
+	
+	<p>
+		Antes de efetuar a instalação do <a href="http://www.aptana.com/" title="Site oficial do Aptana" target="_blank">Aptana</a>, é necessário efetuar a instalação do Java, se acaso não estiver instalado, para isso acesse este link: "<a href="../configuracoes/como-instalar-o-java-no-fedora" title="Como instalar o java no Fedora" target="_blank">Como instalar o Java no Fedora</a>" e após a instalação do "Oracle Java" ou do "Open JDK" execute os seguintes passos abaixo.
+	</p>
+	
+	<div class="alteracoes">
+		<span class="negrito">&curren;</span> Baixe o Aptana via navegador no através do seguinte link: <a href="http://www.aptana.com/" title="Site oficial do Aptana" target="_blank">Download Aptana</a>;<br/>
+		<span class="negrito">&curren;</span> Acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos;<br/>
+	</div>
+	
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Acesse a pasta Downloads (considerando que foi aí que salvou o Download)
+cd /home/seu-usuario/Downloads
+
+# Descompacte o arquivo zip baixado
+unzip Aptana_Studio_3_Setup_Linux_x86_64_3.6.1.zip
+
+# mova o diretório descompactado do Aptana para o diretório de binários
+mv Aptana_Studio_3/ /usr/local/bin
+
+# Conceda as permissões de acesso ao Aptana
+find Aptana_Studio_3/ ! -type d -exec chmod a+r {} \;
+
+# Crie o link no menu principal
+touch /usr/share/applications/aptana3.desktop
+
+# Edite o arquivo criado, colando as seguintes linhas dentro dele
+nano -w /usr/share/applications/aptana3.desktop
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=Aptana studio 3
+Comment=Aptana studio 3
+Exec=/usr/local/bin/Aptana_Studio_3/AptanaStudio3
+Icon=/usr/local/bin/Aptana_Studio_3/icon.xpm
+Terminal=false
+Type=Application
+Categories=Development;Utility;TextEditor;
+StartupNotify=true
+Actions=Window;Document;
+MimeType=text/plain;text/html;text/x-php;text/x-c;text/x-shellscript;
+</pre>
+	
+	<p>
+		Se acaso, ao tentar descompactar o arquivo baixado, o Fedora lhe apresentar a mensagem que o comando unzip não existe, então deverá efetuar a instalação do unzip, para isso, acesse o link: "<a href="../configuracoes/como-instalar-rar-e-zip-no-fedora" title="Como instalar o unzip no fedora" target="_blank">Instalando os Compactadores Rar/Zip</a>" e efetue os passos lá apresentados.
+	</p>
+	
+	<p>
+		Pronto, embora tenha sido um pouco trabalhoso, pois o Aptana não existe nos repositórios do Fedora, a instalação até que não foi tão ruim assim né?! Se desejar conhecer mais sobre o Aptana, acesse o <a href="http://www.aptana.com/" title="Site oficial do Aptana" target="_blank">site oficial</a> do qual é possível efetuar o download da ferramenta para outras versões de sistemas operacionais.
+	</p>
+	
+</article>
+

@@ -1,0 +1,31 @@
+<article>
+	<h1>Como instalar o Imagination no fedora</h1>
+
+<p>
+	O <a href="http://imagination.sourceforge.net/index.html" alt="Imagination" target="_blank">Imagination</a> é um editor de slide show de DVD leve e simples para Linux e FreeBSD. Foi escrito em linguagem C e construído com o GTK + 2 toolkit.
+</p>
+
+<p>
+	Este aplicativo foi projetado, desde o início, para ser rápido, leve e fácil de usar. Ele exige a instalação do <a href="../configuracoes/como-instalar-codecs-audio-e-video-no-fedora" alt="instalando o FFMpeg">ffmpeg encoder</a> para produzir o arquivo de filme e <a href="http://sox.sourceforge.net/libsox.html" alt="libsox" target="_blank">Libsox</a> para lidar com o áudio. Sim, você não precisa de qualquer outro software de terceiros.
+</p>
+
+<p>
+	Para efetuar a instalação, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Digite este comando para instalar o imagination
+dnf -y install imagination
+</pre>
+
+<p>
+	Para maiores informações e mais detalhes de funcionamento deste aplicativo, acesse o site oficial em <a href="http://imagination.sourceforge.net/index.html" alt="Imagination" target="_blank">Imagination oficial Site</a>
+</p>
+
+</article>

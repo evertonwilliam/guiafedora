@@ -1,0 +1,103 @@
+<article>
+<h1>como instalar o sgdb mariadb no fedora</h1>
+
+<p>
+	A partir da versão 19 do Fedora, o <a href="https://mariadb.org/pt-br/" alt="Site Oficial MariaDB" target="_blank">MariaDB</a> já vem pré instalado, sendo necessário apenas algumas configurações específicas para sua utilização, este SGDB é considerado, pela comunidade, melhor que o Mysql pois este é desenvolvido por uma comunidade existente em todo o mundo, assim quando é identificado um erro de segurança, normalmente, o <a href="https://mariadb.org/pt-br/" alt="Site Oficial MariaDB" target="_blank">MariaDB</a> é o primeiro a receber os devidos ajustes. 
+</p>
+
+<p>
+	As funcionalidades do <a href="https://mariadb.org/pt-br/" alt="Site Oficial MariaDB" target="_blank">MariaDB</a> são idênticas com as funcionalidades do <a href="https://www.mysql.com/" alt="Site Oficial MySQL" target="_blank">MySQL</a>, tornando-os totalmente compatíveis, neste caso, a escolha entre o <a href="https://www.mysql.com/" alt="Site Oficial MySQL" target="_blank">MySQL</a> e o <a href="https://mariadb.org/pt-br/" alt="Site Oficial MariaDB" target="_blank">MariaDB</a> vai do gosto do freguês.
+</p>
+
+<p>
+	Em geral, por padrão, o <a href="https://mariadb.org/pt-br/" alt="Site Oficial MariaDB" target="_blank">MariaDB</a> já vem pré-instalado no Fedora, então vamos efetuar as devidas configurações deste SGDB primeiramente. Para isso, acesse o terminal através do menu "Aplicativos->System Tolls->LXTerminal" do Fedora e execute os seguintes passos para ativar definitivamente o MariaDB em sua distribuição.
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse a conta root
+su
+
+# Digite a sua senha:
+Senha:
+
+# Inicialize o MariaDB com o seguinte comando
+service mysqld start
+
+# Defina uma senha root para o servidor MariaDB
+mysql_secure_installation
+
+# Ao aparecer a mensagem abaixo, insira uma senha de acesso root
+New password: 
+
+# Ao aparecer a mensagem abaixo, redigite a senha de acesso root
+Re-enter new password: 
+</pre>
+
+<p>
+	Após definir a senha para o usuário root, responda Y para todas as perguntas que aparecer em seqüência, até finalizar o processo de configuração. E em seguida reinicie o servidor <a href="https://mariadb.org/pt-br/" alt="Site Oficial MariaDB" target="_blank">MariaDB</a> e insira ele no processo de inicialização juntamente com o Sistema Operacional.
+</p>
+
+<pre class="brush: shell, bash">
+# Reinicialize o MariaDB com o seguinte comando
+service mysqld restart
+
+# Ative-o para inicializar automaticamente ao ligar o S.O.
+systemctl enable mysqld.service
+
+# Se quiser encerrar o serviço o comando é o seguinte
+Service myqld stop
+</pre>
+
+<p>
+	Feito isso, o <a href="https://mariadb.org/pt-br/" alt="Site Oficial MariaDB" target="_blank">MariaDB</a> está instalado e configurado com as configurações de fábrica. Para ter acesso ao <a href="https://mariadb.org/pt-br/" alt="Site Oficial MariaDB" target="_blank">MariaDB</a> basta acessar pelo terminal com o comando.
+</p>
+
+<pre class="brush: shell, bash">
+# Acessando o MariaDB
+mysql -u root -p
+
+# Digite a Senha que foi definido no passo de configuração
+Enter password:
+
+# Se tudo deu certo, irá aparecer a seguinte mensagem e prompt
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 4
+Server version: 10.0.17-MariaDB MariaDB Server
+Copyright (c) 2000, 2015, Oracle, MariaDB Corporation Ab and others.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+MariaDB [(none)]&gt; 
+
+# Para sair do modo interativo do MariaDB basta digitar no prompt
+MariaDB [(none)]> exit;
+</pre>
+
+<p>
+	Neste momento é possivel utilizar o <a href="https://mariadb.org/pt-br/" alt="Site Oficial MariaDB" target="_blank">MariaDB</a> para desenvolver suas aplicações de banco de dados, é possível instalar o PHPMyAdmin ou o MySQLWorkBank para administrá-lo de forma visual e mais agradável, breve teremos como efetuar a instalação de cada ferramenta destas.
+</p>
+
+<p>
+	Se por acaso a sua versão instalada não contempla a pré instalação do <a href="https://mariadb.org/pt-br/" alt="Site Oficial MariaDB" target="_blank">MariaDB</a>, então basta efetuar a instalação utilizando o seguinte comando:
+</p>
+
+<pre class="brush: shell, bash">
+# Instalando o repositório para as versões 21/20 para MariaDB 10
+wget -O /etc/yum.repos.d/MariaDB.repo http://mariadb.if-not-true-then-false.com/fedora/$(rpm -E %fedora)/$(uname -i)/10
+
+# Instalando o repositório para as versões 21/20 para MariaDB 10.1
+wget -O /etc/yum.repos.d/MariaDB.repo http://mariadb.if-not-true-then-false.com/fedora/$(rpm -E %fedora)/$(uname -i)/10_1
+
+# Instalando o repositório para as versões 21/20 para MariaDB 5.5
+wget -O /etc/yum.repos.d/MariaDB.repo http://mariadb.if-not-true-then-false.com/fedora/$(rpm -E %fedora)/$(uname -i)/5
+  
+# Instalando o MariaDB nas versões 21/20
+yum install MariaDB MariaDB-server	
+	
+# Na versão 22 e 23 não necessita de repositórios basta rodar o comando abaixo
+dnf install mariadb mariadb-server
+</pre>
+
+<p>
+	E para concluir é só voltar para os primeiros passos, e seguir até o final.
+</p>
+
+</article>

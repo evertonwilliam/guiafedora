@@ -1,0 +1,241 @@
+<article>
+	<h1>como instalar o fedora (modo avançado)</h1>
+
+	<p>
+		Se você desejar uma instalação mais refinada, com configurações específicas durante a instalação do Fedora então siga estes passos. Para esta instalação vamos precisar dos seguintes itens: 
+	</p>
+
+	<div class="alteracoes">
+		<span class="negrito">&curren;</span> Um arquivo de imagem ISO do Fedora;<br/>
+		<span class="negrito">&curren;</span> Um pen drive com no mínimo 4gb;<br/>
+		<span class="negrito">&curren;</span> Um aplicativo para configurar o pen drive com o boot do Fedora (imageusb);
+	</div>	
+	
+	<p>
+		Supondo que você nunca tenha utilizado o Linux ou não tenha nenhuma outra distribuição Linux instalada em seu computador, vamos então utilizar o Windows para preparar nosso pen drive, para isso acesse o site: <a href="http://www.osforensics.com/tools/write-usb-images.html" alt="osforensics" target="_blank">Osforensics.com</a> e baixe o programa ImageUSB, após o download efetue a descompactação do arquivo no diretório "c:\imageusb" ficando assim:
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="Programa ImageUSB" src="../screens/pt-br/instalandofedora/instalar-fedora-01.jpg" />
+	</div>
+
+	<p>
+		Agora vamos escolher uma versão do Fedora e baixarmos o arquivo ISO, para isso acesse o seguinte endereço: <a href="https://getfedora.org/" alt="Get Fedora" target="_blank">getfedora.com</a> nessa página podemos ver que existem três versões do Fedora, a versão Workstation, a Server e a Cloud. A versão Workstation é a versão que deveremos baixar, porém esta versão vem com o Gnome, nessa instalação quero utilizar outra versão para ser diferente dos outros manuais, para isso, vamos buscar pelas versões alternativas designadas de SPIN, para acessar estas versões, basta ir até o rodapé da página e clicar na opção "Fedora Spins" como mostra na imagem abaixo:
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="Fedora Spins" src="../screens/pt-br/instalandofedora/instalar-fedora-02.jpg" />
+	</div>
+
+	<p>
+		Na página que apareceu tem as versões SPIN do Fedora, elas são: <a href="https://spins.fedoraproject.org/pt_BR/kde/" alt="KDE Plasma Desktop" target="_blank">KDE Plasma Desktop</a>, <a href="https://spins.fedoraproject.org/pt_BR/xfce" alt="Spin KDE" target="_blank">XFCE Desktop</a>, <a href="https://spins.fedoraproject.org/pt_BR/lxde" alt="LXDE Desktop" target="_blank">LXDE Desktop</a>, <a href="https://spins.fedoraproject.org/pt_BR/mate-compiz/" alt="Mate-Compiz Desktop" target="_blank">Mate-Compiz Desktop</a>, <a href="https://spins.fedoraproject.org/en/cinnamon/" alt="Cinnamon Desktop" target="_blank">Cinnamon Desktop</a> e <a href="https://spins.fedoraproject.org/pt_BR/soas" alt="SOAS Desktop" target="_blank">SOAS Desktop</a>, em particular eu gosto do ambiente Plasma, porém para essa instalação, vou utilizar o LXDE como distribuição padrão, mas se desejar baixar outra SPIN não tem problemas, a rotina que vamos seguir nessa instalação independe do ambiente gráfico, então fique á vontade para escolher qual desejar. Para baixar basta clicar na imagem referente à versão desejada e na página que aparecer clique no link DOWNLOAD NOW e depois é só ir seguindo as orientações da tela até chegar na tela que realmente efetua o download do arquivo ISO, como mostra abaixo.
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="Download do Fedora" src="../screens/pt-br/instalandofedora/instalar-fedora-03.jpg" />
+	</div>
+
+	<p>
+		Observe que existem as opções de 64 bits e de 32 bits, escolha a versão correta que irá funcionar em seu computador, se acaso não tiver certeza, baixe a versão 64 bits, se acaso não funcionar, ai tem que ser usada à versão 32 bits. Clique no link que representa o tipo de computador (32 ou 64 bits) e aguarde o download ser totalmente efetuado.
+	</p>
+
+	<p>
+		Após o download de seu arquivo ISO o próximo passo é configurar o pen drive para conseguirmos efetuar o boot através dele. Para isso formate o seu pen drive para apagar todos os dados nele contidos e em seguida execute o programa imageusb que você baixou e descompactou no diretório c:\imageusb, será apresentado à seguinte tela:
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="Configurando o Pen Drive" src="../screens/pt-br/instalandofedora/instalar-fedora-04.jpg" />
+	</div>
+
+	<p>
+		Na parte superior da tela "Step 1" selecione a letra que corresponde ao seu pen drive, depois na parte central da tela "Step 2" selecione a opção "Write imagem to USB drive" e a opção "Post Image Verification" em seguida no item "Step 3" clique no botão Browse e selecione o arquivo ISO do Fedora, e por fim no "STEP 4" clique no botão Write e aguarde o aplicativo efetuar a gravação em seu pen drive, encerre o aplicativo e em seguida reinicie o computador com o pen drive plugado no USB:
+	</p>
+	
+	<div class="box_img_article">
+		<img class="img_article" alt="Configurando o Pen Drive" src="../screens/pt-br/instalandofedora/instalar-fedora-05.jpg" />
+	</div>		
+
+	<p>
+		Ao reiniciar o sistema, não se esqueça de configurar o computador para que reinicie utilizando o pen drive como dispositivo principal de boot. Ao ligar o sistema irá apresentar a seguinte tela:
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="Boot do Fedora" src="../screens/pt-br/instalandofedora/instalar-fedora-06.jpg" />
+	</div>
+
+	<p>
+		Selecione a opção "Start Fedora Live" utilizando as setas de direções do teclado e aguarde o sistema efetuar toda a carga, será apresentado o ambiente gráfico, do qual você escolheu no download da imagem ISO, no meu caso eu escolhi o LXDE, conforme mostra na tela abaixo.
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="Ambiente Gráfico LXDE" src="../screens/pt-br/instalandofedora/instalar-fedora-07.jpg" />
+	</div>
+
+	<p>
+		Se acaso você não quiser instalar de imediato, poderá utilizá-lo em modo Live, porém não poderá instalar novos aplicativos nem atualizar o sistema operacional, então a melhor forma de ter uma boa experiência com o Fedora é instalando ele no disco rígido, neste primeiro momento vou imaginar que você está instalando o Fedora em um disco sem nenhum outro sistema em dual boot.
+	</p>
+
+	<p>
+		Para iniciar, dê um duplo clique no ícone "Install to Hard Drive" que provavelmente está no menu principal, em alguns ambientes gráficos fica na área de trabalho, será apresentada a tela do Anaconda. Nessa tela selecione a opção "Português" no campo à esquerda e no campo à direita escolha "Português Brasil" conforme é mostrado na tela abaixo, e em seguida pressione o botão "Continuar" na parte inferior da tela.
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="Selecionando o Idioma" src="../screens/pt-br/instalandofedora/instalar-fedora-08.jpg" />
+	</div>
+
+	<p>
+		Nesta nova tela que apareceu, clique na opção "Destino da Instalação" conforme mostra na tela abaixo:
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="Configurações Básicas" src="../screens/pt-br/instalandofedora/instalar-fedora-09.jpg" />
+	</div>
+
+	<p>
+		Na tela que apareceu, devemos escolher o HD que será instalado o Fedora, clique duas vezes na imagem que represente o HD que deseja instalar o Fedora. Será liberado na parte inferior a opção "Outras opções de armazenamento", selecionem o item "Eu irei configurar o particionamento" e em seguida clique no botão "Finalizado" na parte superior da tela.
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="Selecionando Partição Manual" src="../screens/pt-br/instalandofedora/instalar-fedora-20.jpg" />
+	</div>
+
+	<p>
+		Será apresentada a tela: "Particionamento Manual", selecione a opção "Partição Padrão" na caixa de seleção "Esquema de Partionamento" e em seguida clique no botão [+] na parte inferior desta tela para que seja apresentado a caixa de configuração da partição. Vamos criar as seguintes partições em nosso sistema de armazenamento, do qual segue as devidas explicações:
+	</p>
+	
+	<div class="box_img_article">
+		<img class="img_article" alt="Selecionando Partição Manual" src="../screens/pt-br/instalandofedora/instalar-fedora-21.jpg" />
+	</div>	
+	
+	<div class="alteracoes">
+		<span class="negrito">&curren; Partição swap:</span> Esta partição tem a finalidade de disponibilizar uma área do Disco Rígido para que seja utilizada como memória secundária, ou como conhecido no mundo Windows, como memória de paginação. Antigamente era solicitada a criação da partição SWAP com o dobro da memória RAM, porém, nos dias de hoje, como temos muita memória RAM em nossos computadores, podemos criá-la com um tamanho padrão de 500mb até 1gb. Neste nosso caso criaremos com 1gb.<br/>
+		<span class="negrito">&curren; Partição /boot:</span> Esta partição será utilizada para a gravação de todos os arquivos que são utilizados para a inicialização do sistema Linux Fedora, seu tamanho é de no mínimo 500mb, porém para que possamos ter um espaço bacana para compilações e testes de novos kernels, vou colocar 2gb para ela. <br/>
+		<span class="negrito">&curren; Partição /home:</span> Esta partição é utilizada pelo sistema para a gravação dos arquivos pessoais do usuário, separando esta partição, se for necessário à reinstalação do Fedora, basta não formatar esta partição e todos os seus arquivos pessoais ficarão intactos na nova instalação, ela é opcional, porém estaremos criando-a com o tamanho de 50gb, lembrando que meu HD em questão é de 100gb, escolha o tamanho que quiser para esta partição.<br/>
+		<span class="negrito">&curren; Partição /:</span> esta é a partição raiz do sistema Linux. Temos que criar esta partição com no mínimo 20gb, para podermos ter espaço suficiente para instalarmos nossos aplicativos no Fedora, se você tiver um HD bem grande, eu aconselho que seja reservado no mínimo 100gb para esta partição.<br/>
+	</div>
+	
+	<p> 
+		Vamos iniciar nossas configurações, na janela "Adicionar um novo ponto de montagem" selecione no campo "Ponto de Montagem" a opção "swap" e no campo "Capacidade Desejada" digite "1024" e clique no botão "Adicionar um ponto de montagem".
+	</p>
+	
+	<div class="box_img_article">
+		<img class="img_article" alt="Ponto de Montagem Swap" src="../screens/pt-br/instalandofedora/instalar-fedora-22.jpg" />
+	</div>	
+	
+	<p>
+		Clique novamente no botão [+] na parte inferior da tela e na janela "Adicionar um novo ponto de montagem" selecione no campo "Ponto de Montagem" a opção "/boot" e no campo "Capacidade Desejada" digite "2048" e clique no botão "Adicionar um ponto de montagem"
+	</p>
+	
+	<div class="box_img_article">
+		<img class="img_article" alt="Ponto de Montagem BOOT" src="../screens/pt-br/instalandofedora/instalar-fedora-23.jpg" />
+	</div>	
+	
+	<p>
+		Clique novamente no botão [+] na parte inferior da tela e na janela "Adicionar um novo ponto de montagem" selecione no campo "Ponto de Montagem" a opção "/home" e no campo "Capacidade Desejada" digite "51200" e clique no botão "Adicionar um ponto de montagem"
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="Ponto de Montagem HOME" src="../screens/pt-br/instalandofedora/instalar-fedora-24.jpg" />
+	</div>	
+	
+	<p>
+		Clique mais uma vez no botão [+] na parte inferior da tela e na janela "Adicionar um novo ponto de montagem" selecione no campo "Ponto de Montagem" a opção "/" e no campo "Capacidade Desejada" deixe em branco, para ele assumir todo o restante do HD para esta partição e clique no botão "Adicionar um ponto de montagem"
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="Ponto de montagem Raiz" src="../screens/pt-br/instalandofedora/instalar-fedora-25.jpg" />
+	</div>
+	
+	<p>
+		O sistema deverá ficar com as seguintes configurações, após os passos acima citados:
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="configuração Final" src="../screens/pt-br/instalandofedora/instalar-fedora-26.jpg" />
+	</div>	
+	
+	<p>
+		Feito isso, clique no botão "Finalizado" na parte superior da tela. Será apresentada a janela Resumo das Mudanças confira se está tudo conforme desejado e clique no botão "Aceitar Mudanças". O sistema irá gravar as configurações e retornará para a tela "Resumo da Instalação".
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="Resumo das Alterações" src="../screens/pt-br/instalandofedora/instalar-fedora-27.jpg" />
+	</div>
+	
+	<p>
+		O instalador irá apresentar a tela inicial novamente, clique na opção "Teclado", verifique se o layout de seu teclado está coerente com o telado de seu computador, para isso faça o teste do layout na caixa à esquerda, testando acentos, cedilhas e caracteres especiais, se acaso não estiver correto, basta clicar no sinal de mais (+) à direita da tela e selecionar o layout correto de seu teclado, após a configuração clique no botão "Finalizado" no topo esquerdo da tela.
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="Selecionando o Teclado" src="../screens/pt-br/instalandofedora/instalar-fedora-11.jpg" />
+	</div>
+
+	<p>
+		Novamente o instalador irá voltar para a tela inicial, agora clique na opção "Time e Data" e selecione a região onde você mora através do Mapa, ou utilizando as caixas suspensas na parte superior da tela, após a configuração clique no botão "Finalizado.
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="Selecionando a localização" src="../screens/pt-br/instalandofedora/instalar-fedora-12.jpg" />
+	</div>
+
+	<p>
+		E para finalizar a configuração nesta tela, clique na opção "Network e Hostname" e nesta tela, digite o nome que deseja que seu computador apresente caso seu computador estiver conectado em uma Rede Local, este nome será apresentado também no terminal de comandos. Escolha um nome sem espaços e sem caracteres especiais em seguida clique em "Finalizado", conforme é mostrado abaixo. 
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="Alterando nome do host" src="../screens/pt-br/instalandofedora/instalar-fedora-13.jpg" />
+	</div>
+
+	<p>
+		Com todos os itens configurados, basta agora clicar no botão "Iniciar a Instalação", localizado na parte inferior da tela, neste momento será iniciada a instalação, porém, na tela que será apresentada, ainda há mais dois itens a serem configurados, então clique agora na opção "Senha de ROOT" e defina uma senha para o usuário root (Insira uma senha e memorize ela, pois esta será solicitada quando necessitarmos de acesso root ao sistema), em seguida, clique em "Finalizado" conforme é mostrado na tela abaixo:
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="Iniciando a Instalação" src="../screens/pt-br/instalandofedora/instalar-fedora-14.jpg" />
+	</div>
+
+	<p>
+		Neste momento será apresentado uma nova tela com as opções "Senha Root" e "Criação Usuário", clique na opção "Senha de ROOT".
+	</p>
+	
+	<div class="box_img_article">
+		<img class="img_article" alt="Configurando Senha e Usuários" src="../screens/pt-br/instalandofedora/instalar-fedora-15.jpg" />
+	</div>	
+	
+	<p>
+	     Na nova tela que surgio, defina uma senha para o usuário root (Insira uma senha e memorize ela, pois esta será solicitada quando necessitarmos de acesso root ao sistema), em seguida, clique em "Finalizado" conforme é mostrado na tela abaixo:
+	</p>
+	
+	<div class="box_img_article">
+		<img class="img_article" alt="Definindo senha root" src="../screens/pt-br/instalandofedora/instalar-fedora-16.jpg" />
+	</div>		
+	
+	<p>
+		O Instalador retornará na tela anterior, clique na opção "Criação de Usuário" e defina um usuário administrador para seu sistema Operacional, entrando com o nome completo, o "User Name" (este deve ser tudo em minúsculo), marque a opção "make this user administrator" e digite a senha para este usuário, terminando estes passos clique em "Finalizado" e aguarde a conclusão da instalação.
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="Criando Usuário" src="../screens/pt-br/instalandofedora/instalar-fedora-17.jpg" />
+	</div>
+
+	<p>
+		Quando o Anaconda estiver efetuado toda a instalação, será apresentado a mensagem que a instalação foi bem sucedida, basta clicar no botão "Sair".
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="Finalizando a Instalação" src="../screens/pt-br/instalandofedora/instalar-fedora-18.jpg" />
+	</div>
+
+	<p>
+		Em seguida, no menu principal do sistema, clique em "Logout" e quando aparecer a tela de opções de desligamento, clique em Reboot para reiniciar o computador. Quando estiver desligando, remova o pen drive do USB para que o sistema inicie diretamente do disco rígido.
+	</p>
+
+	<div class="box_img_article">
+		<img class="img_article" alt="Reiniciando o sistema" src="../screens/pt-br/instalandofedora/instalar-fedora-19.jpg" />
+	</div>
+
+	<p>
+		Prontinho, viu como é simples? Embora tenha sido vários passos, verificamos que foi muito simples a instalação do Fedora. Agora podemos desfrutar deste novo sistema operacional instalado em seu computador.
+	</p>
+
+</article>

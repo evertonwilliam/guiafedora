@@ -1,0 +1,46 @@
+<article>
+<h1>como instalar o gnome clássico e o gnome shell no fedora</h1>
+
+<p>
+	É possível manter instalado e funcional mais de um ambiente gráfico no Linux Fedora, desta forma, independente da versão que foi baixada e instalada em seu computador, é possível utilizar outros ambientes gráficos, ou seja, se você instalou o LXDE no seu computador, nada vai impedir de instalar outro ambiente, sem necessitar baixar um novo ISO completo e efetuar a instalação completa do Fedora.
+</p>
+
+<p>
+	Neste capítulo, vomos explicar como manter mais de um ambiente gráfico ativo e funcional no seu Fedora, e assim escolher qual deles deseja utilizar no seu dia a dia. Vamos começar com o <a href="https://www.gnome.org/" alt="GNOME" target="_blank">GNOME</a>.
+</p>
+
+<p>
+	O <a href="https://www.gnome.org/" target="_blank">GNOME</a> é um projeto Internacional de software livre que provê basicamente duas coisas: um ambiente visual desktop, intuitivo e atraente para usuários finais e uma plataforma de desenvolvimento, um framework extenso para construção de aplicações que se integram com todo o desktop.
+</p>
+
+<p>
+	É Software Livre e parte do Projeto GNU, que se dedica a dar aos usuários e desenvolvedores controle sobre seus desktops, software e dados. Isso consiste, basicamente, em garantir a todos o direito a quatro liberdades básicas: a de usar o software para qualquer fim, estudar o seu código-fonte, modificá-lo para qualquer necessidade que você possa ter e redistribui-lo, modificado ou não.
+</p>
+
+<p>
+	A <a href="https://www.gnome.org/" target="_blank">GNOME</a> é liderada pela organização sem fins lucrativos "Fundação GNOME". O seu conselho é eleito democraticamente, e as decisões técnicas são feitas pelos engenheiros que fazem o trabalho. A comunidade conta com o apoio de muitas organizações, funcionários de mais de cem empresas têm contribuído desde o início do projeto.
+</p>
+
+<p>
+	Para todos os Ambientes gráficos, o Fedora já tem suporte, por isso a instalação é bem simples de cada um deles, para isso, basta acessar o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e entrar com os seguintes comandos, para instalar o GNOME: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Efetue a instalação do GNOME Clássico e GNOME SHELL em um só comando.
+dnf -y groupinstall gnome 
+</pre>
+
+<p>
+	O processo pode demorar um pouco, dependendo da velocidade de sua internet, porém, após a instalação, reinicie o Fedora, e na tela de Login, na opção "AMBIENTE" escolha uma das opções "GNOME Clássico" ou "GNOME" e em seguida efetue o seu login, com usuário e senha.
+</p>
+
+<p>
+	Prontinho, o seu <a href="https://www.gnome.org/" target="_blank">GNOME</a> está instalado e funcional, e se desejar voltar para o ambiente original, basta encerrar a sessão atual e efetuar um novo login. Para conhecer mais sobre o GNOME acesse o <a href="https://www.gnome.org/" target="_blank">Site Oficial</a> ou o <a href="http://br.gnome.org/GNOMEBR/Gnome" target="_blank">Site Oficial no Brasil</a>.
+</p>
+</article>

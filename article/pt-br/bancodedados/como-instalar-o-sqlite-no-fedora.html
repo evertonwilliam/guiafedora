@@ -1,0 +1,51 @@
+<article>
+<h1>como instalar o SQLite no Fedora</h1>
+
+<p>
+	O <a href="https://www.sqlite.org/" alt="Site Oficial SQLite" target="_blank">SQLite</a> é uma biblioteca em linguagem C que implementa um banco de dados SQL embutido. Programas que usam a biblioteca SQLite podem ter acesso a banco de dados SQL sem executar um processo SGBD separado.
+</p>
+
+<p>
+	Ele não é uma biblioteca cliente usada para conectar com um grande servidor de banco de dados, mas sim o próprio servidor. A biblioteca <a href="https://www.sqlite.org/" alt="Site Oficial SQLite" target="_blank">SQLite</a> lê e escreve diretamente para e do arquivo do banco de dados no disco.
+</p>
+
+<p>
+	O uso do <a href="https://www.sqlite.org/" alt="Site Oficial SQLite" target="_blank">SQLite</a> é recomendado onde a simplicidade da administração, implementação e manutenção são mais importantes que incontáveis recursos que SGBDs mais voltados para aplicações complexas possivelmente implementam. As situações onde a simplicidade é a melhor escolha são muito mais freqüentes do que pode-se imaginar
+</p>
+
+<p>
+	A instalação do <a href="https://www.sqlite.org/" alt="Site Oficial SQLite" target="_blank">SQLite</a> é bem simples, ele é um banco de dados muito leve e muito eficiente, por ele ser executado um aplicativo não é necessário ser iniciado e nem parado como acontece com os outros SGDBs.
+</p>
+
+<p>
+	Para efetuar a instalação deste aplicativo, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# acesse a conta root
+su
+
+#digite a sua senha:
+Senha:
+
+# Instalando o SQLite
+dnf install -y sqlite sqlite-devel
+
+# Acessando o SQLite
+sqlite3
+
+#Irá aparecer a seguinte mensagem no Prompt
+SQLite version 3.8.8.3 2015-02-25 13:29:11
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database
+
+# Para sair do modo interativo no SQLite digite
+.quit
+</pre>
+
+<p>
+	No <a href="https://www.sqlite.org/docs.html" alt="Site Oficial SQLite" target="_blank">Site Oficial</a> é possível encontrar uma documentação bem vasta sobre este banco de dados.
+</p>
+
+</article>

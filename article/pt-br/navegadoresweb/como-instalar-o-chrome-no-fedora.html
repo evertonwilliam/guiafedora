@@ -1,0 +1,55 @@
+<article>
+	<h1>como instalar o google chrome no fedora</h1>
+
+<p>
+	O Google Chrome é um dos principais navegadores do mercado, desenvolvido pelo Google para competir com os populares Internet Explorer e Firefox. Além de rápido, seguro e estável, o browser possui versões para Windows, Mac OS, Linux, Android e iOS.
+</p>
+
+<p>
+	Atualmente, o Chrome é o navegador mais utilizado no mundo, com 49,18% dos usuários de Desktop, contra 22,62% do Internet Explorer e 19,25% do Mozilla Firefox, segundo a StatCounter. Além de desenvolver o Google Chrome, o Google ainda patrocina o Mozilla Firefox, um navegador que é desenvolvido pela Fundação Mozilla.
+</p>
+
+<p>
+	Vamos então instalá-lo em nosso Fedora, primeiramente devemos baixar o arquivo RPM do navegador,para isso vamos utilizar a ferramenta wget e em seguida instalá-lo. Acesse o terminal pelo seguinte menu: "Aplicativos->System Tolls->LXTerminal" e entre com os seguintes comandos.
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Digite esse comando instalar o repositório (somente 64bits)
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+
+# Digite esse comando instalar o repositório (somente 32bits)
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_I386.rpm
+
+# Digite o comando abaixo e faça o download da chave de utilização
+wget https://dl.google.com/linux/linux_signing_key.pub
+
+# Digite esse comando para importar a chave
+rpm --import linux_signing_key.pub
+
+# Digite esse comando para instalar a chave
+rpm -qi gpg-pubkey-7fac5991-*
+
+# Digite este comando validação do arquivo (somente 64bits)
+rpm --checksig -v google-chrome-stable_current_x86_64.rpm
+
+# Digite este comando validação do arquivo (somente 32bits)
+rpm --checksig -v google-chrome-stable_current_I386.rpm
+
+# Digite este comando para Instalar o chrome (somente 64bits)
+dnf -y install google-chrome-stable_current_x86_64.rpm
+
+# Digite este comando para Instalar o chrome (somente 32bits)
+dnf -y install google-chrome-stable_current_I386.rpm
+</pre>
+
+<p>
+	O sistema irá instalar várias dependências, são cerca de 90 dependências que serão instaladas, aguarde a instalação de todas elas, este processo poderá demorar um pouco, dependendo da velocidade da conexão da sua internet.
+</p>
+
+</article>

@@ -1,0 +1,143 @@
+<article>
+<h1>como instalar repositórios de terceiros no fedora</h1>
+
+<p>
+	Igualmente a muitas outras distribuições Linux, o Fedora não deixa de lado os seus valores e princípios ao disponibilizar seus produtos para seus clientes. Disponibilizar aplicativos que não são livres e com o código fonte aberto trai a licença <a href="http://www.gnu.org/licenses/" alt="Lienças GNU GPL" target="_blank">GNU GPL</a>, por isso, todos os repositórios oficiais do Fedora só trazem consigo aplicações que são registrados e liberados por esta licença, porém, como todas as outras distribuições, é possível instalar repositórios de terceiros, que trazem consigo estes aplicativos e drivers.
+</p>
+
+<p>
+	A maioria dos repositórios se encontra em formato RPM, facilitando a instalação do mesmo, porém necessitamos conhecer onde estão estes repositórios e saber exatamente a versão do sistema que estamos utilizando para não apontar versões erradas dos repositórios.
+</p>
+
+<p>
+	O repositório RPMFusion, um dos mais famosos e completos para a distribuição Fedora, está localizado no seguinte endereço: <a href="http://rpmfusion.org/Configuration/" alt="RPM Fusion" title="RPM Fusion" target="_Blank">RPMFusion</a> basta baixar os arquivos RPM referente a versão de seu Fedora em seguida efetuar a instalação. Para facilitar vou efetuar todo o processo de instalação via terminal, mas nada impede de você baixar estes repositórios via navegador e em seguida efetuar o duplo clique no arquivo para que ele seja instalado em modo gráfico.
+</p>
+
+<p>
+	Para instalação dos repositórios RPMFUSION via terminal, acesse o terminal pelo seguinte menu: "Aplicativos->System Tolls->LXTerminal" e digite os seguintes comandos:
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Digite o comando abaixo para os pacotes free
+dnf -y install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+
+# Digite o comando abaixo para os pacotes nonfree
+dnf -y install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+</pre>
+
+<p>
+	Observe que nestas linhas, estou incluindo o comando "$(rpm -E %fedora)" que imprime, no comando, a versão exata de seu Fedora, sendo assim, não é necessário saber qual é a versão que está utilizando, uma vez que o comando acima irá recuperar a versão correta, e assim irá baixar os repositórios corretos para a versão que você instalou.
+</p>
+
+<p> 
+	Não existe apenas este respositório disponível para o Fedora, existem vários outros. Outro repositório de aplicações muito importante para o Fedora é o <a href="http://ru.fedoracommunity.org/repository" alt="RussianFedora" target="_Blank">RussianFedora</a> que traz consigo uma infinidade de opções de aplicativos livres e não livres. Ao meu ver, este é um dos repositórios que não devem faltar na sua biblioteca. 
+</p>
+
+<p>
+	Vamos instalar os repositórios RussianFedora via terminal, para isso, acesse o terminal pelo seguinte menu: "Aplicativos->System Tolls->LXTerminall" e digite os seguintes comandos.
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Digite o comando abaixo para os pacotes free
+dnf -y install http://mirror.yandex.ru/fedora/russianfedora/russianfedora/free/fedora/russianfedora-free-release-stable.noarch.rpm
+
+# Digite o comando abaixo para os pacotes nonfree
+dnf -y install http://mirror.yandex.ru/fedora/russianfedora/russianfedora/nonfree/fedora/russianfedora-nonfree-release-stable.noarch.rpm 
+</pre>
+
+<p>
+	É possível encontrar uma lista enorme de repositórios suportados pelo Fedora no seguinte endereço: <a href="https://repos.fedorapeople.org/" alt="Fedora People" title="Fedora People" target="_Blank">Fedora People</a>. Para instalá-los basta efetuar o download dos arquivos repo e em seguida efetuar a cópia destes arquivos para a pasta de repositórios do DNF, que fica no seguinte caminho de seu computador: "/etc/yum.repos.d/".
+</p>
+
+<p>
+	Se você desejar efetuar esta instalação via terminal, deverá efetuar a instalação do aplicativo "Wget", conforme é mostrado em: <a href="como-instalar-wget-no-fedora" alt="Instalando o Wget" title="Instalando o Wget">Instalando o Wget</a> e em seguida executar os seguintes comandos, como exemplo: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Digite o comando abaixo para baixar o arquivo de configuração do repositório
+wget http://repos.fedorapeople.org/repos/spot/chromium-stable/fedora-chromium-stable.repo
+
+# Digite o comando abaixo para transferir os arquivos para o diretório do DNF
+mv -V *.repo /etc/yum.repos.d/
+</pre>
+
+<p>
+	Com certeza, ao procurar pela internet, você terá uma infinidade de opções em repositórios, seja cauteloso ao escolher seus repositórios, pois já ouvi relatos da existência de repositórios que são compostos por vírus e aplicativos com código malicioso. Antes de adicionar um novo repositório, faça uma pesquisa pela internet, e verifique a qualidade e a origem do mesmo, e só depois de ter certeza da qualidade, efetue a instalação dele.
+</p>
+
+<h1>como remover repositórios no fedora</h1>
+
+<p>
+	Existem algumas formas para se fazer isso, uma delas, e não a mais importante, é excluir as entradas dos repositórios existentens no diretório "/etc/yum.repos.d/", nesta opção você estará realizando a exclusão física do arquivo de configuração, não tendo como efetuar a sua reinstalação, a não ser que você tenha uma cópia dele, em outro lugar. Para isso acesse o terminal pelo seguinte menu: "Aplicativos->System Tolls->LXTerminal" e digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Digite este comando para acessar a pasta dos repositórios
+cd /etc/yum.repos.d/
+
+# Digite este comando para listar os arquivos de repositórios
+ls al
+
+# Digite este comando para efetuar um backup dos arquivos
+cp *.repo /home/seu_usuario/pasta_destino
+
+# Digite este comando para remover o repositório desejado
+rm nome_do_arquivo_de_repositórios.repo
+
+# Digite este comando para limpar o cache dos repositórios
+rm /var/cache/yum/
+
+# Digite este comando para recriar o cache dos repositórios
+dnf -y makecache
+</pre>
+
+<p>
+	Após efetuar a instalação de todos os repositórios desejados, ou após efetuar a exclusão de qualquer repositório é necessário recriar o cache do DNF, e solicitar ao sistema que verifique se existe alguma aplicativo para ser atualizado, para isso, sempre que incluir ou excluir um repositório, execute os seguintes passos:
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Gera um novo cache para os seus aplicativos.
+dnf -y makecache
+
+# Verifica o que tem para atualizar.
+dnf -y check-update
+
+# Efetua a atualização se houver algo para atualizar
+dnf -y update		
+</pre>
+
+<p>
+	Prontinho, agora você já sabe como manipular os repositórios do Fedora, instale os repositórios necessários, para que possamos efetuar a instalação de nossos aplicativos, daqui para frente.
+</p>
+
+</article>

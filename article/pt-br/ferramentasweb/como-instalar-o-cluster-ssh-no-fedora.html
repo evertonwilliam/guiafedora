@@ -1,0 +1,31 @@
+<article>
+	<h1>como instalar o cllusterssh no fedora</h1>
+
+<p>
+	Em informática o SSH (Secure Shell) é, ao mesmo tempo, um programa de computador e um protocolo de rede que permitem a conexão com outro computador na rede de forma a permitir execução de comandos de uma unidade remota. O SSH faz parte da suíte de protocolos TCP/IP que torna segura a administração remota de servidores do tipo Unix. O SSH possui as mesmas funcionalidades do TELNET, com a vantagem da criptografia na conexão entre o cliente e o servidor
+</p>
+
+<p>
+	O <a href="http://sourceforge.net/projects/clusterssh/" alt="Site Oficial ClusterSSH" target="_blank">ClusterSSH</a> tem o poder de controlar várias de janelas de terminais através de uma única janela do console gráfica. Permitindo comandos de forma interativa a ser executado em vários servidores através de uma ligação ssh. Basicamente, a tarefa é executar o mesmo comando em sistemas múltiplos, de forma a poupar tempo e erros de digitação.
+</p>
+
+<p>
+	Para instalar esta ferramenta de acesso remoto via SSH, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Efetue a instalação através do dnf
+dnf -y install clusterssh
+</pre>
+
+<p>
+	Se desejar contribuir com o projeto, enviando relatórios de erros ou até mesmo ajudando no desenvolvimento, acesso o site <a href="http://sourceforge.net/projects/clusterssh/" alt="ClusterSSH Web Site" target="_blank">sourceforge.net</a> e faça parte da equipe.
+</p>
+
+</article>

@@ -1,0 +1,45 @@
+<article>
+<h1>como instalar as ferramentas de compilação no fedora</h1>
+<p>
+	É fundamental que tenhamos algumas ferramentas de compilação que acompanham o Linux, tais como C, C++, Python, Ruby, entre outras, com estas ferramentas poderemos recompilar, por exemplo, o kernel do Linux com algumas opções especiais existente no hardware de nosso computador, ou podemos, por exemplo, criar novas aplicações específicas para nossa distribuição.
+</p>
+
+<p>
+	No Fedora temos alguns pacotes que efetua a instalação e a configuração destes interpretadores, para que possamos efetuar a instalação destes compiladores/interpretadores. Vamos começar baixando os fontes do Kernel, e em seguida seus devidos compiladores.
+</p>
+
+<p>
+	Os fontes do Kernel fica no pacotes "kernel-headers" e "kernel-devel", para instalá-los precisamos executar os seguintes passos acessando o terminal pelo menu: "Aplicativos->System Tolls->LXTerminal" e executando os seguintes comandos:
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Instale os cabeçalhos do Kernel
+dnf -y install kernel-headers
+
+# Instale o Kit Kernel
+dnf -y install kernel-devel
+</pre>
+
+<p>
+	Após executar estes comandos, você terá em seu computador os fontes do kernel no seguinte caminho: "/usr/src/kernels". Porém para podermos efetuar qualquer tipo de compilação é necessário baixar os compiladores. Para isso, basta seguir os seguintes passos acessando o terminal pelo menu: "Aplicativos->System Tolls->LXTerminal" e executando os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Instalando o grupo de Ferramentas de Desenvolvimento
+dnf -y groupinstall "Development Tools"
+
+# Instalando o grupo de Bibliotecas de Desenvolvimento
+dnf -y groupinstall "Development Libraries"
+</pre>
+
+<p>
+	Feito isso, você terá todos os aplicativos suficientes para efetuar a compilação do Kernel e qualquer outro aplicativo feito em C. Se acaso você tem interesse em aprender mais sobre como efetuar a compilação/desenvolvimento do Kernel, basta acessar a documentação de desenvolvimento no seguinte link: <a href="https://docs.fedoraproject.org/pt-BR/Fedora_Core/5/html/Release_Notes/ar01s07s07.html" title="Documentação Desenvolvimento Kernel" target="_Blank">Manual de Desenvolvimento do Kernel</a>. Lá você terá todos os passos de como efetuar a configuração de seu computador para o desenvolvimento do Kernel para o Fedora.
+</p>
+
+</article>

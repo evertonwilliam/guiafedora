@@ -1,0 +1,98 @@
+<article>
+<h1>como instalar o flash player no fedora</h1>
+
+<p>
+	O Adobe Flash Player, ou apenas Flash Player, é um reprodutor de multimídia e aplicações amplamente distribuído, atualmente é mantido pela Adobe Systems. Alguns sites o utiliza para gerir animações em banners, áreas ilustrativas e até mesmo para streaming de vídeos, o YouTube utilizou por muitos anos a tecnologia Flash para reproduzir seus vídeos on-line. Ainda podemos considerar este plug-in muito importante para quem utiliza a internet.
+</p>
+
+<p>
+	Vamos então instalá-lo em nosso Fedora, primeiramente devemos instalar o repositório dos aplicativos da Adobe e em seguida efetuar a instalação do Flash Player, para quem está utilizando o Fedora em 32bits deve seguir estes passos, acesse o terminal pelo seguinte menu: "Aplicativos->System Tolls->LXTerminal" e execute os seguintes comandos:
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Digite o comando para instalar o repositório para Fedora 32bits
+rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm
+rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
+
+# Digite o comando para instalar o Flash
+dnf -y install flash-plugin nspluginwrapper alsa-plugins-pulseaudio libcurl
+</pre>
+
+<p>
+	Para quem está utilizando o Fedora em 64bits deve deve seguir estes passos, acesse o terminal pelo seguinte menu: "Aplicativos->System Tolls->LXTerminal" e execute os seguintes comandos:
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Digite o comando para instalar o repositório para Fedora 32bits
+rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
+rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
+
+# Digite o comando para instalar o Flash
+dnf -y install flash-plugin nspluginwrapper alsa-plugins-pulseaudio libcurl
+</pre>
+
+<p>
+	O site oficial da Adobe Flash Player pode ser acessado através deste link <a href="https://get.adobe.com/br/flashplayer/otherversions/" title="Flash Player" target="_blank">get Adobe Player</a>. Neste Link é possível baixar o Flash para todos os sistemas operacionais do qual ele oferece suporte.
+</p>
+
+<h1>como instalar o silverlith no fedora</h1>
+
+<p>
+	O Microsoft Silverlight é um software de tecnologia para navegadores e plug-ins da nova geração. Desenvolvido para competir com o Adobe Flash e com o Adobe Flex, o Silverlight propõe a criação de RIA (Internet rica), propõe combinar visual e funcionalidade, ou seja, criando uma ponte entre designers e desenvolvedores.
+</p>
+
+<p>
+	O maior destaque fica por conta da transmissão de vídeos, que utiliza o codec VC-2 para fornecer uma transferência de dados com maior qualidade e ainda a possibilidade de trabalhar com resoluções em Full HD (1080p). Vale resstitlear o uso da aceleração de hardware 3D, também presente para acirrar a corrida pela tecnologia.
+</p>
+
+<p>
+	Embora este tecnologia já vem sendo abandonada pela microsoft, ainda existem vários aplicativos e sites espalhados pela internet utilizando esta tecnologia, então para que não fiquemos sem ter acesso á estes sites e aplicativos, vamos instalar este plugin em nosso Fedora, tonando-o mais rico e mais atrativos. Para instalá-lo devemos seguir estes passos, acesse o terminal pelo seguinte menu: "Aplicativos->System Tolls->LXTerminal" e execute os seguintes comandos:
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Instalando as dependencias
+dnf -y install cabextract
+rpm -i http://sourceforge.net/projects/mscorefonts2/files/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+
+# Acessando o diretórios de repositórios
+cd /etc/yum.repos.d/
+
+# Digite o comando para instalar o repositório
+wget http://download.opensuse.org/repositories/home:/DarkPlayer:/Pipelight/Fedora_$(rpm -E %fedora)/home:DarkPlayer:Pipelight.repo 
+
+# Digite este comando para instalar a chave de acesso
+rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
+
+# Digite o comando para instalar o Silverlith
+dnf -y install pipelight --allowerasing
+
+# Digite este comando para atualizar o pluguin nos navegadores
+pipelight-plugin --enable silverlight
+
+# E por fim, libere o acesso ao aplicativo no SELinux
+setsebool -P unconfined_mozilla_plugin_transition 0
+</pre>
+
+<p>
+	Pronto, agora o Fedora pode acessar sites com tecnologia Silverlight, para efetuar os testes da instalação do Pipelith acesse este link através do navegador Firefox <a href="http://fds-team.de/pipelight/" title="Testando o Silverlith" target="_blank">Testando o Silverlith</a>.
+</p>
+
+</article>

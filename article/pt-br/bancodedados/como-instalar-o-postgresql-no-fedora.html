@@ -1,0 +1,74 @@
+<article>
+<h1>como instalar o postgreSQL no fedora</h1>
+
+<p>
+	O <a href="http://www.postgresql.org/" alt="Site Oficial PostgreSQL" target="_blank">PostgreSQL</a> (conhecido anteriormente como Postgres95) derivou do projeto POSTGRES da universidade de Berkley, cuja última versão foi a 4.2. O POSTGRES foi originalmente patrocinado pelo DARPA (Agência de Projetos de Pesquisa Avançada para Defesa), ARO (Departamento de Pesquisa Militar), NSF (Fundação Cinetífica Nacional) e ESL Inc. A implementação do projeto POSTGRES iniciou em 1986, já em 87 tornou-se operacional. A primeira versão lançada para o público externo foi em 1989. Devido a uma crítica feita ao seu sistema de regras, o POSTGRES teve essa parte re-implementada e lançada em uma segunda versão em 1990. Em 1991 foi lançada a versão 3, com melhorias no executor de consultas e algumas partes do código foram re-escritas. As versões subsequentes, até o Postgres95, foram focadas em confiabilidade e portabilidade. O POSTGRES foi utilizado para diversos sistemas de pesquisa e de produção, uma aplicação de análise financeira, um banco com rotas de asteróides, e diversos sistemas de informações geográficas. O código do POSTGRES foi aproveitado em um produto comercializado pela Illustra Information Technologies (posteriormente incorporada à Informix, que agora pertence à IBM).
+</p>
+
+<p>
+	Ele é extremamente robusto e confiável, além de ser extremamente flexível e rico em recursos. Ele é considerado objeto-relacional por implementar, além das características de um SGBD relacional, algumas características de orientação a objetos, como herança e tipos personalizados. A equipe de desenvolvimento do <a href="http://www.postgresql.org/" alt="Site Oficial PostgreSQL" target="_blank">PostgreSQL</a> sempre teve uma grande preocupação em manter a compatibilidade com os padrões SQL92/SQL99.
+</p>
+
+<p>
+	Ele convive tranquilamente com qualquer outro SGDB instalado na mesma máquina, sem a necessidade de desinstalação. Se acaso houver, por exemplo, o MySQL ou o MariaDB instalado não é necessário desinstalá-lo, basta efetuar a instalação o <a href="http://www.postgresql.org/" alt="Site Oficial PostgreSQL" target="_blank">PostgreSQL</a> e tudo funcionará perfeitamente.
+</p>
+
+<p>
+	Para efetuar a instalação deste SGDB, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Instalando o Blender
+dnf -y install postgresql-server postgresql-contrib
+
+# Ative a inicialização do PostgreSQL na inicialização do S.O.
+systemctl enable postgresql
+
+# Inicializando o Banco de Dados
+postgresql-setup initdb
+</pre>
+
+<p>
+	Se acaso não desejar deixar o banco de dados ser inicializado juntamente com o S.O. então sempre que for utilizá-lo deverá efetuar a inicialização através do seguinte comando:
+</p>
+
+<pre class="brush: shell, bash">
+# Iniciando o PostgreSQL.
+systemctl start postgresql
+
+# Parando o PostgreSQL.
+systemctl stop postgresql
+
+# reiniciando o serviço.
+systemctl restart postgresql
+</pre>
+
+<p>
+	O <a href="http://www.postgresql.org/" alt="Site Oficial PostgreSQL" target="_blank">PostgreSQL</a> contempla duas ótimas ferramentas de manipulação de banco de dados em ambiente gráfico, entre elas temos o "phpPgAdmin" que roda em plataforma WEB e o "pgadmin3" que toda diretamente no ambiente gráfico. A instalação é bem simples de ambos, para instalá-los digite os seguintes comandos no terminal do Fedora.
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Instalando o phpPgAdmin
+dnf -y install phpPgAdmin
+
+# Instalando o pgadmin3
+dnf install pgadmin3
+</pre>
+
+<p>
+	Se desejar mais infromações sobre a instalação e configurações específicas destes SGDB, basta acessar o site oficial de instalação através deste link: <a href="https://fedoraproject.org/wiki/PostgreSQL" alt="Fedora WIKI" target="_blank">Fedora WIKI</a>
+</p>
+
+</article>

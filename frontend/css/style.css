@@ -1,0 +1,138 @@
+/* ICONES ESPECIAIS */
+
+pre .brush{
+	font-family: 'Gruppo', cursive;
+}
+
+body{
+	/*font-family:'Comfortaa', Verdana, 'Times New Roman', 'Sans Serif';*/
+	font-family: 'Gruppo', cursive;
+}
+
+div.bandheader h1{
+	font-family:'Comfortaa', Verdana, 'Times New Roman', 'Sans Serif';
+}
+
+#menu li a{
+	font-family:'Comfortaa', Verdana, 'Times New Roman', 'Sans Serif';
+}
+
+div#content h1, h2, h3, h4, h5, h6, div#publicity h1{
+	font-family:'Comfortaa', Verdana, 'Times New Roman', 'Sans Serif';
+	text-transform:uppercase;
+	font-weight:bold;
+	border-bottom:1px #ccc solid;
+}
+
+table{
+	width:95%;
+	border: 1px solid #D4D4D4;
+}
+
+table th{
+	font-weight:bold;
+	text-align:center;
+}
+
+table th, table td{
+	border: 1px solid #D4D4D4;
+}
+
+a, a:link, a:active{
+	color:#FFFFFF;
+	text-decoration: none;
+}
+
+a:hover{
+	color:#D4D4D4;
+	text-decoration: none;
+}
+
+div#header, div#footer, div#mainmenu, div#barra, div.social, div.bandheader{
+	background:rgb(10,30,30);
+}
+
+div#publicity {
+	margin-bottom:45px;
+	text-align:center;
+}
+
+div#content .box_img_article{
+	text-align: center;
+}
+
+div#content .box_img_article img{
+	width:95%;
+	border: 1px solid #c3c3c3;
+	-webkit-transition: all 1s ease-in;
+	-moz-transition: all 1s ease-in;
+	-o-transition: all 1s ease-in;
+	-ms-transition: all 1s ease-in;
+	transition: all 1s ease-in;
+}
+
+div#content a, div#content a:active{
+	color:#000000;
+	text-decoration: underline;
+}
+
+div#content a:hover{
+	color:#000000;
+	text-decoration: none;
+}
+
+.assinatura{
+	border-top: 1px solid #D4D4D4;
+}
+
+div#barra{
+	border-bottom:1px dotted rgb(104,104,104);
+	border-top:1px dotted rgb(104,104,104);
+}
+
+div.bandheader{
+	clear:both;
+}
+
+/*
+	CONFIGURAÇÃO DA PÁGINA DE CRÉDITOS.
+*/
+
+div#img-creditos span, div#equipe span, div#img-creditos p, div#equipe p{
+	line-height:1.4em;
+}
+
+.negrito{
+	font-weight:bold;
+}
+
+.img-persona{
+	border-radius:50%;
+	float:left;
+}
+
+.name-persona{
+	float:left;
+}
+
+.desc-persona{
+	clear:both;
+	display:block;
+}
+
+.alteracoes{
+	padding:1.5em !important;
+}
+
+div#img-creditos, div#equipe{
+	clear:both;
+}
+
+#equipe fieldset{
+	border: 1px solid #D4D4D4;
+}
+
+#equipe fieldset legend{
+	border: 1px solid #D4D4D4;
+	font-weight:bold;
+}

@@ -1,0 +1,64 @@
+<article>
+<h1>Como instalar o Kingsoft Office WPS no Fedora</h1>
+
+<p>
+	A suíte de aplicativos <a href="http://www.kingsoftstore.com/" alt="Kingsoft Office WPS" targe="_blank">Kingsoft Office WPS</a> trás consigo os três aplicativos mais utilizados em escritórios; o Writer, um editor de textos muito parecido com o Word da Microsoft, O Presentation um editor de slides com as mesmas características e ferramentas existentes no PowerPoint da Microsoft e o Spreadsheets um editor de planilhas eletrônicas, que além de ter praticamente o mesmo aspecto do Excel da Microsoft, traz consigo funcionalidades impressionantes.
+</p>
+
+<p>
+	O <a href="http://www.kingsoftstore.com/" alt="Kingsoft Office WPS" targe="_blank">Kingsoft Office WPS</a> foi desenvolvido para ser executado em multi-plataforma, tendo versões para Windows da Microsoft, Linux (Fedora, CentOS, OpenSUSE, Ubuntu, Mint, Knoppix e derivados) e para IOS da Apple, com as mesmas características e funcionalidades existentes em seu similar Microsoft Office. O WPS Suporta arquivos DOC, DOCX, XLS, XLSX, PPT, PPTX, TXT, PDF, além dos formatos existentes no mercado.
+</p>
+
+<p>
+	A <a href="http://www.kingsoftstore.com/" alt="Kingsoft Office WPS" targe="_blank">Kingsoft Office</a> foi fundada em 1989, atualmente é a líder em soluções de softwares de escritório, depois da Microsoft. São mais de 25 anos desenvolvendo aplicativos para auxiliar tanto o mercado consumidor quanto o mercado corporativo, embora não identifiquei onde efetuar o download de seu código fonte, ele é totalmente gratuito, para pessoas físicas e para empresas, do qual eu classifico-o como um Freeware e não um OpenSource.
+</p>
+
+<p>
+	Para efetuar a instalação deste aplicativo, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Baixando o WPS OFFICE
+wget http://kdl.cc.ksosoft.com/wps-community/download/a16/wps-office-9.1.0.4945-1.a16p3.i686.rpm
+
+# Baixando as fontes do WPS OFFICE
+wget http://kdl.cc.ksosoft.com/wps-community/download/a15/wps-office-fonts-1.0-1.noarch.rpm
+
+# Digite este comando para instalar o WPS Office
+dnf -y install wps-office-9.1.0.4945-1.a16p3.i686.rpm
+
+# Digite este comando para instalar as fontes do WPS OFFICE
+dnf -y install wps-office-9.1.0.4945-1.a16p3.i686.rpm
+</pre>
+
+<p>
+	Após a instalação do aplicativo, é necessário efetuar a atualização do pacote de instalação para a versão mais recente. Se acaso você abrir qualquer um dos três aplicativos, será apresentado uma mensagem para efetuar o Download da nova versão. Para que tenhamos a versão já atualizada siga os seguintes passos;	
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+Atualização do WPS Office, apenas 32bits
+http://kdl.cc.ksosoft.com/wps-community/download/a19/wps-office-9.1.0.4975-1.a19p1.i686.rpm
+dnf -y install wps-office-9.1.0.4975-1.a19p1.i686.rpm
+
+Atualização do WPS Office, apenas 64bits
+http://kdl.cc.ksosoft.com/wps-community/download/a19/wps-office-9.1.0.4975-1.a19p1.x86_64.rpm
+dnf -y install wps-office-9.1.0.4975-1.a19p1.x86_64.rpm
+</pre>
+
+<p>
+	De todos os aplicativos para escritório, este é o que mais se aproxima, com a estrutura e funcionalidades do Microsoft Office, para você que tem algumas dificuldades com o LibreOffice ou o OpenOffice, esta é uma ótima opção. É possível encontrar o manual completo desta ferramente no site oficial no seguinte link <a href="http://help.kingsoftstore.com/" alt="Manual do LinkOffice" target="_blank">Manual do Kingsoft Office WPS</a>	
+</p>
+
+</article>

@@ -1,0 +1,37 @@
+<article>
+	<h1>como instalar o softmaker office no fedora</h1>
+
+<p>
+	O <a href="http://www.softmaker.com/english/" target="_blank">SoftMaker Office</a> é um conjunto de aplicativos de escritório desenvolvido desde 1987 pela SoftMaker Software GmbH, com sede em Nuremberga, na Alemanha.
+</p>	
+	
+<p>
+	A Versão gratuita do <a href="http://www.softmaker.com/english/" target="_blank">SoftMaker Office</a> é licenciada para utilização particular e profissional, para Windows e Linux, e distribuído com um processador de texto, uma planilha e um programa de apresentações gráficas. Possui maior compatibilidade com o Microsoft Office do que o LibreOffice.
+</p>
+
+<p>
+	Esta suite têm muitas funções iguais ou similares aos conhecidos MS Office, OpenOffice.org ou WordPerfect Office, e também pode ser executado a partir de drives flash USB. Ele tem seus próprios formatos nativos, e pode ler e escrever formatos de arquivo do Microsoft Office, OpenDocument Format (processador de texto somente), RTF e HTML. Ele pode exportar para PDF.
+</p>
+
+<p>
+	Para efetuar a instalação deste aplicativo, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>	
+	
+<pre class="brush: shell, bash">
+# Baixe o arquivo para a versão 32 bits - Se o Fedora for 32 bits
+wget http://www.softmaker.net/down/softmaker-office-2016-749.i386.rpm
+
+# Baixe o arquivo para a versão 64 bits - Se o Fedora for 64 bits.
+wget http://www.softmaker.net/down/softmaker-office-2016-749.x86_64.rpm
+
+# Instale a versão 32 bits - Se o Fedora for 32 bits
+rpm -ivh softmaker-office-trial-2012-702.i386.rpm
+
+# Instale a versão 64 bits - Se o Fedora for 64 bits
+rpm -ivh softmaker-office-2016-749.x86_64.rpm
+</pre>
+
+<p>
+	O SoftMaker Office é um software pago, desta forma a versão que estamos baixando é trial e será expirada após um determinado tempo, sendo assim, se gostar do aplicativo, deverá acessar o <a href="http://www.softmaker.com/en/" target="_Blank">site oficial</a> e efetuar a compra do mesmo.
+</p>
+</article>

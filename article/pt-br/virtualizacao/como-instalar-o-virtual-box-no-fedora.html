@@ -1,0 +1,44 @@
+<article>
+
+<h1>como instalar o virtualbox no fedora</h1>
+
+<p>
+	O <a href="https://www.virtualbox.org/" target="_blank">VirtualBox</a> é um software de virtualização desenvolvido pela empresa Innotek depois comprado pela Sun Microsystems que posteriormente foi comprada pela Oracle que, como o VMware Workstation, visa criar ambientes para instalação de sistemas distintos. Ele permite a instalação e utilização de um sistema operacional dentro de outro, assim como seus respectivos softwares, como dois ou mais computadores independentes, mas compartilhando fisicamente o mesmo hardware.
+</p>
+
+<p>
+	Para efetuar a instalação, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo Root
+su
+
+# Entre com sua senha de root
+Senha:
+
+# Acesse a pasta de repositórios do fedora
+cd /etc/yum.repos.d/
+
+# Efetue o download do repositórios
+wget http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
+
+# Efetue a atualização dos repositórios
+dnf -y makecache
+dnf -y check-update
+dnf -y update
+
+# Execute os seguintes comandos para a instalação
+rpm -qa kernel |sort -V |tail -n 1
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | rpm --import -
+dnf -y install VirtualBox-5.0
+/etc/init.d/vboxdrv setup
+
+# Após a instalação é necessário adicionar o usuário local no grupo vboxusers:
+usermod -a -G vboxusers Nome_Do_Seu_Usuario
+</pre>
+
+<p>
+	Mais informações sobre a instalação e utilização do VirtualBox, pode ser extraídas no <a href="https://www.virtualbox.org/" target="_blank">Site oficial do VirtualBox</a>
+</p>
+</article>

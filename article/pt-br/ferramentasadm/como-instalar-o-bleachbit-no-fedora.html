@@ -1,0 +1,57 @@
+<article>
+<h1>Como instalar o BleachBit no Fedora</h1>
+
+<p>
+	O recurso Ferramentas do Sistema é o primeiro item da árvore de console do Gerenciamento do Computador. Você pode usar as ferramentas padrão existente no sistema operacional ou simplemente complementar estas ferramentas com aplicativos de terceiros.
+</p>
+
+<p>
+	São várias funções existentes nas ferramentas de sistemas, desde uma simples faxina de arquivos temporários á adminstração de redes e remoção de ameças digitais.
+</p>
+
+<p>
+	No Linux temos o <a href="http://bleachbit.sourceforge.net/" target="_blank">BleachBit</a>, uma ferramenta bem similar ao CCleanner, com o conceito de remoção de cache de Web, cookies HTTP, histórico de URL, arquivos temporários, arquivos de log e cookies do Flash para o Firefox, Opera, Safari, APT, Google Chrome entre outras atividades que a ferramenta pode executar.
+</p>
+
+<p>
+	O <a href="http://bleachbit.sourceforge.net/" target="_blank">BleachBit</a> foi lançado pela primeira vez ao público em 24 de Dezembro de 2008 para sistemas GNU/Linux. A versão 0.2.1 criou certa controvérsia, sugerindo que o GNU/Linux precisava de um limpador de registro, porém na verdade o que ele fazia nada mais era do que efetuar a limpeza de disco.
+</p>
+
+<p>
+	Em sua versão 0.4.0 introduziu CleanerML, com base em padrões de linguagem de marcação para a escrita de novos produtos de limpeza. Em 29 de maio de 2009, a versão 0.5.0 do <a href="http://bleachbit.sourceforge.net/" target="_blank">BleachBit</a> adicionou suporte para o Windows XP, Vista e 7 e em 16 de setembro de 2009, a versão 0.6.4 introduziu suporte linha de comando, ele está disponível para download através do seu site <a href="http://bleachbit.sourceforge.net/" target="_blank">http://bleachbit.sourceforge.net/</a> e através dos repositórios de muitas distribuições GNU/Linux, dentre elas o Fedora.
+</p>
+
+<div class="alteracoes">
+	Suas principais funcionalidades são:<br />
+	<span class="negrito">&curren;</span> Remoção dos caches da Web, cookies HTTP, histórico de URL, arquivos temporários, arquivos de log e cookies do Flash;<br />
+	<span class="negrito">&curren;</span> Remover localizações não utilizadas (também chamados de arquivos de local), que são traduções do software;<br />
+	<span class="negrito">&curren;</span> Remover arquivos e limpar o espaço em disco não alocado para minimizar a reminiscência de dados;<br />
+	<span class="negrito">&curren;</span> Limpar o espaço em disco não alocado para melhorar a taxa de compressão de dados para a imagem de disco backups;<br />
+	<span class="negrito">&curren;</span> Desfragmentar o banco de dados do Firefox;<br />
+	<span class="negrito">&curren;</span> A Interface de linha de comando tem o objetivo de automatizar, através de scripts as operações de limpeza do sistema.
+</div>
+
+<p>
+	Vamos então instalá-lo em nosso Fedora, acesse o terminal pelo seguinte menu: "Aplicativos->System Tolls->LXTerminal" e entre com os seguintes comandos.
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o mode Root
+su
+
+# Entre com sua senha de root
+Senha:
+
+# Efetue a instalação do BleachBit
+dnf -y install bleachbit
+</pre>
+
+<p>
+	Efetuado o processo de instalação, basta abrir o aplicativo em "Aplicativos->System Tolls->Clean", marcar os itens que deseja efetuar a limpeza e em seguida clicar em limpar, ai é só deixar ele finalizar o processo e pronto.
+</p>
+
+<p>
+	Agora é só efetuar as devidas manutenções em seu sistema operacional, só tome cuidado para não remover o que  não deve.
+</p>
+
+</article>

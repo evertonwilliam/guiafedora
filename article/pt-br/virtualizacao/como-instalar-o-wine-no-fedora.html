@@ -1,0 +1,87 @@
+<article>
+<h1>como instalar o wine no fedora</h1>
+
+<p>
+	<a href="https://www.winehq.org/" target="_blank">Wine</a> é o acrônimo recursivo para (WINE Is Not an Emulator), em uma tradução livre, podemos dizer que "WINE Não é um Emulador", na realidade <a href="https://www.winehq.org/" target="_blank">Wine</a> é uma camada de compatibilidade para sistemas operativos UNIX que tem como objetivo a implementação da API do Microsoft Windows. Desta forma, em teoria, o <a href="https://www.winehq.org/" target="_blank">Wine</a> permite a execução de aplicativos desenvolvidos para ambiente Windows nativamente em outros sistemas operacionais. <a href="https://www.winehq.org/" target="_blank">Wine</a>, traduzido literalmente do inglês para o português, significa vinho, o que levou à escolha de uma taça de vinho como seu logotipo.
+</p>
+
+<p>
+	A sua finalidade é executar aplicativos desenvolvidos para Windows, em ambiente Unix, entre eles o Linux. Parece loucura né, mas apesar do próprio site do <a href="https://www.winehq.org/" target="_blank">Wine</a> dizer que isso é uma gambiarra a coisa funciona muito bem, tem estabilidade, é rápido e surpreende muito. Sem dizer que podemos utilizá-lo não só para aplicativos comerciais, tais como Photoshop, Picasa, MS-Office entre muitos outros, podemos ainda utilizá-lo para rodar jogos, dos mais leves aos mais parrudos que são desenvolvidos apenas para Windows, com um desempenho que chega a ser maior que no próprio Windows.
+</p>
+
+<p>
+	É claro que, quanto mais simples o programa e quanto menos acessos diretos ele faz ao hardware, mais chances ele tem de executar bem. Se alguma instalação completa não funcionar, tente instalar somente aquilo que deseja usar.
+</p>
+
+<p>
+	Antes de tudo devemos instalá-lo. Ele funciona muito bem em qualquer distribuição. Para uma distribuição diferente do Fedora, consulte a página oficial do <a href="https://www.winehq.org/" target="_blank">Wine</a> e verifique quais são os passos para efetuar a instalação e configurações em sua distribuição.
+</p>
+
+<p>
+	Para nós que utilizamos a distribuição Fedora, basta utilizarmos o dnf para a instalação do <a href="https://www.winehq.org/" alt="Site Oficial Wine" target="_blank">Wine</a>, acesse o Terminal: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer, digite os seguiintes comandos:
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo Root
+su
+
+# Entre com sua senha de root
+Senha:
+
+# Efetue a instalação do Wine
+dnf -y install wine
+
+# Efetue a instalação dos extratores dos arquivos CAB Windows
+dnf -y install cabextract
+</pre>
+
+<p>
+	Após esta instalação, o Wine passa a ser integrado no sistema Linux, e com um único clique em um arquivo .exe, o <a href="https://www.winehq.org/" alt="Site Oficial Wine" target="_blank">Wine</a> passa a executá-lo, e será apresentada a tela do aplicativo diretamente em seu ambiente Linux. Se acaso você efetuar a execução de algum arquivo setup.exe, ou seja, programas de instalação do Windows, o sistema irá executar todos os passos de instalação do aplicativo e após a instalação irá criar um lançador (ícone) do aplicativo instalado em seu menu principal.
+</p>
+
+<p>
+	Conforme dito anteriormente, não tenho costume de instalar programas Windows em meu Fedora, porém eu utilizo bastante o <a href="https://www.winehq.org/" alt="Site Oficial Wine" target="_blank">Wine</a> para os programas Portáteis, aqueles que carregamos em Pen Drive, funcionam muito bem, assim os mesmo programas que utilizo para apresentação em sistema Windows acabo utilizando-os no meu Fedora, porém sempre em modo Portátil.
+</p>
+
+<h1>Como instalar as Bibliotecas (DLLs) do Windows no <a href="https://www.winehq.org/" alt="Site Oficial Wine" target="_blank">Wine</a> utilizando o Fedora</h1>
+
+<p>
+	Se acaso você não conseguiu rodar algum programa Windows específico em seu <a href="https://www.winehq.org/" alt="Site Oficial Wine" target="_blank">Wine</a>, então a opção é utilizar o Winetricks que tem a finalidade de instalar as bibliotecas de execução redistribuíveis necessárias para executar alguns programas no Wine. Estes podem incluir substituições de componentes do Wine que utilizam bibliotecas de código fechado.
+</p>
+
+<p>
+	Com um ambiente gráfico desenvolvido em GTK+, é possível, através da área de trabalho, escolher quais bibliotecas deseja instalar, assim antes de iniciar a instalação de qualquer programa mais específico, tal como um MS-Office, Studio Cantasia entre outros. Basta acessar o Winetricks e selecionar as DLLs necessárias para estas aplicações.
+</p>
+
+<p>
+	Para termos acesso á esta aplicação, acesse o Terminal: "Aplicativos->System Tolls->LXTerminal" seguindo os seguintes passos:
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo Root
+su
+
+# Entre com sua senha de root
+Senha:
+
+# Efetue o download do Winetrick
+wget http://sourceforge.net/projects/postinstaller/files/fedora/releases/21/x86_64/winetricks-20130919-1.fc21.noarch.rpm
+
+# Efetue e instalação do Winetricks
+dnf -y install winetricks-20130919-1.fc21.noarch.rpm
+</pre>
+
+<p>
+	Feito isso, atualize o seu Fedora para que todas as bibliotecas do Fedora sejam atualizadas com o <a href="https://www.winehq.org/" alt="Site Oficial Wine" target="_blank">Wine</a> utilizando o seguinte comando em terminal:
+</p>
+
+<pre class="brush: shell, bash">
+# Efetuando a atualização
+dnf -y update
+</pre>
+
+<p>
+	Para maiores informações sobre o Wine e o Winetricks acesse os respectivos sites: <a href="http://wiki.winehq.org/" target="_blank" alt="Wiki WineHQ">Wike HQ</a> e <a href="http://wiki.winehq.org/winetricks" target="_blank" alt="Wiki WineHQ">Wiki Tricks</a>, lá você terá todas as instruções para utilização e configurações mais detalhadas do Wine.
+</p>
+
+</article>

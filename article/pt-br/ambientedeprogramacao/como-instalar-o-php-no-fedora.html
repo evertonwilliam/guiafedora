@@ -1,0 +1,391 @@
+<article>
+<h1>como instalar o Apache no Fedora</h1>
+
+<p>
+	A primeira coisa que temos que instalar é o Servidor Web. E o que é isso? Quando estamos acessando um site da internet, estamos nada mais e nada menos do que invocando os serviços de um servidor web, são vários tipos de servidores, servidores de aplicações, servidores de arquivos, servidores de serviços, servidores de banco de dados, servidores de backup entre outros que poderíamos citar aqui, cada qual com suas funcionalidades e objetivos.
+</p>
+
+<p>
+	Mas afinal o que é um servidor web, em poucas palavras, pode-se dizer que um servidor web é um aplicativo instalado em um computador com a finalidade de efetuar respostas, geralmente, ao protocolo HTTP (Hypertext Transfer Protocol) utilizando como resposta arquivos formatados com a linguagem de marcação HTML (HyperText Markup Language).
+</p>
+
+<p>
+	A HTML é uma linguagem de marcação utilizada para produzir páginas na Web, os documentos HTML podem ser interpretados por navegadores (conhecidos também como browsers) que ao receber um arquivo HTML efetua a renderização deste código e apresenta-o de forma formatada e com uma apresentação amigável ao usuário que está utilizando o navegador.
+</p>
+
+<p>
+	Os servidores web podem além de responder arquivos HTML estáticos, efetuar processamentos de softwares desenvolvidos com linguagens de programação com acesso a banco de dados, quando temos este cenário, dizemos que estes servidores estão processando requisições de sites ou sistemas dinâmicos, ou seja, que podem ter seu conteúdo alterado conforme um determinado processo efetuado no servidor web.
+</p>
+
+<p>
+	Para que estes processos possam ser executados, devemos instalar juntamente com os servidores web, extensões que consigam interpretar tais linguagens e assim consiga, de forma transparente, retornar ao usuário final, o navegador, uma página ou arquivo HTML.
+</p>
+
+<p>
+	Os aplicativos de servidores web mais conhecidos no mercado são: Apache e o IIS (Internet Information Services) esse segundo é de propriedade da Microsoft, embora sua utilização seja totalmente gratuita para máquinas que roda Windows, ele tem seu código fechado, enquanto o primeiro além de ser totalmente gratuito ele tem seu código fonte aberto.
+</p>
+
+<p>
+	Neste momento vamos focar especificamente no Apache, pois este é multi-plataforma podendo ser instalado em máquinas com sistemas operacionais diversos, entre eles o Windows, Linux, IOS, Unix, entre outros.
+</p>
+
+<p>
+	Normalmente instalamos os servidores web em nossos computadores para poder efetuar testes nos aplicativos web que criamos, um usuário que não desenvolve aplicações não tem a necessidade de instalar um servidor web em seu computador, uma vez que este só terá finalidades para desenvolvedores de sites e sistemas web. Assim só será útil um servidor web em seu computador se acaso você for um desenvolvedor de aplicativos web, ou se acaso você utiliza um aplicativo que utilize esta plataforma para ser executado.
+</p>
+
+<p>
+	Todos os servidores que hospedam sites na internet já contêm um servidor web instalado, seja ele qual for para rodar os aplicativos que utilizamos no nosso dia a dia, como, por exemplo, Google Mail, Yahoo Mail, sites de notícias, sites de diversão entre outros diversos. Assim a instalação só se faz necessário se você for um desenvolvedor de aplicativos web ou se você tem algum aplicativo que deseje executar em seu próprio computador e este necessite do servidor web instalado para sua execução.
+</p>
+
+<p>
+	Antes de iniciar o processo de instalação, vamos verificar se o nosso sistema operacional tem este aplicativo instalado, para isso basta abrir o seu navegador de internet favorito (Chromium, Firefox, Opera, Safari ou qualquer outro) e acessar o seguinte endereço: "<a href="http://localhost/" target="_blanck">http://localhost</a>" ou ainda pelo IP local "<a href="http://127.0.0.1/" target="_blanck">http://127.0.0.1/</a>" normalmente o Apache não vem instalado no Linux e devemos instalar, neste primeiro teste é esperado a seguinte mensagem em seu navegador:
+</p>
+
+	<div class="box_img_article">
+		<img class="img_article" src="../screens/pt-br/instalandophp/instalando-php-001.png" />
+	</div>
+
+<p>
+	Para efetuarmos a instalação do Apache no Fedora, devemos seguir os seguintes passos, após acessar o terminal do Fedora no menu: "Aplicativos->System Tolls->LXTerminal".
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse a conta root
+su
+
+# Digite a sua senha:
+Senha:
+
+# Efetue a instalação do serviço HTTPD
+dnf -y install httpd
+</pre>
+
+<p>
+	Feito isso, o sistema irá efetuar o download e a instalação do Apache em seu computador, após isso, devemos ainda solicitar que o servidor seja executado:
+</p>
+
+<pre class="brush: shell, bash">
+# Entre com o comando de inicialização do apache
+service httpd start
+
+# Podendo utilizar o seguinte comando como alternativa
+/bin/systemctl start httpd.service
+</pre>
+
+<p>
+	Se necessário, poderá efetuar a reinicialização do servidor Apache ou efetuar a parada do servidor com os seguintes comandos respectivamente:
+</p>
+
+<pre class="brush: shell, bash">
+# Reiniciando o servidor Apache
+service httpd restart
+
+# Parando o servidor apache
+service httpd stop
+</pre>
+
+<p>
+	Após isso, basta entrar com os endereços "<a href="http://localhost/" target="_blanck">http://localhost</a>" ou ainda pelo IP local "<a href="http://127.0.0.1/" target="_blanck">http://127.0.0.1/</a>" e deverá ser apresentado a seguinte página web:
+</p>
+
+	<div class="box_img_article">
+		<img class="img_article" src="../screens/pt-br/instalandophp/instalando-php-002.png" />
+	</div>
+	
+<p>
+	Se acaso esta página não aparecer, reinicie o computador, e se mesmo assim não funcionar, repita os passos apresentados acima, para que você possa continuar com os passos seguintes.
+</p>	
+
+<h1>Como instalar o Interpretador PHP no Fedora</h1>
+
+<p>
+	Um Servidor de Aplicações (em inglês Applications Server), é um servidor que disponibiliza um ambiente para a instalação e execução de certas aplicações, centralizando e dispensando a instalação nos computadores clientes. Os servidores de aplicação também são conhecidos por middleware.
+</p>
+
+<p>
+	O objetivo do servidor de aplicações é disponibilizar uma plataforma que separe do desenvolvedor de software algumas das complexidades de um sistema computacional. No desenvolvimento de aplicações comerciais, por exemplo, o foco dos desenvolvedores deve ser a resolução de problemas relacionados ao negócio da empresa, e não de questões de infraestrutura da aplicação. O servidor de aplicações responde a algumas questões comuns a todas as aplicações, como segurança, garantia de disponibilidade, balanceamento de carga e tratamento de exceções
+</p>
+
+<p>
+	A PHP é uma linguagem de programação voltada para o desenvolvimento client-server, capaz de gerar conteúdo dinâmico na World Wide Web. A sua versão mais recente, neste momento, é a 5.5.
+</p>
+
+<p>
+	Esta linguagem está em aperfeiçoamento continuo, com suporte nativo à programação orientada a objetos, tem suporte a todas as características desta arquitetura, tal como classes, objetos, encapsulamento, poliformismo, herança, composição, delegação, recursividade etc.
+</p>
+
+<p>
+	Totalmente gratuita e de código aberto tem suporte á maioria, ou talvez, a todos os sistemas operacionais, com suporte á múltiplos bancos de dados, seu código é interpretado no lado do servidor pelo seu core, que também gera uma página WEB que é visualizada no lado do cliente (navegador).
+</p>
+
+<p>
+	A PHP é uma linguagem de programação de domínio específico, ou seja, seu escopo se estende a um campo de atuação que é o desenvolvimento de sistemas que executam na WEB, embora tenha variantes como o PHP-GTK, o seu principal propósito é implementar soluções WEB rápidas, simples e eficientes.
+</p>
+
+<p>
+	Concorrente direto da tecnologia ASP pertencente à Microsoft, a PHP é utilizada em aplicações como o MediaWiki, Facebook, Drupal, Joomla, WordPress, Magento, Oscommerce, PHPMyAdmin, como também em uma vasta gama de aplicativos de propósitos comerciais.
+</p>
+
+<p>
+	Possui uma comunidade muito ampla que, atualmente, fornece suporte à vários frameworks, entre eles: Zend PHP Framework, PHP Fuel, Yii PHP Framework, CodeIgniter PHP Framework, CakePHP PHP Framework, Symfony PHP Framework, PHPDevShell PHP Framework, Prado PHP Framework, Akelos PHP Framework, ZooP PHP Framework entre outros vários existentes na internet.
+</p>
+
+<p>
+	O time de desenvolvimento PHP inclui dezenas de desenvolvedores, também dezenas de outros trabalhando em algo relacionado ao PHP e apoio a projetos como PEAR, PECL, documentação, infra-estrutura de rede subjacente de bem mais de uma centena de servidores web em seis dos sete continentes do mundo. Embora seja apenas uma estimativa baseada sobre estatísticas de anos anteriores, é seguro presumir que o PHP está agora instalado em dezenas, ou mesmo talvez centenas, de milhões de domínios em todo mundo.
+</p>
+
+<p>
+	Antes de efetuar a instalação do PHP, é necessário que o servidor WEB Apache já esteja instalado e funcionando. Então para podermos instalá-lo basta seguir os seguintes passos:
+</p>
+
+<pre class="brush: shell, bash">
+# acesse a conta root
+su
+
+# digite a sua senha:
+Senha:
+
+# instalando o PHP nas versões 20, 21 e 22 do Fedora
+dnf install php php-common
+dnf -y install php-pecl-apc php-cli php-pear php-pdo php-mysql php-pgsql php-pecl-mongo php-sqlite
+dnf -y install php-pecl-memcache php-pecl-memcached php-gd php-mbstring php-mcrypt php-xml
+
+# instalando o PHP nas versões 23 do Fedora
+dnf -y groupinstall php
+
+# reinicie o apache
+service httpd restart
+</pre>
+
+<p>
+	Para verificarmos se o nosso interpretador foi devidamente instalado, vamos criar um arquivo .php no diretório /var/www/html/, utilize os seguintes comandos.
+</p>
+
+<pre class="brush: shell, bash">
+# acesse a conta root
+su
+
+# digite a sua senha:
+Senha:
+
+# Acessar a pasta html
+cd /var/www/html/
+
+# criar o arquivo index.php usando o nano
+nano index.php
+</pre>
+
+<p>
+	Com o editor de texto nano em execução, digite o seguinte código php.
+</p>
+
+<pre class="brush: php">
+&lt;?php
+   phpinfo();
+?&gt;
+</pre>
+
+<p>
+	Salve o arquivo pressionando CTRL + X + S + ENTER e feche o terminal. Logo em seguida abra o seu navegador preferido e entre com o endereço: http://localhost/index.php e deverá aparecer a seguinte página:
+</p>
+
+	<div class="box_img_article">
+		<img class="img_article" src="../screens/pt-br/instalandophp/instalando-php-003.png" />
+	</div>
+
+<p>
+	Se tudo correu corretamente, está instalado o PHP em seu Fedora, Porém podemos melhorar a configuração do servidor, para torná-lo mais intuitivo e prático para nosso dia a dia.
+</p>
+
+<h1>Configurando o Apache para ficar mais intuitivo e prático</h1>
+
+<p>
+	Não basta apenas efetuar a instalação de nosso servidor de aplicações, para o seu bom funcionamento, devemos efetuar algumas configurações básicas, para que fique mais intuitivo o processo de codificação das aplicações que serão desenvolvidas em nosso dia a dia.
+</p>
+
+<p>
+	Da forma que efetuamos a instalação, sempre que você reiniciar o seu computador será necessário executar o comando para inicializar o apache, via terminal. Para que o apache seja inicializado automaticamente ao ligar o computador, basta executar o seguinte comando.
+</p>
+
+<pre class="brush: shell, bash">
+# Configuando para inicializar automaticamente o apache
+chkconfig httpd on
+</pre>
+
+<p>
+	Feito isso, sempre que desligar ou reiniciar o seu sistema Fedora, o Apache será iniciado juntamente com o Boot do sistema operacional.
+</p>
+
+<p>
+	Se você passou por todos os passos da instalação de nosso servidor de aplicações, acredito que tenha percebido que após instalar o interpretador da linguagem PHP, para efetuarmos a criação do arquivo index.php com o comando phpinfo() tivemos que acessar o diretório /var/www/html/ através das diretivas do usuário root. Pois bem, vamos agora fazer com que o Apache reconheça outro diretório como sendo nosso diretório de aplicação através de alias e tornando os arquivos de desenvolvimento acessíveis ao nosso usuário local, sem necessidades das diretivas root.
+</p>
+
+<p><b>A. Criando a estrutura de pastas na área do usuário</b></p>
+
+<p>
+	o diretório do usuário no Linux fica localizada na seguinte estrutura /home/nome_do_usuario/ e é nesta arquitetura que vamos incluir nosso diretório de desenvolvimento, pois nesta área o usuário atual tem o direito de criar, excluir e alterar arquivos sem a necessidade de efetuar alterações na estrutura básica dos diretórios do Sistema Operacional. Neste nosso material vamos criar a seguinte estrutura:
+</p>
+
+<pre class="brush: shell, bash">
+/home/nome_do_usuario/public_html/
+/home/nome_do_usuario/public_html/projeto1
+/home/nome_do_usuario/public_html/projeto2
+/home/nome_do_usuario/public_html/projeto3
+</pre>
+
+<p>
+	Para isso acesse o terminal do Fedora e execute os seguintes passos. Obs.: não acesse o modo root, pois queremos que estes diretórios estejam no poder de manipulação de nosso usuário padrão.
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o diretório de seu usuário, no meu caso é william
+cd /home/william/
+
+# Crie o diretório public_html se acaso não existir ainda
+mkdir public_html
+
+# Acesse a diretório public_html
+cd public_html
+
+# Crie os diretórios projeto1, projeto2, projeto3
+mkdir projeto1
+mkdir projeto2
+mkdir projeto3
+</pre>
+
+<p>
+	Feito estes passos, agora temos a estrutura dos diretórios em nossa área de usuário, agora devemos efetuar dois passos muito importantes, incluir o nosso usuário para o grupo Apache, e em seguida dar privilégios nos diretórios para o nosso usuário utilizando o grupo Apache. Para isso siga as instruções.
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse a conta root
+su
+
+# Entre com sua senha root
+senha:
+
+# Acesse o diretório de seu usuário /home/user
+cd /home/william/
+
+# Adicione o nosso usuário ao grupo Apache
+gpasswd -a william apache
+
+# Altere a permissão do diretório Projetos.
+chown -Rf william:apache /var/www  # onde william é o usuário e apache o grupo
+</pre>
+
+<p>
+	Neste momento estamos com nossa arquitetura pronta para receber nossos arquivos, abra um editor de texto qualquer, pode ser Gedit, Kedit, vim, vi, nano ou qualquer outro e crie um arquivo index.html com as seguintes informações.
+</p>
+
+<pre class="brush: html">
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Projeto 01&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;h1&gt;Projeto 01&lt;/h1&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>
+	Salve uma cópia deste arquivo em cada diretório dentro de Projetos alterando apenas o número do projeto dentro do arquivo, desta forma iremos conseguir testar se o sistema está acessando cada diretório que criamos.
+</p>
+
+<p><b>B. Configurando o Apache para que passe a entender os alias</b></p>
+
+<p>
+	Agora vem a parte mais crítica de toda a configuração, neste momento tenha calma e não tenha pressa, primeiramente efetue uma cópia do diretório /etc/httpd/ completa para um pendrive ou outra área do disco rígido de seu computador, podendo utilizar o ambiente gráfico para isso.
+</p>
+
+<p>
+	Após a cópia do diretório completo, acesse o terminal, acesse o modo root e edite o seguinte arquivo: /etc/httpd/conf/httpd.conf utilizando o seguinte comando:
+</p>
+
+<pre class="brush: shell, bash">
+# Editando o arquivo httpd.conf
+nano /etc/httpd/conf/httpd.conf
+</pre>
+
+<p>
+	Procure dentro deste arquivo as seguintes linhas de comando e as altere conforme abaixo: 
+</p>
+
+<pre class="brush: shell, bash">
+DocumentRoot "/var/www/html" PARA DocumentRoot "/home/william/public_html"
+ServerAdmin root@localhost PARA insira seu e-mail no lugar do root@localhost
+AddDefaultCharset UTF-8 PARA AddDefaultCharset ISO-8859-1
+User apache PARA User william
+</pre>
+
+<p>
+	Feito isso, finalizamos a primeira parte da configuração, vamos agora ver se está tudo funcionando corretamente rodando os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Reiniciando os serviços do Apache
+service httpd restart
+</pre>
+
+<p>
+	Se não aparecer nenhum erro para reiniciar o Apache, então estamos no caminho certo, agora vamos criar os arquivos de configuração dos alias, para isso siga os seguintes passos.
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o diretório de configurações.
+cd /etc/httpd/conf.d
+
+# Crie o nosso primeiro arquivo de configuração
+nano projeto1.conf
+
+# Cole o seguinte conteúdo dentro do arquivo
+Alias /evertonwilliam /home/william/public_html/evertonwilliam
+&lt;Directory /home/william/public_html/projeto1/&gt;
+   Options Indexes FollowSymLinks
+   AllowOverride All
+   Order allow,deny
+   Allow from all
+&lt;/Directory&gt; 
+</pre>
+
+<p>
+	Onde o "william" é o nome do usuário que você efetua login em seu Sistema Fedora e "/evertonwilliam" é o nome que você quer ter acesso ao site, neste exemplo será: http://localhost/evertonwilliam.
+</p>
+
+<p>
+	Agora crie um arquivo para cada projeto, alterando apenas o nome do arquivo e o diretório do alias, feito isso vamos reiniciar o Apache novamente.
+</p>
+
+<pre class="brush: shell, bash">
+# Reiniciando o Apache
+service httpd restart
+</pre>
+
+<p>
+	Se tudo correu bem, então estamos á um passo de nossa conclusão, vamos agora desabilitar o SELinux, pois este irá impedir do Apache acessar o diretório de nosso usuário para isso efetue os seguintes passo:
+</p>
+
+<pre class="brush: shell, bash">
+# Edite o arquivo de configuração do SELinux
+nano /etc/sysconfig/selinux
+
+# Localiza a linha abaixo e a altere para ficar desta forma.
+SELINUX=disabled
+</pre>
+
+<p>
+	Agora reinicie o seu sistema operacional, para que todas as configurações possam ser atribuídas corretamente. Após a inicialização acesse o seu navegador predileto e acesse os seguintes endereços:
+</p>
+
+<pre class="brush: html">
+http://localhost/projeto1
+http://localhost/projeto2 
+http://localhost/projeto3 
+</pre>
+
+<p>
+	Pronto, o seu Apache está com as configurações básicas para que possa ser utilizado em um ambiente de desenvolvimento e testes. Se acaso necessitar de um servidor de banco de dados, vá ao menu principal e escolha o banco a ser instalado e siga os passos para instalá-lo e bons projetos.
+</p>
+
+</article>

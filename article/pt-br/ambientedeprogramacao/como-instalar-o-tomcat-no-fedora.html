@@ -1,0 +1,48 @@
+<article>
+<h1>como instalar o apache tomcat no fedora</h1>
+
+<p>
+	O <a href="http://tomcat.apache.org/" target="_blank">Tomcat</a> é um servidor web Java, mais especificamente, um container de servlets. Ele implementa, dentre outras de menor relevância, as tecnologias Java Servlet e JavaServer Pages (JSP) que são tecnologias criadas para o desenvolvimento de aplicações com a Linguagem JAVA.
+</p>
+
+<p>
+	Criado pela Apache Software Foundation, é distribuído como software livre. Hoje um projeto independente, porém, foi criado dentro do projeto Apache Jakarta e posteriormente separado, devido a conclusão do projeto Jakarta.
+</p>
+
+<p>
+	Ele cobre parte da especificação Java EE com tecnologias como servlet e JSP, e tecnologias de apoio relacionadas como Realms e segurança, JNDI Resources e JDBC DataSources. Ele tem a capacidade de atuar também como servidor web, ou pode funcionar integrado a um servidor web dedicado como o Apache ou o IIS. Como servidor web, ele provê um servidor web HTTP puramente em Java.
+</p>
+
+<p>
+	Antes de efetuar a instalação do <a href="http://tomcat.apache.org/" target="_blank">Tomcat</a>, é necessário efetuar a instalação do Java, se acaso não estiver instalado, para isso acesse este link: "<a href="../configuracoes/como-instalar-o-java-no-fedora" title="Como instalar o java no Fedora" target="_blank">Como instalar o Java no Fedora</a>" e após a instalação do "Oracle Java" ou do "Open JDK" execute os seguintes comandos abaixo.
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Instalando o Tomcat
+dnf -y groupinstall tomcat
+
+# Habilitando para iniciar com o Fedora
+systemctl enable tomcat
+
+# Iniciando o serviço do tomcat
+service tomcat start
+
+# Parando o serviço do tomcat
+service tomcat stop
+
+# Reiniciando o serviço do Tomcat
+service tomcat restart
+</pre>
+
+<p>
+		Se acaso o Java não estiver instalado e for efetuado a instalação do Tomcat, o DNF irá efetuar automaticamente a instalação do OpenJDK, pois faz parte das dependências do Tomcat. Para saber mais sobre o projeto, acesso o <a href="http://tomcat.apache.org/" target="_blank">Site Oficial</a>.
+</p>
+
+
+</article>

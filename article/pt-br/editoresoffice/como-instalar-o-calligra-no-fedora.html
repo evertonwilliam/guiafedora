@@ -1,0 +1,90 @@
+<article>
+<h3>como instalar o calligra suíte Office</h3>
+
+<p>
+	Para quem usa o KDE Plasma como ambiente desktop no Fedora, a comunidade KDE dá a oportunidade de utilizar uma das mais completas suítes de escritório e desenhos gráfico para Linux, disponível para PCs desktop, tablets e smartphones é uma das melhores na área de desenhos e escritórios, estamos falando do <a href="https://www.calligra.org/" alt="Calligra Office" target="_blank">Calligra Office</a>.
+</p>
+
+<p>
+	O <a href="https://www.calligra.org/" alt="Calligra Office" target="_blank">Calligra Office</a> contém uma gama muito grande de aplicativos, segue abaixo a lista e suas funcionalidades:
+</p>
+
+<p>
+	<b>1. Calligra Words:</b> É um processador de texto multifacetado destinado à acadêmicos, empresários e para uso residencial. Igualmente ao MS-Word é possível com apenas alguns cliques do seu mouse, inserir objetos como imagens, gráficos, cliparts podendo ser organizados facilmente ou alterados, enquanto o texto simplesmente flui em torno dele.
+</p>
+
+<p>
+	<b>2. Calligra Stage:</b> Igualmente ao MS-PowerPoint ele é um aplicativo de apresentação poderosa e de fácil utilização, contempla várias opções surpreendentes, podendo criar slides usando imagens, vídeos, animações e apresentações, fazer uma apresentação nunca foi tão fácil! Com plug-ins disponíveis para o Calligra Suíte, há mais opções do que nunca para adicionar aos slides.
+</p>
+
+<p>
+	<b>3. Calligra Sheets:</b> É o aplicativo de planilha eletrônica, podendo ser usado para criar rapidamente planilhas com fórmulas e gráficos, para calcular e organizar seus dados em uma planilha. Calligra vem com opções para Empresas, Negócios e residencial com um conjunto planilhas pré-montadas, como também uma espantosa variedade de fórmulas pré-estabelecidas.
+</p>
+
+<p>
+	<b>4. Calligra flow:</b> É usado para fazer diagramas e fluxogramas. Use Flow para fazer diagramas de rede, organogramas, fluxogramas e muito mais. O Flow também vem com várias extensões que podem ser usados para fazer o que quiser. Há opções para Networking, Energia Renovável, Química, locais de construção, e muitas outras opções para ajudar a fazer qualquer tipo de diagrama.
+</p>
+
+<p>
+	<b>5. Calligra Kexi:</b> É um criador de banco de dados visuais, muito mais robusto que o MS-ACCESS e com todos os recursos nele existente, ele pode ser usado para a criação de aplicações de banco de dados, inserir e editar dados, efetuar pesquisas e processamento de dados. Os formulários podem ser criados para fornecer uma interface personalizada para sua aplicação. O Kexi administra todos os objetos de banco de dados, as tabelas, consultas, formulários, relatórios.
+</p>
+
+<p>
+	<b>6. Calligra Plan:</b> Muito parecido com o MS-Project, é uma ferramenta utilizada para o gerenciamento de tarefas, voltado para projetos com vários recursos. Oferece diferentes tipos de dependências de tarefas e restrições de tempo. O caso de uso habitual é definir as suas tarefas, estimar o esforço necessário para realizar cada tarefa, alocar recursos e, em seguida, deixar Plan agendar as tarefas de acordo com a rede e disponibilidade de recursos.
+</p>
+
+<p>
+	<b>7. Calligra Karbon:</b> Sua especialidade é criar imagens gráficas vetoriais, utilizando camadas avançadas é possível criar ilustrações com efeitos de alta qualidade.
+</p>
+
+<p>
+	<b>8. Calligra Krita:</b> é uma poderosa ferramenta para criação de ilustração, possibilitando também ser usado como ferramenta de retoques e manipulação de fotografia, conversor de formatos, etc.
+</p>
+
+<p>
+	Para a instalação do Suíte da  <a href="https://www.calligra.org/" alt="Calligra Office" target="_blank">Calligra</a>, necessitamos baixar o repositório do KDE, para isso acesse o Terminal: "Aplicativos->System Tolls->LXTerminal" e digite os seguintes comandos:
+</p>
+
+<pre class="brush: bash">
+# Acesse o modo Root
+su
+
+# Entre com sua senha de root
+Senha:
+
+# Acessando a pasta de repositórios
+cd /etc/yum.repos.d/
+
+# Instalando o Repositório KDE
+wget http://apt.kde-redhat.org/apt/kde-redhat/fedora/kde.repo
+
+# Atualize os repositórios
+yum -y update
+
+# Efetue a instalação do calligra-suite
+yum -y install calligra*
+</pre>
+
+<p>
+	Se acaso não tenha gostado das ferramentas do Calligra, basta efetuar a desinstalação da suíte utilizando os seguintes passos:
+</p>
+
+<pre class="brush: bash">
+# Efetue a desinstalação do calligra-suite
+yum -y remove calligra*
+</pre>
+
+<p>
+	Lembrando que o símbolo (*) substitui o comando groupinstall, do qual significa todos os aplicativos do  <a href="https://www.calligra.org/" alt="Calligra Office" target="_blank">Calligra</a> se desejar remover um aplicativo especifico, basta inserir o nome do aplicativo após o Calligra, da seguinte forma:
+</p>
+
+<pre class="brush: bash">
+# Efetue a desinstalação do calligra-suite
+yum -y remove calligra-krita
+</pre>
+
+<p>
+	Simples não é? Agora você pode desfrutar de uma sute muito poderosa para edição de textos, apresentações e imagens com o <a href="https://www.calligra.org/" alt="Calligra Office" target="_blank">Calligra Office</a>
+</p>
+
+</article>

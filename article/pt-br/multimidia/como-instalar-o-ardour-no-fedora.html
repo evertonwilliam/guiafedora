@@ -1,0 +1,36 @@
+<article>
+<h1>como instalar o ardour no fedora</h1>
+
+<p>
+	O <a href="http://ardour.org/" target="_blank">Ardour</a> é um programa livre e de código aberto para gravação de áudio digital adequado para uso profissional. Ele apresenta faixas de áudio ilimitadas e ônibus, edição não-destrutiva, não-linear com ilimitado undo, e nada-a-qualquer lugar sinal de roteamento. Ele suporta os formatos de arquivo padrão, como BWF, WAV, WAV64, AIFF e CAF, e ele pode usar LADSPA, LV2, VST e formatos de plugin AudioUnit.
+</p>
+
+<p>
+	O <a href="http://ardour.org/" target="_blank">Ardour</a> roda em Linux e Mac OS X, e usa o Kit de Conexão Jack Áudio (JACK) para fazer a interface com placa de som do computador, bem como com outras aplicações de áudio em execução no mesmo sistema.
+</p>
+
+<p>
+	Você pode encontrar um conteúdo completo sobre as funcionalidades do aplicativo no site oficial do <a href="http://ardour.org/" target="_blank">Ardour</a> acessando o link "Features" do site.
+</p>
+
+<p>
+	Para efetuar a instalação, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Digite este comando para instalar o Ardour
+dnf -y install ardour qjackctl jamin ladspa-swh-plugins ladspa-cmt-plugins
+dnf -y install ladspa-fil-plugins ladspa-caps-plugins ladspa-tap-plugins ladspa-rev-plugins
+</pre>
+
+<p>
+	O dnf se encarregará de instalar todas as dependências do aplicativo, por isso tenha paciência por são muitas. Se você estiver interessado em conhecer mais sobre este aplicativo, acesse o site oficial em <a href="http://ardour.org/" target="_blank">Ardour</a> ou acesse o Wiki deste aplicativo em: <a href="http://en.flossmanuals.net/ardour_es_es/index/" target="_blank">Ardour</a> 
+</p>
+
+</article>

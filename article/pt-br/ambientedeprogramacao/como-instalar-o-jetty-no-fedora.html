@@ -1,0 +1,71 @@
+<article>
+	<h1>como instalar o jetty no fedora</h1>	
+
+<p>
+	O Jetty é um servidor HTTP e Servlet Container 100% escrito em Java. É o grande concorrente do Tomcat que ficou famoso por ter sido utilizado como o servlet container do JBoss antigamente.
+</p>
+
+<p>
+	A grande vantagem do Jetty com relação ao Tomcat é a sua fácil configuração. Ele também foi o pioneiro a usar I/O assíncrono para aguentar uma carga maior de usuários simultâneos sem depender da antiga estratégia thread-per-connection. 
+</p>
+
+<p>
+	É o servidor Java utilizado em grandes sites brasileiros, como o fórum do GUJ, e até americanos, como o Artist Connect, da Apple.
+</p>
+
+<p>
+	Antes de efetuar a instalação do Jetty, é necessário efetuar a instalação do Java, se acaso não estiver instalado, para isso acesse este link: "<a href="../configuracoes/como-instalar-o-java-no-fedora" title="Como instalar o java no Fedora" target="_blank">Como instalar o Java no Fedora</a>" e após a instalação do "Oracle Java" ou do "Open JDK" execute os seguintes passos abaixo.
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Baixando o arquivo de instalação do Jetty
+wget http://eclipse.org/downloads/download.php?file=/jetty/stable-9/dist/jetty-distribution-9.3.6.v20151106.tar.gz
+
+# Extraindo o Jetty
+tar zxvf jetty-distribution-9.3.6.v20151106.tar.gz -C /opt/
+
+# Renomeando a pasta descompactada para Jetty
+mv /opt/jetty-distribution-9.3.6.v20151106/ /opt/jetty
+
+# Criando o usuário para iniciar o Jetty
+useradd -m jetty
+
+# Alterando as permissões de acesso á pasta do Jetty
+chown -R jetty:jetty /opt/jetty/
+
+# Criando um link para a pasta de inicialização do Fedora
+ln -s /opt/jetty/bin/jetty.sh /etc/init.d/jetty
+
+# Criando o script
+chkconfig --add jetty
+
+# Fazendo o Jetty ser executado ao iniciar o sistema
+chkconfig --level 345 jetty on
+
+# Se desejar alterar qualquer informação como a porta de acesso edite o arquivo /etc/default/jetty
+JETTY_HOME=/opt/jetty
+JETTY_USER=jetty
+JETTY_PORT=8080
+JETTY_HOST=192.168.12.10
+JETTY_LOGS=/opt/jetty/logs/
+
+# Inicializando o Jetty
+service jetty start
+
+# Parando o Jetty
+service jetty stop
+
+# Reiniciando o Jetty
+service jetty start
+</pre>
+
+<p>
+	Se desejar baixar outras versões do Jetty ou obter mais informações, acesse o <a href="http://download.eclipse.org/jetty/" target="_blank">Site Oficial do projeto</a>.
+</p>
+</article>

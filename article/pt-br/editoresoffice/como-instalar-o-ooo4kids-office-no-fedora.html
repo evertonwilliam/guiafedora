@@ -1,0 +1,132 @@
+<article>
+<h1>Como instalar o OOo4Kids no Fedora</h1>
+
+<p>
+	<a href="http://educoo.org/OOo4Kids.php" title="OOo4Kids" target="_blank">OOo4Kids</a> é uma suíte de escritório adaptada para escolas infantis e faculdades, criados a partir de OpenOffice.org, e concebidos em colaboração com os atores do mundo da educação (professores, líderes EPN, formadores, educadores ...) .
+</p>
+
+<p>
+	É composto de quatro módulos simplificados para o uso fácil com crianças: Writer, Calc, Impress, Draw. do qual segue a lista de definições de cada um destes módulos.
+</p>
+
+<p>
+	<b>1. Writer:</b> A ênfase está na acessibilidade das características mais comuns. A interface do usuário depende do nível: ajuste é realizado pelo professor através das preferências de software. Como um estudante novato terá uma interface mínima, um especialista irá interface completa. Para evitar modificação não autorizada, é possível proteger com uma senha. Inclui descobertas reais como fontes cursivas roteiros ideais para aprender a ler e até mesmo uma fonte projetada para ajudar as pessoas disléxicas.
+</p>
+
+<p>
+	<b>2. Calc:</b> Suas características são voluntariamente restrito a um estudante usaria primária ou faculdade, a fim de simplificar a interface. Somente botões úteis por um estudante foram mantidos. O documento de planilha <a href="http://educoo.org/OOo4Kids.php" alt="OOo4Kids" target="_blank">OOo4Kids</a> contém 256 linhas e 64 colunas e tem apenas planilha padrão (em vez de três). Dependendo do grau do utilizador, a lista de funções matemáticas disponíveis varia. Todas as funções estão presentes e utilizável, mas não são necessariamente visíveis na lista proposta pelas "funções" do assistente.
+</p>
+
+<p>
+	<b>3. Draw:</b> Com uma barra de ferramentas que simplifica a abordagem de Draw. Você tem, além de formas básicas convencionais prontos para uso, formas mais especiais, como banners, estrelas e lendas. Orientação paisagem é posicionado por padrão para níveis "iniciante" de usuários e orientação e "médio" retrato no modo "avançado". Se para executar simples esboços ou desenhos complexos, Draw você será rapidamente indispensável.
+</p>
+
+<p>
+	<b>4. Match:</b> Procurando por um aplicativo para edição de fórmulas matemáticas? Math tem a solução e elimina a necessidade de utilizar uma aplicação externa. Com ele você pode integrar e frações letras gregas, equações e fórmulas, com termos incluindo expoentes e índices, etc. em todos os seus tipos de documento.
+</p>
+
+<p>
+	Para efetuar a instalação na plataforma 32bits deste aplicativo, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Baixando para plataforma 32bits
+wget http://sourceforge.net/projects/educooo/files/OOo4Kids/Linux/1.3/pt/OOo4Kids_1.3_120525_LinuxIntel_install_pt_rpm.tar.gz
+
+# Descompactando a versão 32bits
+tar -vzxf  OOo4Kids_1.3_120525_LinuxIntel_install_pt_rpm.tar.gz
+
+# Acesse a pasta onde estão os arquivos RPMS
+cd pt/RPMS
+
+# efetue a instação do OOo4Kids
+rpm -Uvh *.rpm
+
+# efetue a instalação dos ícones no menu principal
+cd desktop-integration
+rpm -Uvh OOo4kids1.3-redhat-menus-1.3-131.noarch.rpm
+</pre>
+
+<p>
+	Para efetuar a instalação na plataforma 64bits deste aplicativo, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Baixando para plataforma 64bits
+http://sourceforge.net/projects/educooo/files/OOo4Kids/Linux/1.3/pt/OOo4Kids_1.3_120619_LinuxX86-64_install_pt_rpm.tar.gz
+
+# Descompactando a versão 32bits
+tar -vzxf OOo4Kids_1.3_120619_LinuxX86-64_install_pt_rpm.tar.gz
+
+# Acesse a pasta onde estão os arquivos RPMS
+cd pt/RPMS
+
+# efetue a instação do OOo4Kids
+rpm -Uvh *.rpm
+
+# efetue a instalação dos ícones no menu principal
+cd desktop-integration
+rpm -Uvh OOo4kids1.3-redhat-menus-1.3-131.noarch.rpm
+</pre>
+
+<p>
+	Os aplicativos instalados estarão na pasta "/opt/ooo4kids1.3/program" para executá-los basta acessar o terminal no menu "Aplicativos->System Tolls->LXTerminal" e entrar com os seguintes comandos:
+</p>
+
+<pre class="brush: shell, bash">
+# Executando o OOo4Kids
+/opt/ooo4kids1.3/program/soffice
+</pre>
+
+<p>
+	No LXDE é necessário efetuar a criação dos link no Menu principal, para isso você deverá seguir os seguintes passos:
+</p>
+
+<pre class="brush: shell, bash">
+# Acesse o modo superusuario.
+su
+
+# Digite a sua senha de superusuário
+Senha
+
+# Acesse o diretório de icones do menu
+/usr/share/applications/
+
+# Crie um arquivo de icone
+leafpad ooo4kids1.3-ooo4kids.desktop
+
+# Cole este conteúdo no editor que abrir
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=OOo4Kids
+Name[en_US]=OOo4Kids
+GenericName=Word Processor
+Exec=/opt/ooo4kids1.3/program/soffice
+Comment[en_US]=Office for kids
+StartupNotify=true
+MimeType=application/x-abiword;text/x-abiword;text/x-xml-abiword;text/plain;application/msword;application/rtf;application/vnd.plain;application/xhtml+xml;text/html;application/x-crossmark;application/docbook+xml;application/x-t602;application/vnd.oasis.opendocument.text;application/vnd.oasis.opendocument.text-template;application/vnd.oasis.opendocument.text-web;application/vnd.sun.xml.writer;application/vnd.stardivision.writer;text/vnd.wap.wml;application/wordperfect6;application/wordperfect5.1;application/vnd.wordperfect;application/x-abicollab;application/x-applix-word;application/x-mswrite;application/x-kword;application/x-mif;
+Categories=Office;WordProcessor;GNOME;GTK;X-Red-Hat-Base;
+
+# Atualize a barras de menu do LXDE
+lxpanelctl restart
+</pre>
+
+<p>
+	Pronto, agora você já pode desfrutar do seu mais novo pacote de ferramentas office no Fedora.
+</p>
+
+
+</article>
