@@ -10,6 +10,10 @@
 </p>
 
 <p>
+	ATENÇÃO: A Google descontinuou a versão 32 bits do Chrome para Linux, por este motivo não existe mais a opção de instalação do Chrome 32 bits neste manual.
+</p>
+
+<p>
 	Vamos então instalá-lo em nosso Fedora, primeiramente devemos baixar o arquivo RPM do navegador,para isso vamos utilizar a ferramenta wget e em seguida instalá-lo. Acesse o terminal pelo seguinte menu: "Aplicativos->System Tolls->LXTerminal" e entre com os seguintes comandos.
 </p>
 
@@ -23,9 +27,6 @@ Senha
 # Digite esse comando instalar o repositório (somente 64bits)
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
 
-# Digite esse comando instalar o repositório (somente 32bits)
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_I386.rpm
-
 # Digite o comando abaixo e faça o download da chave de utilização
 wget https://dl.google.com/linux/linux_signing_key.pub
 
@@ -35,17 +36,11 @@ rpm --import linux_signing_key.pub
 # Digite esse comando para instalar a chave
 rpm -qi gpg-pubkey-7fac5991-*
 
-# Digite este comando validação do arquivo (somente 64bits)
+# Digite este comando validação do arquivo
 rpm --checksig -v google-chrome-stable_current_x86_64.rpm
 
-# Digite este comando validação do arquivo (somente 32bits)
-rpm --checksig -v google-chrome-stable_current_I386.rpm
-
-# Digite este comando para Instalar o chrome (somente 64bits)
+# Digite este comando para Instalar o chrome
 dnf -y install google-chrome-stable_current_x86_64.rpm
-
-# Digite este comando para Instalar o chrome (somente 32bits)
-dnf -y install google-chrome-stable_current_I386.rpm
 </pre>
 
 <p>

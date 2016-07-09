@@ -1,12 +1,12 @@
 <article>
-	<h1>como instalar o jetty no fedora</h1>	
+	<h1>como instalar o jetty no fedora</h1>
 
 <p>
 	O Jetty é um servidor HTTP e Servlet Container 100% escrito em Java. É o grande concorrente do Tomcat que ficou famoso por ter sido utilizado como o servlet container do JBoss antigamente.
 </p>
 
 <p>
-	A grande vantagem do Jetty com relação ao Tomcat é a sua fácil configuração. Ele também foi o pioneiro a usar I/O assíncrono para aguentar uma carga maior de usuários simultâneos sem depender da antiga estratégia thread-per-connection. 
+	A grande vantagem do Jetty com relação ao Tomcat é a sua fácil configuração. Ele também foi o pioneiro a usar I/O assíncrono para aguentar uma carga maior de usuários simultâneos sem depender da antiga estratégia thread-per-connection.
 </p>
 
 <p>
@@ -25,13 +25,13 @@ su
 Senha
 
 # Baixando o arquivo de instalação do Jetty
-wget http://eclipse.org/downloads/download.php?file=/jetty/stable-9/dist/jetty-distribution-9.3.6.v20151106.tar.gz
+wget http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/9.3.10.v20160621/jetty-distribution-9.3.10.v20160621.tar.gz
 
 # Extraindo o Jetty
-tar zxvf jetty-distribution-9.3.6.v20151106.tar.gz -C /opt/
+tar zxvf jetty-distribution-9.3.10.v20160621.tar.gz -C /opt/
 
 # Renomeando a pasta descompactada para Jetty
-mv /opt/jetty-distribution-9.3.6.v20151106/ /opt/jetty
+mv /opt/jetty-distribution-9.3.10.v20160621.tar.gz/ /opt/jetty
 
 # Criando o usuário para iniciar o Jetty
 useradd -m jetty

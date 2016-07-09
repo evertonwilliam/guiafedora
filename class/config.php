@@ -15,7 +15,7 @@ if(isset($_POST['lang'])){
 
 // DIRECTORY RAIZ
 if(!defined('PROJECT_DIR'))
-	define('PROJECT_DIR', '/guiafedora/');
+	define('PROJECT_DIR', '/');
 
 // DIRECTORY APPLICATION
 if(!defined('APPLICATION_DIR'))
@@ -29,11 +29,16 @@ if(!defined('REQUEST_URI'))
 if(!defined('REQUEST_URLF'))
 	define('REQUEST_URLF', $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].PROJECT_DIR);
 
+// FOLLOW link
+if(!defined('REQUEST_FOLLOW'))
+	define('REQUEST_FOLLOW',$_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+
+
 // FILE READY
 if(!defined('REQUEST_URL')){
 	$url = str_replace(PROJECT_DIR,'',$_SERVER['REQUEST_URI'].'.html');
 	if($url == '.html'){
-		define('REQUEST_URL','introducao/prefacio.html');
+		define('REQUEST_URL','/introducao/prefacio.html');
 	}else{
 		define('REQUEST_URL',str_replace(PROJECT_DIR,'/',$_SERVER['REQUEST_URI'].'.html'));
 	}

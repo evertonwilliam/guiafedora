@@ -5,12 +5,12 @@
 	O <a href="http://cinelerra.org/2015/index.php" alt="Cinelarra" target="_blank">Cinelerra</a> é um programa profissional de edição de vídeo originariamente desenhado para os sistemas operativos Linux. É um software livre, sob a licença GPL (General Plublic License) pelo que poderá ser baixado e instalado sem nenhum encargo.
 </p>
 
-<p> 
+<p>
 	Ele suporta OpenGL em algumas placas gráficas NVIDIA, o que acelera enormemente a reprodução. Atualmente o padrão para a programação GPU mudou ao longo dos anos entre NC, GLSL, e CUDA. A Intel e a ATI/AMD criaram seus próprios padrões. O <a href="http://cinelerra.org/2015/index.php" alt="Cinelarra" target="_blank">Cinelarra</a> foi escrito em GLSL, que só está disponível nas placas NVidia e atualmente parece ser a minoria existente no mercado.
 </p>
 
 <p>
-	Para efetuar a instalação, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+	Para efetuar a instalação, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos:
 </p>
 
 <pre class="brush: shell, bash">
@@ -20,26 +20,17 @@ su
 # Digite a sua senha de superusuário
 Senha
 
-# Importe a chave publica do Atrpms 
-rpm import http://ATrpms.net/RPM-GPG-KEY.atrpms
+# Baixe os arquivos do Cinelerra  32 bits
+wget ftp://195.220.108.108/linux/atrpms/el6-i386/atrpms/stable/cinelerra-2.1-24.2_git20110613.el6.i686.rpm
 
-# Edite o arquivo de repositórios do Fedora
-gedit /etc/yum.repos.d/cinelerra.repo
+# Ou baixe os arquivos do Cinelerra 64 bits
+wget ftp://195.220.108.108/linux/atrpms/sl6-x86_64/atrpms/stable/cinelerra-2.1-24.2_git20110613.el6.x86_64.rpm
 
-# Cole este conteúdo no arquivo
-[atrpms]
-name=Fedora Core $releasever - $basearch - ATrpms
-baseurl=http://dl.atrpms.net/f$releasever-$basearch/atrpms/stable
-gpgkey=http://ATrpms.net/RPM-GPG-KEY.atrpms
-gpgcheck=1
+# Instale o Cinelerra 32 bits no Fedora
+dnf -y install cinelerra-2.1-24.2_git20110613.el6.i686.rpm
 
-# Atualize o sistema após a gravação do arquivo
-dnf -y makecache
-dnf -y check-update
-dnf -y update
-
-# Instale o Cinelerra no Fedora
-dnf -y install cinelerra
+# Instale o Cinelerra 64bits no Fedora
+dnf -y install cinelerra-2.1-24.2_git20110613.el6.x86_64.rpm
 </pre>
 
 <p>

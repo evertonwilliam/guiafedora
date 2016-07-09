@@ -14,10 +14,10 @@
 </p>
 
 <p>
-	Que tal começar a utilizar os serviços da núvem para manter seguro os seus arquivos pessoais? Vamos instalá-lo? Para isso, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+	Que tal começar a utilizar os serviços da núvem para manter seguro os seus arquivos pessoais? Vamos instalá-lo? Para isso, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos:
 </p>
 
-<p> 
+<p>
 	Obs.: Os procedimento abaixo são para a instalação do <a href="https://www.dropbox.com" alt="Download DropBox" target="_blank">DropBox</a> no Fedora que esteja instalado com o ambiente Gnome e suas ramificações, tais como LXDE, XFCE, GNOME SHELL etc. Para KDE estaremos atualizando esta matéria, do qual falaremos da instalação do <a href="http://kdropbox.deuteros.es/" alt="Kfilebox Project" target="_blank">Kfilebox</a>.
 </p>
 
@@ -57,8 +57,11 @@ su
 # Digite a sua senha de superusuário
 Senha
 
-# efetue a instalação do Dropbox
+# efetue a instalação do Dropbox 64 bits
 dnf -y install nautilus-dropbox-2015.10.28-1.fedora.x86_64.rpm
+
+# efetue a instalação do Dropbox 32 bits
+dnf -y install nautilus-dropbox-2015.10.28-1.fedora.i386.rpm
 </pre>
 
 <p>

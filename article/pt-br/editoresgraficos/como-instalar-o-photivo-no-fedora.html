@@ -14,7 +14,7 @@
 </p>
 
 <p>
-	Para efetuar a instalação deste aplicativo, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+	Para efetuar a instalação deste aplicativo, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos:
 </p>
 
 <pre class="brush: shell, bash">
@@ -25,20 +25,28 @@ su
 Senha
 
 # Instalando as dependencias
-sudo yum install gcc gcc-c++ ccache qt-devel mercurial libjpeg-turbo-devel exiv2-devel lensfun-devel fftw-devel libpng-devel libtiff-devel gimp-devel lcms2-devel liblqr-1-devel fftw3-devel libjasper-devel libwmf-devel liblqr-1-devel GraphicsMagick-c++-devel 
+sudo yum install gcc gcc-c++ ccache qt-devel mercurial libjpeg-turbo-devel exiv2-devel lensfun-devel fftw-devel libpng-devel libtiff-devel gimp-devel lcms2-devel liblqr-1-devel fftw3-devel libjasper-devel libwmf-devel liblqr-1-devel GraphicsMagick-c++-devel
 
-# Baixe os arquivos fontes do aplicativo
-wget http://download.opensuse.org/repositories/home:/sergeyopensuse/Fedora_20/src/photivo-alexander-1063rev1a9673d035b3-10.2.src.rpm
+# Baixe os binarios do phototipo versão 64 bits
+wget http://download.opensuse.org/repositories/home:/sergeyopensuse/Fedora_23/x86_64/photivo-1117rev5d7d1cc4ef4d-283.1.x86_64.rpm
 
-# efetue a compilação do código fonte
-rpmbuild --rebuild photivo-alexander-1063rev1a9673d035b3-9.1.src.rpm
+# Baixe os plugin para o gimp do Phototipo 64 bits
+http://download.opensuse.org/repositories/home:/sergeyopensuse/Fedora_23/x86_64/photivo-gimp-1117rev5d7d1cc4ef4d-283.1.x86_64.rpm
 
-# efetue a instalação
-cd [diretório gerado pela build]
-dnf -y install photivo-alexander-1063rev1a9673d035b3-9.1.x86_64.rpm photivo-alexander-gimp-1063rev1a9673d035b3-9.1.x86_64.rpm
+# Se acaso sua instalação for 32 bits, então efetue estes downloads
+# Baixe os binarios do phototipo versão 32 bits
+wget http://download.opensuse.org/repositories/home:/sergeyopensuse/Fedora_23/i686/photivo-1117rev5d7d1cc4ef4d-283.1.i686.rpm
 
-# acesse o aplicativo pelo comando
-photivo
+# Baixe os plugin para o gimp do Phototipo 64 bits
+wget http://download.opensuse.org/repositories/home:/sergeyopensuse/Fedora_23/i686/photivo-gimp-1117rev5d7d1cc4ef4d-283.1.i686.rpm
+
+# Para efetuar a instalação em 64 bits, basta executar este comando
+dnf -y install photivo-1117rev5d7d1cc4ef4d-283.1.x86_64.rpm
+dnf -y install photivo-gimp-1117rev5d7d1cc4ef4d-283.1.x86_64.rpm
+
+# Para efetuar a instalação em 32 bits, basta executar este comando
+dnf -y install photivo-1117rev5d7d1cc4ef4d-283.1.i686.rpm
+dnf -y install photivo-gimp-1117rev5d7d1cc4ef4d-283.1.i686.rpm
 </pre>
 
 <p>

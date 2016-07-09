@@ -1,7 +1,7 @@
 <?php
 	require_once('class/config.php');
 	require_once('class/redirect.php');
-	require_once('class/language/'.$_COOKIE[LANG].'.php');
+	//require_once('class/language/'.$_COOKIE[LANG].'.php');
 	require_once('class/titlepage.php');
 ?>
 <!DOCTYPE HTML>
@@ -51,12 +51,10 @@
 		<link rel="apple-touch-icon-precomposed" href="<?=REQUEST_URLF?>design/144x144.png">
 		<!-- Tile icon for Win8 (144x144 + tile color) -->
 
-		<meta name="google-site-verification" content="YIv32qaTUhgsLeijqA_zb5P-9yhubKpqfoWB00NCFeI" />
 		<meta name="classification" content="Como Instalar o Fedora, Instalação de Sistemas Operacionais, Manual do Usuário, Guia do Usuário, Tecnologias, Informática, TI" />
 		<meta name="Description" content="Guia do usuário do sistema Linux Fedora - tudo o que você precisa saber sobre o Linux Fedora" />
 		<meta name="Keywords" content="Linux, Fedora, RHEL, Red-Hat, manual, guia, instalação, configuração, pos-instalação, utilitários, aplicativos, programas, GNU, GNU Linux, Aprendendo Linux, Entendendo o Linux, GNU-Linux, Documentação Fedora" />
 		<meta name="robots" content="index,follow" />
-		<meta name="robots" content="noarchive" />
 		<meta name="author" content="Everton William Constantino"/>
 		<meta name="reply-to" content="contato@evertonwilliam.com.br" />
 		<meta name="Custodian" content="Everton William Constantino" />
@@ -91,11 +89,29 @@
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 
+		<!-- TWITTER CONNECT -->
+		<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
 		<!-- FACEBOOK CONNECT -->
 		<script src="http://connect.facebook.net/pt_BR/all.js#xfbml=1"></script>
 
+		<!-- PLUS CONNECT -->
+		<script src="https://apis.google.com/js/platform.js" async defer>
+		  {lang: 'pt-BR'}
+		</script>
+
+
 	</head>
 	<body>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-59530365-5', 'auto');
+		  ga('send', 'pageview');
+		</script>
 		<div id="all">
 
 		<!-- INIT HEADER -->
@@ -106,6 +122,7 @@
 					<div class="url">
 					<?='...'.(REQUEST_URI != '/' ? REQUEST_URI : "/introducao/prefacio") ?>
 					</div>
+					<!--
 					<div class="idioma">
 						<form id="lang" action="." method="post">
 							<select name="lang">
@@ -114,6 +131,7 @@
 							<input type="submit" value="OK">
 						</form>
 					</div>
+					-->
 				</div>
 
 				<div class="bandheader">
@@ -123,10 +141,14 @@
 
 				<div class="social">
 					<ul>
-						<li><a href="javascript: void(0);" onclick="window.open('http://www.facebook.com/share.php?u=<?=REQUEST_URLF?>&t=Guia Linux Fedora','fcompart', 'toolbar=0, status=0, width=650, height=450');"><span class="fa fa-facebook-square small"></span></a></li>
-						<li><a href="javascript: void(0);" onclick="window.open('https://plus.google.com/share?url=<?=REQUEST_URLF?>','gcompart', 'toolbar=0, status=0, width=650, height=450');"><span class="fa fa-google-plus-square small"></span></a></li>
-						<li><a href="javascript: void(0);" onclick="window.open('http://twitter.com/share?text=Guia Linux Fedora&url=<?=REQUEST_URLF?>&counturl=http://guiafedora.evertonwilliam.com.br&via=evertonwilliamc','tcompart', 'toolbar=0, status=0, width=650, height=450');"><span class="fa fa-twitter-square small"></span></a></li>
-						<li><a href="javascript: void(0);" onclick="window.open('http://pinterest.com/pin/create/button/?url=<?=REQUEST_URLF?>&media=<?=REQUEST_URLF?>/design/favicon.png&description=Guia Fedora','pcompart', 'toolbar=0, status=0, width=650, height=450');"><span class="fa fa-pinterest-square small"></span></a></li>
+						<li><a href="javascript: void(0);" onclick="window.open('http://www.facebook.com/share.php?u=<?=REQUEST_FOLLOW?>&t=Guia Linux Fedora','fcompart', 'toolbar=0, status=0, width=650, height=450');"><span class="fa fa-facebook-square small"></span></a></li>
+
+						<li><a href="javascript: void(0);" onclick="window.open('https://plus.google.com/share?url=<?=REQUEST_FOLLOW?>','gcompart', 'toolbar=0, status=0, width=650, height=450');"><span class="fa fa-google-plus-square small"></span></a></li>
+
+						<li><a href="javascript: void(0);" onclick="window.open('http://twitter.com/share?text=Guia Fedora&url=<?=REQUEST_FOLLOW?>&counturl=http://guiafedora.evertonwilliam.com.br&via=evertonwilliamc','tcompart', 'toolbar=0, status=0, width=650, height=450');"><span class="fa fa-twitter-square small"></span></a></li>
+
+						<li><a href="javascript: void(0);" onclick="window.open('http://pinterest.com/pin/create/button/?url=<?=REQUEST_FOLLOW?>&media=<?=REQUEST_URLF?>/design/favicon.png&description=Guia Fedora','pcompart', 'toolbar=0, status=0, width=650, height=450');"><span class="fa fa-pinterest-square small"></span></a></li>
+
 					</ul>
 				</div>
 
@@ -152,7 +174,7 @@
 			<!-- INIT FOOTER -->
 			<div id="footer">
 				<footer>
-				  <p>Copyright&copy; 2015 - Guia Fedora</p>
+				  <p>Copyright&copy; 1998-2016 - Guia Fedora</p>
 				</footer>
 			</div>
 
@@ -178,6 +200,5 @@
 			SyntaxHighlighter.defaults['toolbar'] = false;
 			SyntaxHighlighter.all();
 		</script>
-
 	</body>
 </html>

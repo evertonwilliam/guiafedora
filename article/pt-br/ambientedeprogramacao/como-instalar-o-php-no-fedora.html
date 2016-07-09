@@ -91,10 +91,10 @@ service httpd stop
 	<div class="box_img_article">
 		<img class="img_article" src="../screens/pt-br/instalandophp/instalando-php-002.png" />
 	</div>
-	
+
 <p>
 	Se acaso esta página não aparecer, reinicie o computador, e se mesmo assim não funcionar, repita os passos apresentados acima, para que você possa continuar com os passos seguintes.
-</p>	
+</p>
 
 <h1>Como instalar o Interpretador PHP no Fedora</h1>
 
@@ -150,7 +150,7 @@ dnf install php php-common
 dnf -y install php-pecl-apc php-cli php-pear php-pdo php-mysql php-pgsql php-pecl-mongo php-sqlite
 dnf -y install php-pecl-memcache php-pecl-memcached php-gd php-mbstring php-mcrypt php-xml
 
-# instalando o PHP nas versões 23 do Fedora
+# instalando o PHP nas versões superior ou igual á 23 do Fedora
 dnf -y groupinstall php
 
 # reinicie o apache
@@ -309,7 +309,7 @@ nano /etc/httpd/conf/httpd.conf
 </pre>
 
 <p>
-	Procure dentro deste arquivo as seguintes linhas de comando e as altere conforme abaixo: 
+	Procure dentro deste arquivo as seguintes linhas de comando e as altere conforme abaixo:
 </p>
 
 <pre class="brush: shell, bash">
@@ -320,7 +320,7 @@ User apache PARA User william
 </pre>
 
 <p>
-	Feito isso, finalizamos a primeira parte da configuração, vamos agora ver se está tudo funcionando corretamente rodando os seguintes comandos: 
+	Feito isso, finalizamos a primeira parte da configuração, vamos agora ver se está tudo funcionando corretamente rodando os seguintes comandos:
 </p>
 
 <pre class="brush: shell, bash">
@@ -346,7 +346,7 @@ Alias /evertonwilliam /home/william/public_html/evertonwilliam
    AllowOverride All
    Order allow,deny
    Allow from all
-&lt;/Directory&gt; 
+&lt;/Directory&gt;
 </pre>
 
 <p>
@@ -380,8 +380,8 @@ SELINUX=disabled
 
 <pre class="brush: html">
 http://localhost/projeto1
-http://localhost/projeto2 
-http://localhost/projeto3 
+http://localhost/projeto2
+http://localhost/projeto3
 </pre>
 
 <p>

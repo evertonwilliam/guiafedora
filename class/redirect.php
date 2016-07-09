@@ -8,15 +8,16 @@
  *** @return url
  /**********************************************************/
 function url_response($urlpatterns) {
-	$msg = '';
 	foreach ($urlpatterns as $pcre => $app) {
-		$file = '.'.$_SERVER[PROJECT_ROOT] . '/article/pt-br/' . $app;
+		$file = $_SERVER['DOCUMENT_ROOT'].PROJECT_DIR.'article/pt-br' . $app;
 		if (file_exists($file)) {
 			if (preg_match("@^{$pcre}$@", REQUEST_URI, $_GET)) {
 				include (APPLICATION_DIR . '/' . $app);
 				break;
 			}
 		}else{
+			//echo '<pre>';
+			//print_r($_SERVER);
 			include('./content/404.html');
 		}
 	}

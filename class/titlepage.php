@@ -1,7 +1,6 @@
 <?php
 	function getTitlePage(){
-		$filename = '.'.$_SERVER[PROJECT_ROOT] . '/article/pt-br/' . REQUEST_URL;
-		//$title = '.'.$_SERVER[PROJECT_ROOT] . '/article/pt-br' . REQUEST_URL;
+		$filename = $_SERVER['DOCUMENT_ROOT'].PROJECT_DIR. '/article/pt-br' . REQUEST_URL;
 		$handle = file($filename);
 		foreach ($handle as $line_num => $line) {
 	    	if($line_num == '1'){
@@ -13,7 +12,7 @@
 		}else{
 			return ucfirst("prefácio");
 		}
-		
+
 	}
 
 ?>

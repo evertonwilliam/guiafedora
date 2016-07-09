@@ -7,21 +7,21 @@
 	.tiny {
 		font-size: 3.2em;
 	}
-	
+
 	.small {
 		font-size: 4.2em;
 	}
-	
+
 	.medium {
 		font-size: 4.2em;
 	}
 
 	div#barra{
-		padding:10px;
+		padding:5px;
 	}
 
 	.url{
-		font-size: 10pt;
+		font-size: 12pt;
 		color:#ffffff;
 	}
 
@@ -32,7 +32,7 @@
 		font-size:6pt;
 		color:#FFFFFF;
 	}
-	
+
 	div#header{
 		top:0px;
 		position:fixed;
@@ -40,10 +40,10 @@
 		height:10px;
 		z-index:1000;
 	}
-	
+
 	div.bandheader{
 		clear:both;
-	}	
+	}
 
 	div.bandheader a span{
 		float:left;
@@ -55,7 +55,7 @@
 	.btmainmenu{
 		margin-top:5px;
 	}
-	
+
 	div.bandheader h1{
 		float:left;
 		margin-top:12px;
@@ -68,7 +68,7 @@
 		width:50%;
 		height:47px;
 	}
-	
+
 	div.social{
 		text-align:right;
 	}
@@ -76,12 +76,12 @@
 	div.social ul {
 		margin-top:2px;
 	}
-	
+
 	div.social ul li{
 		display:inline;
 		padding:0.3em 0.3em 0 0;
 	}
-	
+
 	div#content{
 		margin-top:8em;
 		margin-bottom:25px;
@@ -92,14 +92,14 @@
 		padding:0 1em 0 1em;
 		clear:both;
 	}
-	
+
 	div#content p{
 		line-height:1.2em;
 		text-indent: 0.8em;
 		font-size:15pt;
 		padding:0.3em 0.3em 0.1em 0.3em;
 	}
-	
+
 	div#content h1, h2, h3, h4, h5, h6, div#publicity h1 {
 		padding:1em 0em 0.2em 1.2em;
 		font-size:15pt;
@@ -119,7 +119,7 @@
 		width:100%;
 		height:20px;
 		z-index:1000;
-	}	
+	}
 
 	div#footer footer{
 		font-size: 10pt;
@@ -131,11 +131,11 @@
 	div#content .box_img_article img{
 		width:50%;
 	}
-	
+
 	div#content .box_img_article img:hover{
 		width:90%;
-	}	
-	
+	}
+
 /*
 	CONFIGURAÇÃO DA PÁGINA DE CRÉDITOS.
 */
@@ -144,13 +144,13 @@
 		width: 90px;
 		margin-top:10px;
 	}
-	
+
 	.name-persona{
 		margin-top:40px;
 		margin-right: 1px;
 		font-size:15pt;
-	}	
-	
+	}
+
 	.desc-persona{
 		margin-top:30px;
 		font-size:15pt;
@@ -163,7 +163,7 @@
 		font-size:15pt;
 		line-height:1.5em;
 	}
-	
+
 	div#img-creditos span, div#equipe span, div#img-creditos p, div#equipe p{
 		line-height:1.2em;
 		text-indent: 0.8em;
@@ -186,10 +186,10 @@
 		width:250px;
 		padding:6px;
 	}
-	
+
 /*
 	CONFIGURACAO DA TABELA
-*/	
+*/
 
 	table{
 		margin-left:30px;
@@ -201,11 +201,11 @@
 
 	table th, table td{
 		padding:4px;
-	}	
-	
+	}
+
 /*
 	CONFIGURAÇÃO DO MENU RETRATIL.
-*/		
+*/
 	div#mainmenu h1, div#mainmenu h2, div#mainmenu h3{
 		font-weight:bolder;
 		border-bottom: 2px solid #C3C3C3;
@@ -220,10 +220,10 @@
 		transition: all 0.5s ease;
 		position:fixed;
 		top:75px;
-		width:501px; 
+		width:501px;
 		height:100%;
 		z-index:100;
-		left:-501px;	
+		left:-501px;
 	}
 
 	.active {
@@ -253,10 +253,10 @@
 		position:relative;
 		margin:2em 0 10em 0.5em;
 	}
-	
+
 	#menu ul li a{
 		margin: 0em 0em 0em 1.5em;
-	}	
+	}
 
 	#menu li a, #menu li a:link {
 		color:#c3c3c3;
@@ -295,16 +295,16 @@
 	.menulogo{
 		text-align:center;
 	}
-	
+
 	.assinatura{
 		font-size:15pt;
 	}
-	
+
 	.assinatura{
 		font-size:15pt;
 		padding-left:30px;
 		margin-top:10px;
 		margin-bottom: 10px;
-	}	
+	}
 
 }

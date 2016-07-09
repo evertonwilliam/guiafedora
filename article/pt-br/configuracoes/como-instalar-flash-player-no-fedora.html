@@ -75,8 +75,8 @@ rpm -i http://sourceforge.net/projects/mscorefonts2/files/rpms/msttcore-fonts-in
 # Acessando o diretórios de repositórios
 cd /etc/yum.repos.d/
 
-# Digite o comando para instalar o repositório
-wget http://download.opensuse.org/repositories/home:/DarkPlayer:/Pipelight/Fedora_$(rpm -E %fedora)/home:DarkPlayer:Pipelight.repo 
+# Digite o comando para instalar o repositório (Obs: só tem para a versão 20, 21 e 22)
+wget http://download.opensuse.org/repositories/home:/DarkPlayer:/Pipelight/Fedora_22/home:DarkPlayer:Pipelight.repo
 
 # Digite este comando para instalar a chave de acesso
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux

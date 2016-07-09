@@ -7,11 +7,11 @@
 	.tiny {
 		font-size: 2.0em;
 	}
-	
+
 	.small {
 		font-size: 1.8em;
 	}
-	
+
 	.medium {
 		font-size: 2.0em;
 	}
@@ -21,7 +21,8 @@
 	}
 
 	.url, .idioma{
-		display:none;
+		font-size: 10pt;
+		color:#ffffff;
 	}
 
 	div#header{
@@ -50,7 +51,7 @@
 		width:50%;
 		height:22px;
 	}
-	
+
 	div.social{
 		text-align:right;
 	}
@@ -59,7 +60,7 @@
 		display:inline;
 		padding:0.3em 0.3em 0 0;
 	}
-	
+
 	div#content{
 		margin-top:4em;
 		margin-bottom:40px;
@@ -69,22 +70,22 @@
 		display:block;
 		clear:both;
 	}
-	
+
 	div#content p{
 		line-height:1.2em;
 		text-indent: 0.8em;
 		font-size:10pt;
 		padding:0.5em 0.5em 0.5em 0.5em;
 	}
-	
+
 	div#content h1, h2, h3, h4, h5, h6, div#publicity h1 {
 		padding:0.5em 0.5em 0.5em 0.5em;
 		font-size:10pt;
 	}
-	
+
 	div#publicity {
 		display:none;
-	}	
+	}
 
 	div#content ul li{
 		line-height:1.0em;
@@ -100,30 +101,30 @@
 		width:100%;
 		height:20px;
 		z-index:1000;
-	}	
+	}
 
 	div#footer footer{
-		font-size: 4pt;
+		font-size: 10pt;
 		color:#C4C4C4;
 		text-align: center;
 		margin-top: 5px;
 	}
-	
+
 /*
-	CONFIGURAÇÃO DA PÁGINA DE CRÉDITOS.
+	CONFIGURAï¿½ï¿½O DA Pï¿½GINA DE CRï¿½DITOS.
 */
 
 	.img-persona{
 		width: 30px;
 		margin-top:10px;
 	}
-	
+
 	.name-persona{
 		margin-top:17px;
 		margin-right: 1px;
 		font-size:8pt;
-	}	
-	
+	}
+
 	.desc-persona{
 		margin-top:30px;
 		font-size:8pt;
@@ -135,7 +136,7 @@
 		font-size:7pt;
 		line-height:1.5em;
 	}
-	
+
 	div#img-creditos span, div#equipe span, div#img-creditos p, div#equipe p{
 		line-height:1.2em;
 		text-indent: 0.8em;
@@ -158,10 +159,10 @@
 		width:100px;
 		padding:3px;
 	}
-	
+
 /*
 	CONFIGURACAO DA TABELA
-*/	
+*/
 
 	table{
 		margin-left:2px;
@@ -173,11 +174,11 @@
 
 	table th, table td{
 		padding:4px;
-	}	
-	
+	}
+
 /*
-	CONFIGURAÇÃO DO MENU RETRATIL.
-*/		
+	CONFIGURAï¿½ï¿½O DO MENU RETRATIL.
+*/
 	div#mainmenu h1, div#mainmenu h2, div#mainmenu h3{
 		font-weight:bolder;
 		border-bottom: 2px solid #C3C3C3;
@@ -192,10 +193,10 @@
 		transition: all 0.5s ease;
 		position:fixed;
 		top:33px;
-		width:200px; 
+		width:200px;
 		height:100%;
 		z-index:100;
-		left:-200px;	
+		left:-200px;
 	}
 
 	.active {
@@ -263,12 +264,12 @@
 	.menulogo{
 		text-align:center;
 	}
-	
+
 	.menulogo img{
 		width:100px;
-	}	
-		
-	
+	}
+
+
 	.assinatura{
 		font-size:9pt;
 		padding-left:5px;

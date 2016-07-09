@@ -1,0 +1,1 @@
+User-agent: GooglebotDisallow:User-agent: SlurpDisallow:User-agent: MSNBotDisallow:User-agent: Googlebot-ImageDisallow:User-agent: yahoo-mmcrawlerDisallow:User-agent: psbotDisallow:User-agent: *Disallow:Disallow: /screensDisallow: /frontendDisallow: /contentDisallow: /class

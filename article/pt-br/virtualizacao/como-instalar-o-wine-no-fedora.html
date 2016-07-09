@@ -65,10 +65,13 @@ su
 Senha:
 
 # Efetue o download do Winetrick
-wget http://sourceforge.net/projects/postinstaller/files/fedora/releases/21/x86_64/winetricks-20130919-1.fc21.noarch.rpm
+wget  https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
 
-# Efetue e instalação do Winetricks
-dnf -y install winetricks-20130919-1.fc21.noarch.rpm
+# Insira permissão para execução
+chmod +x winetricks
+
+# Efetue a instalação
+cp winetricks /usr/local/bin
 </pre>
 
 <p>

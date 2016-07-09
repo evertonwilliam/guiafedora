@@ -6,7 +6,7 @@
 </p>
 
 <p>
-	Para efetuar a instalação, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos: 
+	Para efetuar a instalação, acesse o terminal através do menu: "Aplicativos->System Tolls->LXTerminal" e na tela que aparecer digite os seguintes comandos:
 </p>
 
 <pre class="brush: shell, bash">
@@ -17,16 +17,20 @@ su
 Senha
 
 # Digite este comando para instalar no ambiente 32 bits (Versão 21)
-wget http://sourceforge.net/projects/postinstaller/files/fedora/releases/21/i386/ffdiaporama-2.0.b1-1.fc21.i686.rpm
-dnf -y install ffdiaporama-2.0.b1-1.fc21.i686.rpm
+wget http://ffdiaporama.tuxfamily.org/script/GetPackage.php?f=ffDiaporama-2.1.2014.0209-0.fc20.i686.rpm
+dnf -y install ffDiaporama-2.1.2014.0209-0.fc20.i686.rpm
 
 # Digite este comando para instalar no ambiente 64 bits (Versão 21)
-wget http://sourceforge.net/projects/postinstaller/files/fedora/releases/21/x86_64/ffdiaporama-2.0.b1-1.fc21.x86_64.rpm
-dnf -y install ffdiaporama-2.0.b1-1.fc21.x86_64.rpm
+wget http://ffdiaporama.tuxfamily.org/script/GetPackage.php?f=ffDiaporama-2.1.2014.0209-0.fc20.x86_64.rpm
+dnf -y install ffDiaporama-2.1.2014.0209-0.fc20.x86_64.rpm
 </pre>
 
 <p>
 	No site oficial do <a href="http://ffdiaporama.tuxfamily.org/?page_id=8386&lang=pt" alt="FFDiaporama" target="_blank">ffDiaporama</a>, é possível encontrar um área destinada a demonstrações e tutoriais, se você tiver interesse em aprender um pouco mais sobre este aplicativo, acesse: <a href="http://ffdiaporama.tuxfamily.org/?page_id=8386&lang=pt" alt="Tutoriais FFDiaporama" target="_blank">Tutorial FFDiaporama</a>
+</p>
+
+<p>
+	Observação: Você só conseguirá instalar o ffdiaporama se tiver todos os codecs instalados anteriormente em seu Linux se acaso não tiver, será apresentado vários erros de falta das bibliotecas dos codecs.
 </p>
 
 </article>

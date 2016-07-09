@@ -2,7 +2,7 @@
 <h1>como instalar repositórios de terceiros no fedora</h1>
 
 <p>
-	Igualmente a muitas outras distribuições Linux, o Fedora não deixa de lado os seus valores e princípios ao disponibilizar seus produtos para seus clientes. Disponibilizar aplicativos que não são livres e com o código fonte aberto trai a licença <a href="http://www.gnu.org/licenses/" alt="Lienças GNU GPL" target="_blank">GNU GPL</a>, por isso, todos os repositórios oficiais do Fedora só trazem consigo aplicações que são registrados e liberados por esta licença, porém, como todas as outras distribuições, é possível instalar repositórios de terceiros, que trazem consigo estes aplicativos e drivers.
+	Igualmente a muitas outras distribuições Linux, o Fedora não deixa de lado os seus valores e princípios ao disponibilizar seus produtos para seus clientes. Disponibilizar aplicativos que não são livres e com o código fonte aberto trai a licença <a href="http://www.gnu.org/licenses/" alt="Licenças GNU GPL" target="_blank">GNU GPL</a>, por isso, todos os repositórios oficiais do Fedora só trazem consigo aplicações que são registrados e liberados por esta licença, porém, como todas as outras distribuições, é possível instalar repositórios de terceiros, que trazem consigo estes aplicativos e drivers.
 </p>
 
 <p>
@@ -35,8 +35,8 @@ dnf -y install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-r
 	Observe que nestas linhas, estou incluindo o comando "$(rpm -E %fedora)" que imprime, no comando, a versão exata de seu Fedora, sendo assim, não é necessário saber qual é a versão que está utilizando, uma vez que o comando acima irá recuperar a versão correta, e assim irá baixar os repositórios corretos para a versão que você instalou.
 </p>
 
-<p> 
-	Não existe apenas este respositório disponível para o Fedora, existem vários outros. Outro repositório de aplicações muito importante para o Fedora é o <a href="http://ru.fedoracommunity.org/repository" alt="RussianFedora" target="_Blank">RussianFedora</a> que traz consigo uma infinidade de opções de aplicativos livres e não livres. Ao meu ver, este é um dos repositórios que não devem faltar na sua biblioteca. 
+<p>
+	Não existe apenas este respositório disponível para o Fedora, existem vários outros. Outro repositório de aplicações muito importante para o Fedora é o <a href="http://ru.fedoracommunity.org/repository" alt="RussianFedora" target="_Blank">RussianFedora</a> que traz consigo uma infinidade de opções de aplicativos livres e não livres. Ao meu ver, este é um dos repositórios que não devem faltar na sua biblioteca.
 </p>
 
 <p>
@@ -54,7 +54,7 @@ Senha
 dnf -y install http://mirror.yandex.ru/fedora/russianfedora/russianfedora/free/fedora/russianfedora-free-release-stable.noarch.rpm
 
 # Digite o comando abaixo para os pacotes nonfree
-dnf -y install http://mirror.yandex.ru/fedora/russianfedora/russianfedora/nonfree/fedora/russianfedora-nonfree-release-stable.noarch.rpm 
+dnf -y install http://mirror.yandex.ru/fedora/russianfedora/russianfedora/nonfree/fedora/russianfedora-nonfree-release-stable.noarch.rpm
 </pre>
 
 <p>
@@ -62,7 +62,7 @@ dnf -y install http://mirror.yandex.ru/fedora/russianfedora/russianfedora/nonfre
 </p>
 
 <p>
-	Se você desejar efetuar esta instalação via terminal, deverá efetuar a instalação do aplicativo "Wget", conforme é mostrado em: <a href="como-instalar-wget-no-fedora" alt="Instalando o Wget" title="Instalando o Wget">Instalando o Wget</a> e em seguida executar os seguintes comandos, como exemplo: 
+	Se você desejar efetuar esta instalação via terminal, deverá efetuar a instalação do aplicativo "Wget", conforme é mostrado em: <a href="como-instalar-wget-no-fedora" alt="Instalando o Wget" title="Instalando o Wget">Instalando o Wget</a> e em seguida executar os seguintes comandos, como exemplo:
 </p>
 
 <pre class="brush: shell, bash">
@@ -86,7 +86,7 @@ mv -V *.repo /etc/yum.repos.d/
 <h1>como remover repositórios no fedora</h1>
 
 <p>
-	Existem algumas formas para se fazer isso, uma delas, e não a mais importante, é excluir as entradas dos repositórios existentens no diretório "/etc/yum.repos.d/", nesta opção você estará realizando a exclusão física do arquivo de configuração, não tendo como efetuar a sua reinstalação, a não ser que você tenha uma cópia dele, em outro lugar. Para isso acesse o terminal pelo seguinte menu: "Aplicativos->System Tolls->LXTerminal" e digite os seguintes comandos: 
+	Existem algumas formas para se fazer isso, uma delas, e não a mais importante, é excluir as entradas dos repositórios existentens no diretório "/etc/yum.repos.d/", nesta opção você estará realizando a exclusão física do arquivo de configuração, não tendo como efetuar a sua reinstalação, a não ser que você tenha uma cópia dele, em outro lugar. Para isso acesse o terminal pelo seguinte menu: "Aplicativos->System Tolls->LXTerminal" e digite os seguintes comandos:
 </p>
 
 <pre class="brush: shell, bash">
@@ -133,7 +133,7 @@ dnf -y makecache
 dnf -y check-update
 
 # Efetua a atualização se houver algo para atualizar
-dnf -y update		
+dnf -y update
 </pre>
 
 <p>
